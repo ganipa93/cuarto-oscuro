@@ -38,7 +38,14 @@
     [
      "Senado, desempate (La Voz de San Justo)",
      "https://www.lavozdesanjusto.com.ar/el-senado-aprueba-la-ley-bases-con-desempate-de-villarruel"
+    ],
+    [
+     "Votos de Diputados por bloque (¿Cómo votó?)",
+     "https://comovoto.dev.ar/"
     ]
+   ],
+   "actasD": [
+    "d-bases"
    ]
   },
   {
@@ -71,7 +78,14 @@
     [
      "Diputados, votos (Canal 26)",
      "https://www.canal26.com/politica/2025/12/19/que-voto-cada-diputado-de-cara-a-la-aprobacion-del-presupuesto-2026-quienes-dieron-el-visto-bueno-y-quienes-estuvieron-en-contra/"
+    ],
+    [
+     "Votos de Diputados por bloque (¿Cómo votó?)",
+     "https://comovoto.dev.ar/"
     ]
+   ],
+   "actasD": [
+    "d-presupuesto"
    ]
   },
   {
@@ -105,7 +119,14 @@
     [
      "Diputados, votos (Canal 26)",
      "https://www.canal26.com/politica/2026/02/20/media-sancion-a-la-reforma-laboral-como-voto-cada-diputado/"
+    ],
+    [
+     "Votos de Diputados por bloque (¿Cómo votó?)",
+     "https://comovoto.dev.ar/"
     ]
+   ],
+   "actasD": [
+    "d-labor"
    ]
   },
   {
@@ -134,7 +155,14 @@
     [
      "Senado, voto por senador (Canal 26)",
      "https://www.canal26.com/politica/2026/02/28/regimen-penal-juvenil-asi-voto-cada-senador-la-ley-que-bajara-la-edad-de-imputabilidad-a-14-anos/"
+    ],
+    [
+     "Votos de Diputados por bloque (¿Cómo votó?)",
+     "https://comovoto.dev.ar/"
     ]
+   ],
+   "actasD": [
+    "d-rpj"
    ]
   },
   {
@@ -167,12 +195,19 @@
     [
      "Diputados (LM Neuquén)",
      "https://www.lmneuquen.com/pais/la-camara-diputados-aprobo-el-proyecto-que-limita-los-dnu-javier-milei-pero-debe-volver-al-senado-n1212318"
+    ],
+    [
+     "Votos de Diputados por bloque (¿Cómo votó?)",
+     "https://comovoto.dev.ar/"
     ]
+   ],
+   "actasD": [
+    "d-dnu"
    ]
   },
   {
    "id": 5,
-   "n": "Ley de Glaciares (Senado, 2026)",
+   "n": "Ley de Glaciares (2026)",
    "q": [
     [
      42,
@@ -183,15 +218,24 @@
    "short": "Ley de Glaciares",
    "date": "2026-02-26",
    "res": [
-    "Senado 26/2/2026, en general: 40 a 31 con 1 abstención."
+    "Senado 26/2/2026, en general: 40 a 31 con 1 abstención.",
+    "Diputados 9/4/2026, en general y en particular: 137 a 111 con 3 abstenciones (acta nominal)."
    ],
    "acta": "glaciares",
    "tema": "ambiente",
-   "links": []
+   "links": [
+    [
+     "Votos de Diputados por bloque (¿Cómo votó?)",
+     "https://comovoto.dev.ar/"
+    ]
+   ],
+   "actasD": [
+    "d-glaciares"
+   ]
   },
   {
    "id": 6,
-   "n": "Emergencia en discapacidad (Senado, 2025)",
+   "n": "Emergencia en discapacidad (2025)",
    "q": [
     [
      43,
@@ -202,11 +246,20 @@
    "short": "Emergencia en discapacidad",
    "date": "2025-09-04",
    "res": [
-    "Senado 4/9/2025, habilitación para tratar la insistencia: 62 a 8 (dos tercios). Los 8 votos en contra fueron de LLA."
+    "Senado 4/9/2025, habilitación para tratar la insistencia: 62 a 8 (dos tercios). Los 8 votos en contra fueron de LLA.",
+    "Diputados 5/6/2025, en general: 148 a 71 con 3 abstenciones y 34 ausentes (acta nominal)."
    ],
    "acta": "discapacidad",
    "tema": "economía",
-   "links": []
+   "links": [
+    [
+     "Votos de Diputados por bloque (¿Cómo votó?)",
+     "https://comovoto.dev.ar/"
+    ]
+   ],
+   "actasD": [
+    "d-discapacidad"
+   ]
   }
  ],
  "actas": {

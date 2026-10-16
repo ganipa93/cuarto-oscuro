@@ -202,13 +202,13 @@
   "vv": [
    1,
    0,
-   null,
-   0,
-   null,
-   null,
-   null
+   -1,
+   1,
+   1,
+   -1,
+   1
   ],
-  "vt": "Votos divididos: mayormente a favor de la Ley Bases, abstención en general y rechazo por artículos en el Presupuesto 2026, y cambios propios al Régimen Penal Juvenil. No encontré su voto en la reforma laboral. En la reforma de los DNU (2025) firmó un dictamen propio y su diputado López habló a favor.",
+  "vt": "En las actas nominales de Diputados, el bloque Coalición Cívica votó así: Ley Bases, 5 a favor y 1 abstención; Presupuesto 2026, 2 abstenciones; reforma laboral, 2 en contra; Régimen Penal Juvenil, 1 a favor y 1 ausente; reforma de los DNU, 6 a favor; Ley de Glaciares, 2 en contra; emergencia en discapacidad, 6 a favor. En la reforma de los DNU (2025) firmó un dictamen propio y su diputado López habló a favor. Los números son del bloque, que en cada votación reunió entre 2 y 6 diputados.",
   "pj": "Julio de 2026: Ferraro rechazó la reforma política del Gobierno por considerarla una \"ley de lemas encubierta\" y propuso hacer optativas las PASO y debatir el financiamiento de campañas. No encontré un proyecto de ley propio reciente.",
   "pl": [
    [
@@ -456,15 +456,15 @@
    ]
   ],
   "vv": [
-   null,
    1,
    1,
    1,
-   null,
-   null,
-   null
+   1,
+   1,
+   0,
+   -1
   ],
-  "vt": "Integró el bloque que votó a favor del Presupuesto 2026, la reforma laboral y el Régimen Penal Juvenil (dentro de Fuerzas del Cambio). No encontré su voto en la Ley Bases.",
+  "vt": "En las actas nominales de Diputados, el bloque MID (2 o 3 diputados) votó a favor de la Ley Bases, el Presupuesto 2026, la reforma laboral, el Régimen Penal Juvenil y la reforma de los DNU; se abstuvo en la Ley de Glaciares y en la emergencia en discapacidad tuvo 1 voto en contra y 2 ausentes.",
   "ev": "C",
   "nt": "No pude leer su declaración de principios. Estimación por trayectoria, discurso de 2022 y votos de 2025-2026.",
   "slug": "mid",
@@ -691,10 +691,10 @@
    -1,
    -1,
    1,
-   null,
-   null
+   -1,
+   1
   ],
-  "vt": "Los diputados del Frente de Izquierda votaron en contra de las cuatro leyes del cuadro. El Frente de Izquierda firmó el dictamen mayoritario de la reforma de los DNU.",
+  "vt": "En las actas nominales de Diputados, los diputados del Frente de Izquierda votaron en contra de la Ley Bases, el Presupuesto 2026, la reforma laboral y el Régimen Penal Juvenil; a favor de la reforma de los DNU y de la emergencia en discapacidad; y en contra de la reforma de la Ley de Glaciares. El Frente de Izquierda firmó el dictamen mayoritario de la reforma de los DNU. En Presupuesto, laboral y penal juvenil figuran en un solo bloque, así que no se separa por partido.",
   "pj": "Julio de 2026: Del Caño, Bregman, Del Plá y Pitrola (Frente de Izquierda) presentaron un proyecto de emergencia financiera de dos años para hogares endeudados: suspensión de embargos de salario, quita de deuda según ingresos y tope a las tasas de préstamos y tarjetas según los salarios registrados.",
   "pl": [
    [
@@ -741,10 +741,10 @@
    -1,
    -1,
    1,
-   null,
-   null
+   -1,
+   1
   ],
-  "vt": "Los diputados del Frente de Izquierda votaron en contra de las cuatro leyes del cuadro. El Frente de Izquierda firmó el dictamen mayoritario de la reforma de los DNU.",
+  "vt": "En las actas nominales de Diputados, los diputados del Frente de Izquierda votaron en contra de la Ley Bases, el Presupuesto 2026, la reforma laboral y el Régimen Penal Juvenil; a favor de la reforma de los DNU y de la emergencia en discapacidad; y en contra de la reforma de la Ley de Glaciares. El Frente de Izquierda firmó el dictamen mayoritario de la reforma de los DNU. En Presupuesto, laboral y penal juvenil figuran en un solo bloque, así que no se separa por partido.",
   "pj": "Julio de 2026: el proyecto de emergencia financiera para familias endeudadas lo encabezó Del Caño junto con Bregman, Del Plá y Pitrola. Mayo de 2026: Bregman y Del Caño volvieron a presentar un proyecto para legalizar la marihuana, según la prensa de la época.",
   "pl": [
    [
@@ -779,7 +779,7 @@
    null,
    null
   ],
-  "vt": "Su diputado integra el bloque del Frente de Izquierda, que votó en contra de las cuatro leyes. El Frente de Izquierda firmó el dictamen mayoritario de la reforma de los DNU.",
+  "vt": "Su diputado integra el bloque del Frente de Izquierda, que votó en contra de la Ley Bases, el Presupuesto 2026, la reforma laboral y el Régimen Penal Juvenil, y a favor de la reforma de los DNU. No hay acta separada de su voto en glaciares y discapacidad.",
   "ev": "A",
   "nt": "Bases: planificación estatal, nacionalización de banca y energía, moratoria de la deuda, política exterior independiente. No trata seguridad.",
   "slug": "izquierda-socialista",
@@ -797,6 +797,16 @@
   "ev": "A",
   "nt": "Bases casi idénticas a las de Izquierda Socialista; tampoco tratan seguridad pública.",
   "slug": "mst",
-  "asof": "2026-10-16"
+  "asof": "2026-10-16",
+  "vv": [
+   null,
+   null,
+   null,
+   null,
+   1,
+   null,
+   1
+  ],
+  "vt": "En las actas nominales de Diputados, el diputado del MST votó a favor de la reforma de los DNU y de la emergencia en discapacidad. En las demás votaciones relevadas no figura con un bloque propio."
  }
 ]

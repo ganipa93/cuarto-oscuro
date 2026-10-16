@@ -49,9 +49,10 @@
   Promise.all([
     getJSON("data/questions.json"), getJSON("data/parties.json"), getJSON("data/votes.json"),
     getJSON("data/dnu.json"), getJSON("data/timeline.json"), getJSON("data/content.json"), getJSON("data/meta.json"),
-    getJSON("data/distritos.json").catch(function () { return null; })
+    getJSON("data/distritos.json").catch(function () { return null; }),
+    getJSON("data/diputados.json").catch(function () { return null; })
   ]).then(function (r) {
-    D.AX = r[0].axes; D.OPT = r[0].options; D.Q = r[0].questions; D.P = r[1]; D.V = r[2]; D.DNU = r[3]; D.TL = r[4]; D.C = r[5]; D.M = r[6]; D.DIST = r[7];
+    D.AX = r[0].axes; D.OPT = r[0].options; D.Q = r[0].questions; D.P = r[1]; D.V = r[2]; D.DNU = r[3]; D.TL = r[4]; D.C = r[5]; D.M = r[6]; D.DIST = r[7]; D.DIP = r[8];
     init();
   }).catch(function (e) {
     var b = $("loaderr");
@@ -276,6 +277,18 @@
     }
     showVote();
   }
+  function actaTable(box, cam, a) {
+    box.appendChild(el("h3", null, cam + ", por bloque: " + a.t + " (" + fmtDate(a.d) + ")"));
+    var tx = "Total: " + a.tot[0] + " a favor, " + a.tot[1] + " en contra, " + a.tot[2] + " abstenciones, " + a.tot[3] + " ausentes.";
+    box.appendChild(el("p", "small muted", (a.maj ? "Mayoría requerida: " + a.maj + ". " : "") + tx));
+    var wrap = el("div", "tablewrap"), t = el("table");
+    t.innerHTML = "<thead><tr><th>Bloque</th><th class='n'>Sí</th><th class='n'>No</th><th class='n'>Abst.</th><th class='n'>Aus.</th></tr></thead>";
+    var tb = el("tbody");
+    a.b.forEach(function (r) { var tr = el("tr"); r.forEach(function (c, k) { tr.appendChild(el("td", k ? "n" : null, String(c))); }); tb.appendChild(tr); });
+    t.appendChild(tb); wrap.appendChild(t); box.appendChild(wrap);
+    var al = el("p", "small"); al.appendChild(link(cam === "Senado" ? "Ver el acta oficial con el voto de cada senador" : "Ver la votación en el sitio oficial de Diputados", a.u)); box.appendChild(al);
+  }
+
   function showVote() {
     var v = D.V.defs[Number($("vsel").value || 0)], box = $("vdetail"); box.innerHTML = "";
     box.style.cssText = "display:flex;flex-direction:column;gap:12px;margin-top:8px";
@@ -283,19 +296,11 @@
     var stance = S.st ? S.st[v.id] : 0;
     box.appendChild(el("p", "small", "Con tus respuestas " + (stance === 1 ? "tendrías una postura a favor." : (stance === -1 ? "tendrías una postura en contra." : "tu postura no es clara."))));
     if (v.links && v.links.length) { var l = el("div", "lk"); l.style.cssText = "display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.88rem"; v.links.forEach(function (x) { l.appendChild(link(x[0], x[1])); }); box.appendChild(l); }
-    var a = v.acta && D.V.actas[v.acta];
-    if (a) {
-      box.appendChild(el("h3", null, "Senado, por bloque: " + a.t + " (" + fmtDate(a.d) + ")"));
-      box.appendChild(el("p", "small muted", "Mayoría requerida: " + a.maj + ". Total: " + a.tot[0] + " a favor, " + a.tot[1] + " en contra, " + a.tot[2] + " abstenciones, " + a.tot[3] + " ausentes."));
-      var wrap = el("div", "tablewrap"), t = el("table");
-      t.innerHTML = "<thead><tr><th>Bloque</th><th class='n'>Sí</th><th class='n'>No</th><th class='n'>Abst.</th><th class='n'>Aus.</th></tr></thead>";
-      var tb = el("tbody");
-      a.b.forEach(function (r) { var tr = el("tr"); r.forEach(function (c, k) { tr.appendChild(el("td", k ? "n" : null, String(c))); }); tb.appendChild(tr); });
-      t.appendChild(tb); wrap.appendChild(t); box.appendChild(wrap);
-      var al = el("p", "small"); al.appendChild(link("Ver el acta oficial con el voto de cada senador", a.u)); box.appendChild(al);
-    } else {
-      box.appendChild(el("p", "small muted", "No tengo el acta nominal de esta votación: las cifras salen de la prensa."));
-    }
+    var any = false;
+    if (v.acta && D.V.actas[v.acta]) { actaTable(box, "Senado", D.V.actas[v.acta]); any = true; }
+    (v.actasD || []).forEach(function (k) { var x = D.DIP && D.DIP.actas[k]; if (x) { actaTable(box, "Diputados", x); any = true; } });
+    if (!any) box.appendChild(el("p", "small muted", "No tengo el acta nominal de esta votación: las cifras salen de la prensa."));
+    if (D.DIP && (v.actasD || []).length) box.appendChild(el("p", "small muted", "Diputados: " + D.DIP.nota + " Datos de ¿Cómo votó? (comovoto.dev.ar), licencia MIT."));
     box.appendChild(Object.assign(el("p", "small"), {})).appendChild(reportLink("Votación " + v.n));
     var pl = D.P.filter(function (p) { return p.vv && p.vv[v.id] != null; });
     if (pl.length) {
@@ -350,7 +355,7 @@
     var box = $("extra"); box.innerHTML = "";
     box.style.cssText = "display:flex;flex-direction:column;gap:20px";
     box.appendChild(listCard("Qué campañas están relevadas", D.C.scope));
-    var nota = el("p", "small muted", "Las actas del Senado muestran el voto de cada senador y el conteo por bloque. Los bloques del Senado no son partidos: \"Justicialista\" y \"Frente PRO\" se asignaron al PJ y al PRO, y los bloques provinciales no se asignaron a ningún partido de la lista. Para Diputados el sitio de votaciones nominales no permite la lectura automática, así que sus cifras salen de la prensa y de Parlamentario.");
+    var nota = el("p", "small muted", "Las actas del Senado muestran el voto de cada senador y el conteo por bloque. Los bloques del Senado no son partidos: \"Justicialista\" y \"Frente PRO\" se asignaron al PJ y al PRO, y los bloques provinciales no se asignaron a ningún partido de la lista. Las tablas de Diputados por bloque salen de los datos abiertos de ¿Cómo votó? (comovoto.dev.ar), que recopila el sitio oficial de votaciones de Diputados; los totales coinciden con los de la prensa. En Diputados los bloques tampoco son partidos.");
     box.appendChild(listCard("Senado: votos nominales relevados", D.C.senado, nota));
     box.appendChild(listCard("Votaciones del Congreso consideradas", D.C.congreso));
     box.appendChild(listCard("Documentos consultados", D.C.docs));

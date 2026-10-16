@@ -1,0 +1,1120 @@
+{
+ "fuente": "¿Cómo votó? (rquiroga7/como_voto, MIT) sobre votaciones.hcdn.gob.ar",
+ "url_fuente": "https://comovoto.dev.ar/",
+ "nota": "Votos nominales de la Cámara de Diputados agrupados por el bloque en que cada diputado figuraba en el acta. Un bloque no es un partido. No se cuenta al presidente de la Cámara.",
+ "actas": {
+  "d-bases": {
+   "t": "Ley Bases: aceptación de los cambios del Senado",
+   "d": "2024-06-28",
+   "id": "5272",
+   "u": "https://votaciones.hcdn.gob.ar/votacion/5272",
+   "tot": [
+    147,
+    107,
+    2,
+    0
+   ],
+   "b": [
+    [
+     "Union Por La Patria",
+     0,
+     99,
+     0,
+     0
+    ],
+    [
+     "La Libertad Avanza",
+     37,
+     0,
+     0,
+     0
+    ],
+    [
+     "Pro",
+     37,
+     0,
+     0,
+     0
+    ],
+    [
+     "Ucr - Union Civica Radical",
+     34,
+     0,
+     0,
+     0
+    ],
+    [
+     "Hacemos Coalicion Federal",
+     13,
+     3,
+     0,
+     0
+    ],
+    [
+     "Innovacion Federal",
+     8,
+     0,
+     0,
+     0
+    ],
+    [
+     "Coalicion Civica",
+     5,
+     0,
+     1,
+     0
+    ],
+    [
+     "Independencia",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Mid - Movimiento De Integracion Y Desarrollo",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Pts-frente De Izquierda Unidad",
+     0,
+     3,
+     0,
+     0
+    ],
+    [
+     "Buenos Aires Libre",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Produccion Y Trabajo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Creo",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Izquierda Socialista Fit-unidad",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Movimiento Popular  Neuquino",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Partido Obrero-frente De Izquierda Y Trabajadores Unidad",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Por Santa Cruz",
+     1,
+     0,
+     1,
+     0
+    ]
+   ]
+  },
+  "d-presupuesto": {
+   "t": "Presupuesto 2026, en general",
+   "d": "2025-12-18",
+   "id": "5822",
+   "u": "https://votaciones.hcdn.gob.ar/votacion/5822",
+   "tot": [
+    132,
+    97,
+    19,
+    8
+   ],
+   "b": [
+    [
+     "La Libertad Avanza",
+     94,
+     0,
+     0,
+     0
+    ],
+    [
+     "Union Por La Patria",
+     0,
+     88,
+     0,
+     5
+    ],
+    [
+     "Pro",
+     12,
+     0,
+     0,
+     0
+    ],
+    [
+     "Innovacion Federal",
+     7,
+     0,
+     0,
+     0
+    ],
+    [
+     "Ucr - Union Civica Radical",
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente De Izquierda Y De Trabajadores Unidad",
+     0,
+     4,
+     0,
+     0
+    ],
+    [
+     "Elijo Catamarca",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Encuentro Federal",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     2,
+     0,
+     0,
+     1
+    ],
+    [
+     "Mid - Movimiento De Integracion Y Desarrollo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Pais Federal",
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     "Produccion Y Trabajo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Adelante Buenos Aires",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Defendamos Cordoba",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Por Santa Cruz",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero San Luis",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Coalicion Civica",
+     0,
+     0,
+     2,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     0,
+     0,
+     17,
+     0
+    ],
+    [
+     "Sin bloque",
+     0,
+     0,
+     0,
+     1
+    ]
+   ]
+  },
+  "d-labor": {
+   "t": "Modernización laboral, en general",
+   "d": "2026-02-20",
+   "id": "5853",
+   "u": "https://votaciones.hcdn.gob.ar/votacion/5853",
+   "tot": [
+    135,
+    115,
+    0,
+    6
+   ],
+   "b": [
+    [
+     "La Libertad Avanza",
+     94,
+     0,
+     0,
+     0
+    ],
+    [
+     "Union Por La Patria",
+     0,
+     91,
+     0,
+     2
+    ],
+    [
+     "Provincias Unidas",
+     6,
+     9,
+     0,
+     3
+    ],
+    [
+     "Pro",
+     12,
+     0,
+     0,
+     0
+    ],
+    [
+     "Innovacion Federal",
+     7,
+     0,
+     0,
+     0
+    ],
+    [
+     "Ucr - Union Civica Radical",
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente De Izquierda Y De Trabajadores Unidad",
+     0,
+     4,
+     0,
+     0
+    ],
+    [
+     "Elijo Catamarca",
+     0,
+     3,
+     0,
+     0
+    ],
+    [
+     "Coalicion Civica",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Encuentro Federal",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     2,
+     0,
+     0,
+     1
+    ],
+    [
+     "Mid - Movimiento De Integracion Y Desarrollo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Pais Federal",
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     "Produccion Y Trabajo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Adelante Buenos Aires",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Coherencia",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Defendamos Cordoba",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Por Santa Cruz",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero San Luis",
+     0,
+     1,
+     0,
+     0
+    ]
+   ]
+  },
+  "d-rpj": {
+   "t": "Régimen Penal Juvenil, en general",
+   "d": "2026-02-12",
+   "id": "5847",
+   "u": "https://votaciones.hcdn.gob.ar/votacion/5847",
+   "tot": [
+    149,
+    100,
+    0,
+    7
+   ],
+   "b": [
+    [
+     "La Libertad Avanza",
+     94,
+     0,
+     0,
+     0
+    ],
+    [
+     "Union Por La Patria",
+     0,
+     91,
+     0,
+     2
+    ],
+    [
+     "Provincias Unidas",
+     17,
+     0,
+     0,
+     1
+    ],
+    [
+     "Pro",
+     11,
+     0,
+     0,
+     1
+    ],
+    [
+     "Innovacion Federal",
+     7,
+     0,
+     0,
+     0
+    ],
+    [
+     "Ucr - Union Civica Radical",
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente De Izquierda Y De Trabajadores Unidad",
+     0,
+     4,
+     0,
+     0
+    ],
+    [
+     "Elijo Catamarca",
+     0,
+     3,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Mid - Movimiento De Integracion Y Desarrollo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Pais Federal",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Produccion Y Trabajo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Adelante Buenos Aires",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Coalicion Civica",
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     "Defendamos Cordoba",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Encuentro Federal",
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     "La Neuquinidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Por Santa Cruz",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero San Luis",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Coherencia",
+     0,
+     0,
+     0,
+     1
+    ]
+   ]
+  },
+  "d-dnu": {
+   "t": "Reforma de la ley de DNU (26.122), en general",
+   "d": "2025-10-08",
+   "id": "5774",
+   "u": "https://votaciones.hcdn.gob.ar/votacion/5774",
+   "tot": [
+    140,
+    80,
+    17,
+    20
+   ],
+   "b": [
+    [
+     "Union Por La Patria",
+     95,
+     0,
+     0,
+     3
+    ],
+    [
+     "La Libertad Avanza",
+     0,
+     35,
+     0,
+     2
+    ],
+    [
+     "Pro",
+     3,
+     29,
+     1,
+     2
+    ],
+    [
+     "Encuentro Federal",
+     12,
+     0,
+     1,
+     2
+    ],
+    [
+     "Democracia Para Siempre",
+     8,
+     0,
+     1,
+     3
+    ],
+    [
+     "Coalicion Civica",
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     "Liga Del Interior Eli",
+     0,
+     6,
+     0,
+     0
+    ],
+    [
+     "Ucr - Union Civica Radical",
+     4,
+     2,
+     8,
+     0
+    ],
+    [
+     "Coherencia",
+     4,
+     0,
+     0,
+     0
+    ],
+    [
+     "Futuro Y Libertad",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Izquierda Socialista Fit-unidad",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Mid - Movimiento De Integracion Y Desarrollo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Por Santa Cruz",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Produccion Y Trabajo",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Pts-frente De Izquierda Unidad",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Creo",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Defendamos Santa Fe",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Mst - Frente De Izquierda Y Trabajadores Unidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Somos Fueguinos",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     0,
+     0,
+     0,
+     3
+    ],
+    [
+     "Innovacion Federal",
+     0,
+     0,
+     4,
+     4
+    ],
+    [
+     "Movimiento Popular  Neuquino",
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     "Republicanos Unidos",
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     "Unidos",
+     0,
+     0,
+     1,
+     0
+    ]
+   ]
+  },
+  "d-glaciares": {
+   "t": "Ley de Glaciares, en general y particular",
+   "d": "2026-04-09",
+   "id": "5902",
+   "u": "https://votaciones.hcdn.gob.ar/votacion/5902",
+   "tot": [
+    137,
+    111,
+    3,
+    5
+   ],
+   "b": [
+    [
+     "La Libertad Avanza",
+     93,
+     0,
+     0,
+     1
+    ],
+    [
+     "Union Por La Patria",
+     2,
+     90,
+     0,
+     1
+    ],
+    [
+     "Provincias Unidas",
+     6,
+     11,
+     0,
+     1
+    ],
+    [
+     "Pro",
+     11,
+     0,
+     0,
+     1
+    ],
+    [
+     "Innovacion Federal",
+     8,
+     0,
+     0,
+     1
+    ],
+    [
+     "Ucr - Union Civica Radical",
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     "Elijo Catamarca",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Coalicion Civica",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Encuentro Federal",
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     "Partido Obrero En El Fte De Izquierda Y De Trabajadores-unidad",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Produccion Y Trabajo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Pts-frente De Izquierda Y De Trabajadores Unidad",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Adelante Buenos Aires",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Coherencia",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Defendamos Cordoba",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Por Santa Cruz",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero San Luis",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     "Mid - Movimiento De Integracion Y Desarrollo",
+     0,
+     0,
+     2,
+     0
+    ]
+   ]
+  },
+  "d-discapacidad": {
+   "t": "Emergencia en discapacidad, en general",
+   "d": "2025-06-05",
+   "id": "5667",
+   "u": "https://votaciones.hcdn.gob.ar/votacion/5667",
+   "tot": [
+    148,
+    71,
+    3,
+    34
+   ],
+   "b": [
+    [
+     "Union Por La Patria",
+     92,
+     0,
+     0,
+     6
+    ],
+    [
+     "La Libertad Avanza",
+     0,
+     35,
+     0,
+     3
+    ],
+    [
+     "Pro",
+     1,
+     29,
+     1,
+     4
+    ],
+    [
+     "Ucr - Union Civica Radical",
+     12,
+     0,
+     0,
+     2
+    ],
+    [
+     "Encuentro Federal",
+     11,
+     0,
+     2,
+     2
+    ],
+    [
+     "Democracia Para Siempre",
+     9,
+     0,
+     0,
+     3
+    ],
+    [
+     "Coalicion Civica",
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     "Liga Del Interior Eli",
+     0,
+     4,
+     0,
+     2
+    ],
+    [
+     "Independencia",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Pts-frente De Izquierda Unidad",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Innovacion Federal",
+     2,
+     0,
+     0,
+     6
+    ],
+    [
+     "Por Santa Cruz",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Creo",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Defendamos Santa Fe",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Mid - Movimiento De Integracion Y Desarrollo",
+     0,
+     1,
+     0,
+     2
+    ],
+    [
+     "Movimiento Popular  Neuquino",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Mst - Frente De Izquierda Y Trabajadores Unidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Partido Obrero -frente De Izquierda Y De Trabajadores -unidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Produccion Y Trabajo",
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     "Somos Fueguinos",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Transformacion",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Unidos",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Futuro Y Libertad",
+     0,
+     0,
+     0,
+     2
+    ],
+    [
+     "Republicanos Unidos",
+     0,
+     0,
+     0,
+     1
+    ]
+   ]
+  }
+ }
+}

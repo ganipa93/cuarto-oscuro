@@ -10,6 +10,7 @@ const links = (arr, where) => (arr || []).forEach((x, i) => {
 });
 
 const Q = rd("questions.json"), P = rd("parties.json"), V = rd("votes.json"), T = rd("timeline.json"), M = rd("meta.json");
+let DP = null; try { DP = rd("diputados.json"); } catch (e) { /* opcional */ }
 let D = null; try { D = rd("distritos.json"); } catch (e) { /* opcional */ }
 
 if (!isDate(M.updated)) err("meta.updated inválida");
@@ -39,6 +40,7 @@ V.defs.forEach((v, k) => {
   if (v.id !== k) err(`votación ${v.n}: id debe ser ${k}`);
   if (!isDate(v.date)) err(`votación ${v.n}: fecha inválida`);
   v.q.forEach((x) => { if (!ids.has(x[0])) err(`votación ${v.n}: pregunta ${x[0]} inexistente`); });
+  (v.actasD || []).forEach((k) => { if (!DP || !DP.actas[k]) err(`votación ${v.n}: acta de Diputados ${k} inexistente`); });
   if (v.acta && !V.actas[v.acta]) err(`votación ${v.n}: acta ${v.acta} inexistente`);
   links(v.links, `votación ${v.n}.links`);
 });
@@ -46,6 +48,12 @@ Object.entries(V.actas).forEach(([k, a]) => {
   if (!isUrl(a.u)) err(`acta ${k}: url inválida`);
   const t = a.b.reduce((s, r) => s.map((x, i) => x + r[i + 1]), [0, 0, 0, 0]);
   if (t.some((x, i) => x !== a.tot[i])) err(`acta ${k}: los bloques suman ${t} y el total dice ${a.tot}`);
+});
+
+if (DP) Object.entries(DP.actas).forEach(([k, a]) => {
+  const t = a.b.reduce((s, r) => s.map((x, i) => x + r[i + 1]), [0, 0, 0, 0]);
+  if (t.some((x, i) => x !== a.tot[i])) err(`acta ${k}: los bloques suman ${t} y el total dice ${a.tot}`);
+  if (!isUrl(a.u)) err(`acta ${k}: url inválida`);
 });
 
 T.items.forEach((i, k) => {
