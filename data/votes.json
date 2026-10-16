@@ -1,0 +1,1054 @@
+{
+ "defs": [
+  {
+   "id": 0,
+   "n": "Ley Bases (2024)",
+   "q": [
+    [
+     0,
+     1
+    ],
+    [
+     4,
+     -1
+    ],
+    [
+     12,
+     1
+    ],
+    [
+     28,
+     1
+    ]
+   ],
+   "rel": "gasto público, empresas estatales, mercado y baja de impuestos",
+   "short": "Ley Bases",
+   "date": "2024-06-28",
+   "res": [
+    "Senado 12/6/2024, en general: empate resuelto por el voto de la vicepresidenta Villarruel (la nota de La Voz de San Justo cita 37 a 36).",
+    "Diputados 28/6/2024: 147 a 107 con 2 abstenciones. A favor LLA, PRO, UCR y la mayoría de Hacemos, Innovación Federal y Coalición Cívica; en contra Unión por la Patria y el Frente de Izquierda."
+   ],
+   "acta": null,
+   "tema": "economía",
+   "links": [
+    [
+     "Diputados, por bloque (Chequeado)",
+     "https://chequeado.com/el-explicador/diputados-sanciono-la-ley-bases-y-el-paquete-fiscal-como-voto-cada-bloque/"
+    ],
+    [
+     "Senado, desempate (La Voz de San Justo)",
+     "https://www.lavozdesanjusto.com.ar/el-senado-aprueba-la-ley-bases-con-desempate-de-villarruel"
+    ]
+   ]
+  },
+  {
+   "id": 1,
+   "n": "Presupuesto 2026",
+   "q": [
+    [
+     0,
+     1
+    ],
+    [
+     24,
+     -1
+    ],
+    [
+     28,
+     1
+    ]
+   ],
+   "rel": "gasto público, financiamiento de jubilaciones y universidades, e impuestos",
+   "short": "Presupuesto 2026",
+   "date": "2025-12-26",
+   "res": [
+    "Diputados (dic. 2025): 132 afirmativos. A favor LLA (94), PRO (12), UCR (6), Innovación Federal y MID; en contra Unión por la Patria (88) y el Frente de Izquierda; Provincias Unidas mayormente se abstuvo. El Gobierno perdió el artículo que derogaba las leyes de financiamiento universitario y emergencia en discapacidad.",
+    "Senado 26/12/2025, artículos 1 a 10: 46 a 25 con 1 abstención."
+   ],
+   "acta": "presupuesto",
+   "tema": "economía",
+   "links": [
+    [
+     "Diputados, votos (Canal 26)",
+     "https://www.canal26.com/politica/2025/12/19/que-voto-cada-diputado-de-cara-a-la-aprobacion-del-presupuesto-2026-quienes-dieron-el-visto-bueno-y-quienes-estuvieron-en-contra/"
+    ]
+   ]
+  },
+  {
+   "id": 2,
+   "n": "Reforma laboral (2026)",
+   "q": [
+    [
+     20,
+     1
+    ],
+    [
+     16,
+     -1
+    ],
+    [
+     12,
+     1
+    ]
+   ],
+   "rel": "flexibilización laboral, sindicatos y regulación del mercado",
+   "short": "Reforma laboral",
+   "date": "2026-02-27",
+   "res": [
+    "Senado 11/2/2026, en general: 42 a 30.",
+    "Diputados 20/2/2026: 135 a 115. A favor LLA, PRO, UCR, MID y bloques aliados a gobernadores; en contra Unión por la Patria y el Frente de Izquierda; Provincias Unidas se dividió.",
+    "Senado 27/2/2026, aceptación de los cambios: 42 a 28 con 2 abstenciones."
+   ],
+   "acta": "labor-final",
+   "tema": "trabajo",
+   "links": [
+    [
+     "Diputados, votos (Canal 26)",
+     "https://www.canal26.com/politica/2026/02/20/media-sancion-a-la-reforma-laboral-como-voto-cada-diputado/"
+    ]
+   ]
+  },
+  {
+   "id": 3,
+   "n": "Régimen Penal Juvenil (2026)",
+   "q": [
+    [
+     3,
+     1
+    ],
+    [
+     23,
+     1
+    ]
+   ],
+   "rel": "edad de punibilidad y dureza de las penas",
+   "short": "Régimen Penal Juvenil",
+   "date": "2026-02-27",
+   "res": [
+    "Diputados 12/2/2026: 149 a 100.",
+    "Senado 27/2/2026: 44 a 27 con 1 abstención. Baja de 16 a 14 años la edad de imputabilidad para delitos graves, con tope de 15 años de pena y sanciones alternativas."
+   ],
+   "acta": "rpj",
+   "tema": "seguridad",
+   "links": [
+    [
+     "Senado, voto por senador (Canal 26)",
+     "https://www.canal26.com/politica/2026/02/28/regimen-penal-juvenil-asi-voto-cada-senador-la-ley-que-bajara-la-edad-de-imputabilidad-a-14-anos/"
+    ]
+   ]
+  },
+  {
+   "id": 4,
+   "n": "Reforma de los DNU (2025)",
+   "q": [
+    [
+     32,
+     -1
+    ],
+    [
+     33,
+     1
+    ]
+   ],
+   "rel": "el uso y los límites de los decretos de necesidad y urgencia",
+   "short": "Reforma de los DNU",
+   "date": "2025-10-08",
+   "res": [
+    "Senado 4/9/2025: 56 a 8 con 2 abstenciones y 6 ausentes (mayoría absoluta).",
+    "Diputados 8/10/2025, en general: 140 a 80 con 17 abstenciones. Se rechazó el artículo del plazo automático de 90 días, por lo que volvió al Senado. No verifiqué su desenlace posterior."
+   ],
+   "acta": "dnu",
+   "tema": "instituciones",
+   "links": [
+    [
+     "Senado (Letra P)",
+     "https://www.letrap.com.ar/politica/ley-anti-dnu-la-oposicion-aprobo-la-reforma-mayoria-especial-y-milei-le-pide-auxilio-martin-menem-n5418559"
+    ],
+    [
+     "Diputados (LM Neuquén)",
+     "https://www.lmneuquen.com/pais/la-camara-diputados-aprobo-el-proyecto-que-limita-los-dnu-javier-milei-pero-debe-volver-al-senado-n1212318"
+    ]
+   ]
+  },
+  {
+   "id": 5,
+   "n": "Ley de Glaciares (Senado, 2026)",
+   "q": [
+    [
+     42,
+     1
+    ]
+   ],
+   "rel": "el uso productivo de zonas con glaciares",
+   "short": "Ley de Glaciares",
+   "date": "2026-02-26",
+   "res": [
+    "Senado 26/2/2026, en general: 40 a 31 con 1 abstención."
+   ],
+   "acta": "glaciares",
+   "tema": "ambiente",
+   "links": []
+  },
+  {
+   "id": 6,
+   "n": "Emergencia en discapacidad (Senado, 2025)",
+   "q": [
+    [
+     43,
+     1
+    ]
+   ],
+   "rel": "el financiamiento de la emergencia en discapacidad",
+   "short": "Emergencia en discapacidad",
+   "date": "2025-09-04",
+   "res": [
+    "Senado 4/9/2025, habilitación para tratar la insistencia: 62 a 8 (dos tercios). Los 8 votos en contra fueron de LLA."
+   ],
+   "acta": "discapacidad",
+   "tema": "economía",
+   "links": []
+  }
+ ],
+ "actas": {
+  "labor-general": {
+   "t": "Modernización laboral, en general",
+   "d": "2026-02-11",
+   "maj": "Simple",
+   "tot": [
+    42,
+    30,
+    0,
+    0
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2623",
+   "b": [
+    [
+     "Convicción Federal",
+     0,
+     3,
+     0,
+     0
+    ],
+    [
+     "Despierta Chubut",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente Cívico por Santiago",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Frente PRO",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Justicialista",
+     0,
+     21,
+     0,
+     0
+    ],
+    [
+     "La Libertad Avanza",
+     21,
+     0,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Movere Santa Cruz",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero los Salteños",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "UCR",
+     10,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "labor-final": {
+   "t": "Modernización laboral, aceptación de los cambios de Diputados",
+   "d": "2026-02-27",
+   "maj": "Simple",
+   "tot": [
+    42,
+    28,
+    2,
+    0
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2678",
+   "b": [
+    [
+     "Justicialista",
+     0,
+     21,
+     0,
+     0
+    ],
+    [
+     "La Libertad Avanza",
+     21,
+     0,
+     0,
+     0
+    ],
+    [
+     "UCR",
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente PRO",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Convicción Federal",
+     0,
+     3,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente Cívico por Santiago",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Movere Santa Cruz",
+     0,
+     0,
+     2,
+     0
+    ],
+    [
+     "Despierta Chubut",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero los Salteños",
+     1,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "rpj": {
+   "t": "Régimen Penal Juvenil, en general",
+   "d": "2026-02-27",
+   "maj": "Simple",
+   "tot": [
+    44,
+    27,
+    1,
+    0
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2665",
+   "b": [
+    [
+     "Convicción Federal",
+     1,
+     2,
+     0,
+     0
+    ],
+    [
+     "Despierta Chubut",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente Cívico por Santiago",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Frente PRO",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Justicialista",
+     0,
+     21,
+     0,
+     0
+    ],
+    [
+     "La Libertad Avanza",
+     21,
+     0,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Movere Santa Cruz",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero los Salteños",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     "UCR",
+     10,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "presupuesto": {
+   "t": "Presupuesto 2026, artículos 1 a 10",
+   "d": "2025-12-26",
+   "maj": "Simple",
+   "tot": [
+    46,
+    25,
+    1,
+    0
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2608",
+   "b": [
+    [
+     "La Libertad Avanza",
+     21,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicialista",
+     0,
+     21,
+     0,
+     0
+    ],
+    [
+     "UCR",
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     "Convicción Federal",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente PRO",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente Cívico por Santiago",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Movere Santa Cruz",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Despierta Chubut",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero los Salteños",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     1,
+     0,
+     1,
+     0
+    ]
+   ]
+  },
+  "glaciares": {
+   "t": "Reforma de la Ley de Glaciares, en general",
+   "d": "2026-02-26",
+   "maj": "Simple",
+   "tot": [
+    40,
+    31,
+    1,
+    0
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2657",
+   "b": [
+    [
+     "Convicción Federal",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Despierta Chubut",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Frente Cívico por Santiago",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Frente PRO",
+     1,
+     2,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Justicialista",
+     2,
+     19,
+     0,
+     0
+    ],
+    [
+     "La Libertad Avanza",
+     21,
+     0,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     "Movere Santa Cruz",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero los Salteños",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     "UCR",
+     8,
+     2,
+     0,
+     0
+    ]
+   ]
+  },
+  "dnu": {
+   "t": "Reforma de los DNU, artículos 1 a 3",
+   "d": "2025-09-04",
+   "maj": "Absoluta",
+   "tot": [
+    56,
+    8,
+    2,
+    6
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2578",
+   "b": [
+    [
+     "Cambio Federal",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Convicción Federal",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Despierta Chubut",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente Nacional y Popular",
+     3,
+     0,
+     0,
+     1
+    ],
+    [
+     "Frente PRO",
+     5,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Juntos Somos Río Negro",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicialista",
+     14,
+     0,
+     0,
+     0
+    ],
+    [
+     "La Libertad Avanza",
+     0,
+     8,
+     0,
+     1
+    ],
+    [
+     "Movere Santa Cruz",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Movimiento Neuquino",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     0,
+     0,
+     2,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Sin especificar",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "UCR",
+     9,
+     0,
+     0,
+     4
+    ],
+    [
+     "Unidad Ciudadana",
+     8,
+     0,
+     0,
+     0
+    ],
+    [
+     "Sin bloque indicado",
+     1,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "discapacidad": {
+   "t": "Emergencia en discapacidad, habilitación para tratar la insistencia",
+   "d": "2025-09-04",
+   "maj": "Dos tercios de los presentes",
+   "tot": [
+    62,
+    8,
+    0,
+    2
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2575",
+   "b": [
+    [
+     "Cambio Federal",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Convicción Federal",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Despierta Chubut",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente Nacional y Popular",
+     3,
+     0,
+     0,
+     1
+    ],
+    [
+     "Frente PRO",
+     5,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Juntos Somos Río Negro",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicialista",
+     14,
+     0,
+     0,
+     0
+    ],
+    [
+     "La Libertad Avanza",
+     1,
+     8,
+     0,
+     0
+    ],
+    [
+     "Movere Santa Cruz",
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     "Movimiento Neuquino",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Sin especificar",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "UCR",
+     13,
+     0,
+     0,
+     0
+    ],
+    [
+     "Unidad Ciudadana",
+     8,
+     0,
+     0,
+     0
+    ],
+    [
+     "Sin bloque indicado",
+     1,
+     0,
+     0,
+     0
+    ]
+   ]
+  }
+ }
+}

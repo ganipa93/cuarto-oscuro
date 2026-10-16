@@ -1,0 +1,327 @@
+{
+ "axes": [
+  {
+   "k": "Economía",
+   "lo": "Estado presente",
+   "hi": "Mercado libre"
+  },
+  {
+   "k": "Valores",
+   "lo": "Progresista",
+   "hi": "Conservador"
+  },
+  {
+   "k": "Mundo",
+   "lo": "Soberanista",
+   "hi": "Aperturista"
+  },
+  {
+   "k": "Orden",
+   "lo": "Garantista",
+   "hi": "Mano dura"
+  }
+ ],
+ "options": [
+  {
+   "l": "Muy en desacuerdo",
+   "v": -2
+  },
+  {
+   "l": "En desacuerdo",
+   "v": -1
+  },
+  {
+   "l": "Neutral / no sé",
+   "v": 0
+  },
+  {
+   "l": "De acuerdo",
+   "v": 1
+  },
+  {
+   "l": "Muy de acuerdo",
+   "v": 2
+  }
+ ],
+ "questions": [
+  {
+   "id": 0,
+   "t": "El Estado debería reducir el gasto público de forma drástica, aunque eso implique achicar servicios.",
+   "a": 0,
+   "s": 1,
+   "core": true
+  },
+  {
+   "id": 1,
+   "t": "El aborto legal, seguro y gratuito es un derecho que el Estado tiene que garantizar.",
+   "a": 1,
+   "s": -1,
+   "core": true
+  },
+  {
+   "id": 2,
+   "t": "Argentina debería alinear su política exterior con Estados Unidos e Israel.",
+   "a": 2,
+   "s": 1,
+   "core": true
+  },
+  {
+   "id": 3,
+   "t": "Hay que bajar la edad de punibilidad para los menores que cometen delitos graves.",
+   "a": 3,
+   "s": 1,
+   "core": true
+  },
+  {
+   "id": 4,
+   "t": "Las empresas estratégicas (energía, correo, aerolínea de bandera) deben ser del Estado.",
+   "a": 0,
+   "s": -1
+  },
+  {
+   "id": 5,
+   "t": "La educación sexual integral debería ser obligatoria en todas las escuelas.",
+   "a": 1,
+   "s": -1,
+   "core": true
+  },
+  {
+   "id": 6,
+   "t": "Hay que proteger la industria nacional con aranceles frente a las importaciones.",
+   "a": 2,
+   "s": -1,
+   "core": true
+  },
+  {
+   "id": 7,
+   "t": "Las fuerzas de seguridad necesitan más respaldo legal para usar la fuerza.",
+   "a": 3,
+   "s": 1
+  },
+  {
+   "id": 8,
+   "t": "Hay que subir los impuestos a los sectores de mayores ingresos para financiar políticas sociales.",
+   "a": 0,
+   "s": -1,
+   "core": true
+  },
+  {
+   "id": 9,
+   "t": "La familia tradicional es la base de la sociedad y el Estado debería promoverla.",
+   "a": 1,
+   "s": 1,
+   "core": true
+  },
+  {
+   "id": 10,
+   "t": "Un acuerdo amplio de libre comercio (con la Unión Europea o Estados Unidos) le conviene al país.",
+   "a": 2,
+   "s": 1
+  },
+  {
+   "id": 11,
+   "t": "Los juicios por delitos de lesa humanidad de la última dictadura deben continuar.",
+   "a": 3,
+   "s": -1,
+   "core": true
+  },
+  {
+   "id": 12,
+   "t": "La mejor forma de reducir la pobreza es dejar crecer al mercado con pocas regulaciones.",
+   "a": 0,
+   "s": 1,
+   "core": true
+  },
+  {
+   "id": 13,
+   "t": "La religión debería tener un lugar más visible en la vida pública.",
+   "a": 1,
+   "s": 1
+  },
+  {
+   "id": 14,
+   "t": "Argentina debe cumplir sus acuerdos con el FMI aunque eso implique ajuste.",
+   "a": 2,
+   "s": 1,
+   "core": true
+  },
+  {
+   "id": 15,
+   "t": "Los cortes de calle y piquetes deberían sancionarse con firmeza.",
+   "a": 3,
+   "s": 1,
+   "core": true
+  },
+  {
+   "id": 16,
+   "t": "Los sindicatos y los convenios colectivos protegen a los trabajadores y no conviene flexibilizarlos.",
+   "a": 0,
+   "s": -1
+  },
+  {
+   "id": 17,
+   "t": "Las políticas de género y diversidad deben ser una prioridad del Estado.",
+   "a": 1,
+   "s": -1
+  },
+  {
+   "id": 18,
+   "t": "La soberanía sobre Malvinas debería ser un eje central de la política exterior.",
+   "a": 2,
+   "s": -1
+  },
+  {
+   "id": 19,
+   "t": "Las Fuerzas Armadas deberían tener un rol más activo en la seguridad interior.",
+   "a": 3,
+   "s": 1
+  },
+  {
+   "id": 20,
+   "t": "Una reforma laboral que flexibilice contratos e indemnizaciones ayuda a crear empleo formal.",
+   "a": 0,
+   "s": 1,
+   "core": true
+  },
+  {
+   "id": 21,
+   "t": "Las personas deberían poder cambiar su género registral con un simple trámite administrativo.",
+   "a": 1,
+   "s": -1
+  },
+  {
+   "id": 22,
+   "t": "Argentina debería retirarse de organismos internacionales como la OMS o el Acuerdo de París si no le convienen.",
+   "a": 2,
+   "s": 1
+  },
+  {
+   "id": 23,
+   "t": "Hay que endurecer las penas y construir más cárceles.",
+   "a": 3,
+   "s": 1
+  },
+  {
+   "id": 24,
+   "t": "Las jubilaciones y las universidades públicas deben tener financiamiento garantizado por ley, aunque aumente el déficit.",
+   "a": 0,
+   "s": -1
+  },
+  {
+   "id": 25,
+   "t": "El Código Penal no debería tener figuras específicas como el femicidio.",
+   "a": 1,
+   "s": 1
+  },
+  {
+   "id": 26,
+   "t": "La integración regional (Mercosur, vínculos con Brasil y Latinoamérica) debería pesar más que los acuerdos con Estados Unidos.",
+   "a": 2,
+   "s": -1
+  },
+  {
+   "id": 27,
+   "t": "Debería ser más fácil para los civiles tener y portar armas.",
+   "a": 3,
+   "s": 1
+  },
+  {
+   "id": 28,
+   "t": "Hay que bajar o eliminar impuestos y retenciones, aunque baje la recaudación.",
+   "a": 0,
+   "s": 1
+  },
+  {
+   "id": 29,
+   "t": "El matrimonio entre personas del mismo sexo debería seguir plenamente reconocido por la ley.",
+   "a": 1,
+   "s": -1,
+   "core": true
+  },
+  {
+   "id": 30,
+   "t": "Argentina debería mantener equidistancia entre Estados Unidos y China.",
+   "a": 2,
+   "s": -1
+  },
+  {
+   "id": 31,
+   "t": "El consumo personal de drogas debería despenalizarse.",
+   "a": 3,
+   "s": -1
+  },
+  {
+   "id": 32,
+   "t": "Un presidente puede gobernar por decreto de necesidad y urgencia cuando el Congreso bloquea reformas que considera urgentes.",
+   "a": 3,
+   "s": 1,
+   "core": true
+  },
+  {
+   "id": 33,
+   "t": "Los decretos de necesidad y urgencia deberían caer automáticamente si el Congreso no los ratifica en 90 días.",
+   "a": 3,
+   "s": -1
+  },
+  {
+   "id": 34,
+   "t": "Las privatizaciones de los años 90 (YPF, teléfonos, Aerolíneas, jubilaciones) fueron un acierto.",
+   "a": 0,
+   "s": 1
+  },
+  {
+   "id": 35,
+   "t": "La estatización de YPF en 2012 fue una buena decisión.",
+   "a": 0,
+   "s": -1
+  },
+  {
+   "id": 36,
+   "t": "Las jubilaciones deberían volver a un sistema de capitalización privada, como las AFJP.",
+   "a": 0,
+   "s": 1
+  },
+  {
+   "id": 37,
+   "t": "La Ley de Medios, que limitó la concentración de medios audiovisuales, fue una buena idea.",
+   "a": 0,
+   "s": -1
+  },
+  {
+   "id": 38,
+   "t": "La convertibilidad (un peso, un dólar) fue positiva para el país.",
+   "a": 2,
+   "s": 1
+  },
+  {
+   "id": 39,
+   "t": "Argentina debería salir del Mercosur para negociar tratados por su cuenta.",
+   "a": 2,
+   "s": 1
+  },
+  {
+   "id": 40,
+   "t": "El Estado debería ser laico, sin vínculos institucionales ni financiamiento a la Iglesia católica.",
+   "a": 1,
+   "s": -1
+  },
+  {
+   "id": 41,
+   "t": "Hay que dar amnistía o indulto a los condenados por delitos de la última dictadura.",
+   "a": 3,
+   "s": 1
+  },
+  {
+   "id": 42,
+   "t": "Cada provincia debería poder autorizar actividades productivas, como la minería, en zonas de glaciares y ambiente periglacial.",
+   "a": 0,
+   "s": 1
+  },
+  {
+   "id": 43,
+   "t": "La emergencia en discapacidad (pensiones y prestaciones) debe garantizarse por ley aunque aumente el gasto.",
+   "a": 0,
+   "s": -1
+  }
+ ]
+}

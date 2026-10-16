@@ -1,0 +1,15 @@
+{
+  "name": "cuarto-oscuro",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Test de ideología política argentina con partidos, votaciones y fuentes.",
+  "scripts": {
+    "start": "serve -l 4173 .",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.49.0",
+    "serve": "^14.2.4"
+  }
+}

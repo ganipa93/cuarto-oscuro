@@ -1,0 +1,57 @@
+{
+ "rows": [
+  [
+   "Alfonsín",
+   "sin dato",
+   "Según Chequeado los usó muy poco; el Plan Austral fue por DNU."
+  ],
+  [
+   "Menem",
+   "195",
+   "casi 19 por año"
+  ],
+  [
+   "De la Rúa",
+   "59",
+   "casi 30 por año"
+  ],
+  [
+   "Duhalde",
+   "154",
+   "0,3 por día"
+  ],
+  [
+   "Néstor Kirchner",
+   "236",
+   "0,14 por día"
+  ],
+  [
+   "Cristina Kirchner",
+   "78",
+   "casi 10 por año"
+  ],
+  [
+   "Macri",
+   "71",
+   "casi 18 por año (el artículo trae también 78)"
+  ],
+  [
+   "Alberto Fernández",
+   "177",
+   "76 en 2020"
+  ],
+  [
+   "Milei",
+   "62 hasta agosto de 2025",
+   "50 en su primer año (informe de ACIJ)"
+  ]
+ ],
+ "notes": [
+  "Fuente de las cifras de 1989 a 2023: <a href=\"https://chequeado.com/el-explicador/el-dnu-de-javier-milei-cuales-son-los-presidentes-que-mas-usaron-esta-herramienta-entre-1989-y-2023/\">Chequeado</a>, con datos de SAIJ. Otras metodologías, por ejemplo las que cuentan decretos con distinto criterio, dan números distintos.",
+  "Milei: <a href=\"https://noticias.perfil.com/noticias/politica/milei-historico-nunca-un-presidente-tuvo-tantos-decretos-rechazados.phtml\">Noticias (Perfil), agosto de 2025</a> contó 62 DNU y 5 decretos anulados por ambas cámaras (el DNU 656/2024 de fondos reservados de inteligencia y cuatro decretos delegados). El <a href=\"https://hoydia.com.ar/politica/nacional/un-informe-advierte-que-milei-es-el-presidente-que-mas-dnu-firmo-en-los-ultimos-cuatro-gobiernos/\">informe de ACIJ</a> calcula 50 en su primer año, frente a 44 por año de Alberto Fernández, 17,5 de Macri y 11,75 de Cristina Kirchner (2011-2024).",
+  "15/10/2026: la oposición convocó a una sesión especial en Diputados para tratar la deuda familiar, la emergencia en discapacidad y la derogación del DNU 70/23, y no logró quórum: había 121 diputados presentes, 8 menos que los necesarios (<a href=\"https://www.parlamentario.com/2026/10/15/la-oposicion-no-consiguio-quorum-y-se-cayo-la-sesion-para-voltear-el-dnu-70-23/\">Parlamentario</a>). El decreto sigue vigente.",
+  "El DNU 70/2023, de más de 300 reformas de desregulación económica, fue el primero de su gobierno y dio origen a buena parte del debate sobre estos decretos.",
+  "Reforma del régimen de DNU (ley 26.122): el Senado la aprobó el 4/9/2025 (<a href=\"https://www.letrap.com.ar/politica/ley-anti-dnu-la-oposicion-aprobo-la-reforma-mayoria-especial-y-milei-le-pide-auxilio-martin-menem-n5418559\">Letra P</a>) y Diputados la aprobó en general el 8/10/2025 pero rechazó el artículo del plazo automático de 90 días, por lo que volvió al Senado (<a href=\"https://www.lmneuquen.com/pais/la-camara-diputados-aprobo-el-proyecto-que-limita-los-dnu-javier-milei-pero-debe-volver-al-senado-n1212318\">LM Neuquén</a>). No verifiqué su desenlace posterior.",
+  "Para el texto de cada decreto y ley consultá el buscador oficial <a href=\"https://servicios.infoleg.gob.ar/\">InfoLEG</a>. No relevé uno por uno todos los proyectos debatidos desde 1983: son miles y no pude verificarlos con fuentes confiables. Elegí en cambio un conjunto de leyes y decretos emblemáticos como preguntas y votaciones."
+ ]
+}
