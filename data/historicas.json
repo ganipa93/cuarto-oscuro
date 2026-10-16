@@ -1,0 +1,2646 @@
+{
+ "fuente": "¿Cómo votó? (rquiroga7/como_voto, MIT) sobre votaciones.hcdn.gob.ar y senado.gob.ar",
+ "nota": "Votos nominales agrupados por el bloque en que cada legislador figuraba en el acta (se muestran los 12 bloques más grandes). Un bloque no es un partido. No se cuenta al presidente de la cámara. Los títulos son los del acta.",
+ "items": [
+  {
+   "key": "movilidad-2008",
+   "tema": "Previsión",
+   "n": "Movilidad de las prestaciones previsionales (2008)",
+   "actas": [
+    {
+     "cam": "D",
+     "id": "2079",
+     "t": "Exp. 19-PE-08 - Proyecto de Ley por el cual se establece la Movilidad de las Prestaciones Previsionales del Sistema Integrado de Jubilacione",
+     "d": "2008-09-04",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/2079",
+     "tot": [
+      141,
+      77,
+      0,
+      38
+     ],
+     "b": [
+      [
+       "Frente para la Victoria - PJ",
+       114,
+       0,
+       0,
+       13
+      ],
+      [
+       "Unión Cívica Radical",
+       1,
+       16,
+       0,
+       7
+      ],
+      [
+       "Coalición Cívica - ARI - GEN - UPT",
+       0,
+       13,
+       0,
+       5
+      ],
+      [
+       "Partido Socialista",
+       0,
+       10,
+       0,
+       0
+      ],
+      [
+       "Solidaridad e Igualdad (SI) - ARI (T.D.F",
+       0,
+       9,
+       0,
+       0
+      ],
+      [
+       "Propuesta Republicana",
+       0,
+       8,
+       0,
+       1
+      ],
+      [
+       "De la Concertación",
+       6,
+       0,
+       0,
+       0
+      ],
+      [
+       "Frente Cívico por Santiago",
+       6,
+       0,
+       0,
+       0
+      ],
+      [
+       "Frente Justicia Unión y Libertad",
+       0,
+       5,
+       0,
+       1
+      ],
+      [
+       "Encuentro Popular y Social",
+       4,
+       0,
+       0,
+       0
+      ],
+      [
+       "Unión Celeste y Blanco",
+       0,
+       4,
+       0,
+       0
+      ],
+      [
+       "Movimiento Popular Neuquino",
+       0,
+       3,
+       0,
+       0
+      ],
+      [
+       "Otros (23 bloques)",
+       10,
+       9,
+       0,
+       11
+      ]
+     ]
+    },
+    {
+     "cam": "S",
+     "id": "1391",
+     "t": "PROYECTO DE LEY EN REVISION DE MOVILIDAD DE LAS PRESTACIONES DEL REGIMEN PREVISIONAL PUBLICO .CD-66/08-PL",
+     "d": "2008-10-01",
+     "u": "https://www.senado.gob.ar/votaciones/detalleActa/1391",
+     "tot": [
+      45,
+      22,
+      0,
+      5
+     ],
+     "b": [
+      [
+       "PJ FRENTE PARA LA VICTORIA",
+       35,
+       0,
+       0,
+       1
+      ],
+      [
+       "UCR - UNIÓN CÍVICA RADICAL",
+       0,
+       9,
+       0,
+       1
+      ],
+      [
+       "FRENTE CÍVICO Y SOCIAL DE CATAMARCA",
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       "JUSTICIALISTA SAN LUIS",
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       "NUEVO ENCUENTRO",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "ALIANZA COALICIÓN CÍVICA",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "CONCERTACIÓN PLURAL",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "ESPERANZA FEDERAL",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FEDERALISMO SANTAFESINO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE CÍVICO POR SANTIAGO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FUERZA REPUBLICANA",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "JUSTICIALISTA 8 DE OCTUBRE",
+       0,
+       1,
+       0,
+       1
+      ],
+      [
+       "Otros (12 bloques)",
+       4,
+       6,
+       0,
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "key": "afjp-2008",
+   "tema": "Previsión",
+   "n": "Sistema Integrado Previsional Argentino, fin de las AFJP (2008)",
+   "actas": [
+    {
+     "cam": "D",
+     "id": "2052",
+     "t": "Exp. 27-PE-08 - Orden del Día 1167 - Proyecto de Ley por el cual se dispone la modificación del Sistema Integrado de Jubilaciones y Pensione",
+     "d": "2008-11-07",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/2052",
+     "tot": [
+      162,
+      75,
+      0,
+      19
+     ],
+     "b": [
+      [
+       "Frente para la Victoria - PJ",
+       115,
+       5,
+       0,
+       7
+      ],
+      [
+       "Unión Cívica Radical",
+       0,
+       22,
+       0,
+       2
+      ],
+      [
+       "Coalición Cívica - ARI - GEN - UPT",
+       0,
+       17,
+       0,
+       1
+      ],
+      [
+       "Partido Socialista",
+       10,
+       0,
+       0,
+       0
+      ],
+      [
+       "Propuesta Republicana",
+       0,
+       9,
+       0,
+       0
+      ],
+      [
+       "Solidaridad e Igualdad (SI) - ARI (T.D.F",
+       7,
+       0,
+       0,
+       2
+      ],
+      [
+       "Frente Cívico por Santiago",
+       6,
+       0,
+       0,
+       0
+      ],
+      [
+       "De la Concertación",
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       "Frente Justicia Unión y Libertad",
+       0,
+       4,
+       0,
+       2
+      ],
+      [
+       "Unión Celeste y Blanco",
+       0,
+       4,
+       0,
+       0
+      ],
+      [
+       "Consenso Federal",
+       2,
+       1,
+       0,
+       1
+      ],
+      [
+       "Encuentro Popular y Social",
+       3,
+       0,
+       0,
+       1
+      ],
+      [
+       "Otros (24 bloques)",
+       14,
+       13,
+       0,
+       3
+      ]
+     ]
+    },
+    {
+     "cam": "S",
+     "id": "2001",
+     "t": "PROYECTO DE LEY EN REVISION DISPONIENDO LA UNIFICACION DEL SISTEMA INTEGRADO DE JUBILACIONES Y PENSIONES EN UN UNICO REGIMEN PREVISIONAL PUB",
+     "d": "2008-11-20",
+     "u": "https://www.senado.gob.ar/votaciones/detalleActa/2001",
+     "tot": [
+      46,
+      18,
+      1,
+      7
+     ],
+     "b": [
+      [
+       "PJ FRENTE PARA LA VICTORIA",
+       35,
+       0,
+       0,
+       1
+      ],
+      [
+       "UCR - UNIÓN CÍVICA RADICAL",
+       0,
+       7,
+       1,
+       2
+      ],
+      [
+       "FRENTE CÍVICO Y SOCIAL DE CATAMARCA",
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       "JUSTICIALISTA 8 DE OCTUBRE",
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       "NUEVO ENCUENTRO",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "ALIANZA COALICIÓN CÍVICA",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "CONCERTACIÓN PLURAL",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "ESPERANZA FEDERAL",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FEDERALISMO SANTAFESINO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE CÍVICO POR SANTIAGO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "JUSTICIALISTA PARA EL DIALOGO DE LOS ARGENTINOS",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "MOVIMIENTO POPULAR NEUQUINO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (12 bloques)",
+       4,
+       5,
+       0,
+       4
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "key": "medios-2009",
+   "tema": "Medios",
+   "n": "Servicios de Comunicación Audiovisual (2009)",
+   "actas": [
+    {
+     "cam": "D",
+     "id": "1992",
+     "t": "REGULACION DE LOS SERVICIOS DE COMUNICACION AUDIOVISUAL EN TODO EL AMBITO DEL TERRITORIO DE LA REPUBLICA ARGENTINA Y PROMOCION DE LAS TECNOL",
+     "d": "2009-09-17",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/1992",
+     "tot": [
+      147,
+      4,
+      1,
+      104
+     ],
+     "b": [
+      [
+       "Frente para la Victoria - PJ",
+       104,
+       0,
+       0,
+       3
+      ],
+      [
+       "Partido Socialista",
+       9,
+       1,
+       0,
+       0
+      ],
+      [
+       "Solidaridad e Igualdad (SI)",
+       7,
+       0,
+       0,
+       0
+      ],
+      [
+       "Frente Cívico por Santiago",
+       6,
+       0,
+       0,
+       0
+      ],
+      [
+       "Encuentro Popular y Social",
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       "De la Concertación",
+       4,
+       0,
+       0,
+       0
+      ],
+      [
+       "Movimiento Popular Neuquino",
+       0,
+       3,
+       0,
+       0
+      ],
+      [
+       "Partido de la Concertación - FORJA",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "Proyecto Progresista",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "Bs. As. para Todos en Proyecto Sur",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "Dignidad Peronista",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "Diálogo por Buenos Aires",
+       0,
+       0,
+       1,
+       0
+      ],
+      [
+       "Otros (32 bloques)",
+       6,
+       0,
+       0,
+       101
+      ]
+     ]
+    },
+    {
+     "cam": "S",
+     "id": "1488",
+     "t": "PROYECTO DE LEY EN REVISION POR EL CUAL SE REGULAN LOS SERVICIOS DE COMUNICACION AUDIOVISUAL EN TODO EL AMBITO TERRITORIAL DE LA REPUBLICA A",
+     "d": "2009-10-09",
+     "u": "https://www.senado.gob.ar/votaciones/detalleActa/1488",
+     "tot": [
+      44,
+      24,
+      0,
+      4
+     ],
+     "b": [
+      [
+       "PJ FRENTE PARA LA VICTORIA",
+       33,
+       2,
+       0,
+       1
+      ],
+      [
+       "UCR - UNIÓN CÍVICA RADICAL",
+       1,
+       7,
+       0,
+       2
+      ],
+      [
+       "FRENTE CÍVICO Y SOCIAL DE CATAMARCA",
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       "JUSTICIALISTA 8 DE OCTUBRE",
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       "JUSTICIALISTA SAN LUIS",
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       "NUEVO ENCUENTRO",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "ALIANZA COALICIÓN CÍVICA",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "CONCERTACIÓN PLURAL",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "ESPERANZA FEDERAL",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FEDERALISMO SANTAFESINO",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "FRENTE CÍVICO POR SANTIAGO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FUERZA REPUBLICANA",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (12 bloques)",
+       4,
+       7,
+       0,
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "key": "matrimonio-2010",
+   "tema": "Derechos",
+   "n": "Matrimonio: modificación del Código Civil (2010)",
+   "actas": [
+    {
+     "cam": "D",
+     "id": "1900",
+     "t": "Proyecto de Ley sobre modificaciones al Código Civil, sobre matrimonio.",
+     "d": "2010-05-05",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/1900",
+     "tot": [
+      126,
+      110,
+      4,
+      16
+     ],
+     "b": [
+      [
+       "Frente para la Victoria - PJ",
+       46,
+       29,
+       0,
+       10
+      ],
+      [
+       "Unión Cívica Radical",
+       17,
+       24,
+       1,
+       1
+      ],
+      [
+       "Peronismo Federal",
+       6,
+       22,
+       0,
+       0
+      ],
+      [
+       "Coalicion Civica",
+       16,
+       1,
+       2,
+       0
+      ],
+      [
+       "Propuesta Republicana",
+       4,
+       6,
+       0,
+       1
+      ],
+      [
+       "Frente Cívico por Santiago",
+       1,
+       4,
+       1,
+       1
+      ],
+      [
+       "Partido Socialista",
+       6,
+       0,
+       0,
+       0
+      ],
+      [
+       "Peronista",
+       0,
+       6,
+       0,
+       0
+      ],
+      [
+       "GEN",
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       "Movimiento Proyecto Sur",
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       "Nuevo Encuentro Popular y Solidario",
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       "Frente Cívico - Córdoba",
+       0,
+       3,
+       0,
+       0
+      ],
+      [
+       "Otros (24 bloques)",
+       15,
+       15,
+       0,
+       3
+      ]
+     ]
+    }
+   ],
+   "nota": "No tengo el acta del Senado de esta ley en la fuente."
+  },
+  {
+   "key": "identidad-2011",
+   "tema": "Derechos",
+   "n": "Derecho a la Identidad de Género (2011)",
+   "actas": [
+    {
+     "cam": "D",
+     "id": "393",
+     "t": "Derecho a la Identidad de Género.",
+     "d": "2011-11-30",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/393",
+     "tot": [
+      168,
+      17,
+      6,
+      66
+     ],
+     "b": [
+      [
+       "Frente para la Victoria - PJ",
+       50,
+       0,
+       5,
+       28
+      ],
+      [
+       "Unión Cívica Radical",
+       29,
+       2,
+       1,
+       9
+      ],
+      [
+       "Coalicion Civica",
+       19,
+       0,
+       0,
+       5
+      ],
+      [
+       "Peronismo Federal",
+       12,
+       4,
+       0,
+       6
+      ],
+      [
+       "Partido Bloquista de San Juan",
+       8,
+       1,
+       0,
+       2
+      ],
+      [
+       "Partido Socialista",
+       6,
+       0,
+       0,
+       0
+      ],
+      [
+       "GEN",
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       "Unidad Popular",
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       "Unidos por una Nueva Argentina",
+       4,
+       0,
+       0,
+       1
+      ],
+      [
+       "Del Bicentenario",
+       1,
+       2,
+       0,
+       0
+      ],
+      [
+       "Frente Cívico - Córdoba",
+       1,
+       2,
+       0,
+       0
+      ],
+      [
+       "Movimiento Popular Neuquino",
+       3,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (26 bloques)",
+       25,
+       6,
+       0,
+       15
+      ]
+     ]
+    }
+   ],
+   "nota": "No tengo el acta del Senado de esta ley en la fuente."
+  },
+  {
+   "key": "ypf-2012",
+   "tema": "Economía",
+   "n": "Expropiación del 51% de YPF (2012)",
+   "actas": [
+    {
+     "cam": "S",
+     "id": "765",
+     "t": "MENSAJE Nº 529/12 Y PROYECTO DE LEY DECLARANDO DE UTILIDAD PUBLICA Y SUJETO A EXPROPIACION EL 51% DEL PATRIMONIO DE YPF S.A., REPRESENTADO P",
+     "d": "2012-04-25",
+     "u": "https://www.senado.gob.ar/votaciones/detalleActa/765",
+     "tot": [
+      63,
+      3,
+      4,
+      2
+     ],
+     "b": [
+      [
+       "PJ FRENTE PARA LA VICTORIA",
+       31,
+       0,
+       0,
+       0
+      ],
+      [
+       "UCR - UNIÓN CÍVICA RADICAL",
+       14,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE CIVICO DE LA PROVINCIA DE CORDOBA",
+       1,
+       0,
+       1,
+       0
+      ],
+      [
+       "FRENTE CÍVICO Y SOCIAL DE CATAMARCA",
+       0,
+       0,
+       2,
+       0
+      ],
+      [
+       "JUSTICIALISTA 8 DE OCTUBRE",
+       1,
+       1,
+       0,
+       0
+      ],
+      [
+       "JUSTICIALISTA SAN LUIS",
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       "NUEVO ENCUENTRO",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "PARTIDO JUSTICIALISTA LA PAMPA",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "ALIANZA COALICIÓN CÍVICA",
+       0,
+       0,
+       1,
+       0
+      ],
+      [
+       "FEDERALISMO SANTAFESINO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE CÍVICO POR SANTIAGO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE DE TODOS",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (11 bloques)",
+       9,
+       0,
+       0,
+       2
+      ]
+     ]
+    },
+    {
+     "cam": "D",
+     "id": "365",
+     "t": "Se declara de utilidad pública y sujeto a expropiación el 51% del patrimonio de la empresa Yacimientos Petrolíferos Fiscales Sociedad Anónim",
+     "d": "2012-05-03",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/365",
+     "tot": [
+      208,
+      32,
+      5,
+      11
+     ],
+     "b": [
+      [
+       "Frente para la Victoria - PJ",
+       114,
+       0,
+       0,
+       0
+      ],
+      [
+       "Unión Cívica Radical",
+       34,
+       1,
+       0,
+       3
+      ],
+      [
+       "Frente Peronista",
+       3,
+       17,
+       0,
+       1
+      ],
+      [
+       "Partido Bloquista de San Juan",
+       0,
+       9,
+       0,
+       2
+      ],
+      [
+       "Frente Cívico por Santiago",
+       7,
+       0,
+       0,
+       0
+      ],
+      [
+       "Diálogo y Trabajo",
+       2,
+       0,
+       4,
+       0
+      ],
+      [
+       "Partido Socialista",
+       6,
+       0,
+       0,
+       0
+      ],
+      [
+       "Nuevo Encuentro",
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       "Unidad Popular",
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       "Frente Cívico - Córdoba",
+       4,
+       0,
+       0,
+       1
+      ],
+      [
+       "GEN",
+       3,
+       0,
+       0,
+       2
+      ],
+      [
+       "Movimiento Popular Neuquino",
+       3,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (22 bloques)",
+       22,
+       5,
+       1,
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "key": "reparacion-2016",
+   "tema": "Previsión",
+   "n": "Reparación Histórica para jubilados y sinceramiento fiscal (2016)",
+   "actas": [
+    {
+     "cam": "D",
+     "id": "2155",
+     "t": "Expediente 15-PE-16 - Orden del Día 186 - Creación del Programa Nacional de Reparación Histórica para Jubilados y Pensionados y modificación",
+     "d": "2016-06-16",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/2155",
+     "tot": [
+      162,
+      76,
+      3,
+      15
+     ],
+     "b": [
+      [
+       "Frente para la Victoria - PJ",
+       7,
+       68,
+       0,
+       4
+      ],
+      [
+       "Unión PRO",
+       41,
+       0,
+       0,
+       0
+      ],
+      [
+       "Unión Cívica Radical",
+       34,
+       0,
+       0,
+       2
+      ],
+      [
+       "Federal Unidos por una Nueva Argentina",
+       21,
+       0,
+       0,
+       2
+      ],
+      [
+       "Justicialista",
+       15,
+       0,
+       0,
+       2
+      ],
+      [
+       "Frente Cívico por Santiago",
+       6,
+       0,
+       0,
+       0
+      ],
+      [
+       "Unidos por una Nueva Argentina",
+       6,
+       0,
+       0,
+       0
+      ],
+      [
+       "Partido Socialista",
+       4,
+       0,
+       0,
+       0
+      ],
+      [
+       "Coalicion Civica",
+       3,
+       0,
+       0,
+       1
+      ],
+      [
+       "Compromiso Federal",
+       3,
+       0,
+       0,
+       0
+      ],
+      [
+       "Fte. de Izquierda y de los Trabajadores",
+       0,
+       3,
+       0,
+       0
+      ],
+      [
+       "Juntos por Argentina",
+       3,
+       0,
+       0,
+       1
+      ],
+      [
+       "Otros (23 bloques)",
+       19,
+       5,
+       3,
+       3
+      ]
+     ]
+    },
+    {
+     "cam": "S",
+     "id": "23",
+     "t": "PROYECTO DE LEY EN REVISION CREANDO EL PROGRAMA NACIONAL DE REPARACION HISTORICA A LOS JUBILADOS Y EL REGIMEN DE SINCERAMIENTO FISCAL.O.D. 3",
+     "d": "2016-06-29",
+     "u": "https://www.senado.gob.ar/votaciones/detalleActa/23",
+     "tot": [
+      56,
+      11,
+      1,
+      4
+     ],
+     "b": [
+      [
+       "FRENTE DE TODOS",
+       10,
+       4,
+       0,
+       0
+      ],
+      [
+       "PJ FRENTE PARA LA VICTORIA",
+       11,
+       3,
+       0,
+       1
+      ],
+      [
+       "UCR - UNIÓN CÍVICA RADICAL",
+       8,
+       0,
+       0,
+       0
+      ],
+      [
+       "JUSTICIALISTA",
+       7,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE PRO",
+       6,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE PARA LA VICTORIA - PJ",
+       0,
+       2,
+       0,
+       1
+      ],
+      [
+       "JUSTICIALISTA SAN LUIS",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "MOVIMIENTO POPULAR NEUQUINO",
+       1,
+       1,
+       0,
+       0
+      ],
+      [
+       "FRENTE CÍVICO POR SANTIAGO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE CÍVICO Y SOCIAL DE CATAMARCA",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE POPULAR",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "GEN",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (11 bloques)",
+       7,
+       1,
+       1,
+       2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "key": "previsional-2017",
+   "tema": "Previsión",
+   "n": "Reforma previsional (2017)",
+   "actas": [
+    {
+     "cam": "D",
+     "id": "3727",
+     "t": "Reforma Previsional. Expediente 123-S-2017 - Orden del Día 3 - Votación en General.",
+     "d": "2017-12-19",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/3727",
+     "tot": [
+      127,
+      117,
+      2,
+      10
+     ],
+     "b": [
+      [
+       "Frente para la Victoria - PJ",
+       0,
+       61,
+       0,
+       4
+      ],
+      [
+       "Pro",
+       54,
+       0,
+       0,
+       0
+      ],
+      [
+       "Unión Cívica Radical",
+       40,
+       0,
+       0,
+       0
+      ],
+      [
+       "Justicialista",
+       5,
+       12,
+       1,
+       1
+      ],
+      [
+       "Federal Unidos por una Nueva Argentina",
+       0,
+       15,
+       0,
+       2
+      ],
+      [
+       "Coalicion Civica",
+       10,
+       0,
+       0,
+       0
+      ],
+      [
+       "Frente Cívico por Santiago",
+       1,
+       4,
+       1,
+       0
+      ],
+      [
+       "Frente De La Concordia Misionero",
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       "Compromiso Federal",
+       0,
+       4,
+       0,
+       0
+      ],
+      [
+       "Cordoba Federal",
+       4,
+       0,
+       0,
+       0
+      ],
+      [
+       "Peronismo para la Victoria",
+       0,
+       4,
+       0,
+       0
+      ],
+      [
+       "Evolucion Radical",
+       0,
+       3,
+       0,
+       0
+      ],
+      [
+       "Otros (21 bloques)",
+       8,
+       14,
+       0,
+       3
+      ]
+     ]
+    }
+   ],
+   "nota": "El Senado registró dos actas casi iguales de esta votación (ids 284 y 285 de la fuente) y no pude determinar cuál es la definitiva, por eso no la incluyo."
+  },
+  {
+   "key": "ive-2018",
+   "tema": "Derechos",
+   "n": "Interrupción voluntaria del embarazo (2018)",
+   "actas": [
+    {
+     "cam": "D",
+     "id": "3805",
+     "t": "Interrupción voluntaria del embarazo. Régimen. Dictamen de Mayoría. Expediente 230-D-2018 y otros. Orden del Día 155.",
+     "d": "2018-06-14",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/3805",
+     "tot": [
+      129,
+      125,
+      1,
+      1
+     ],
+     "b": [
+      [
+       "Frente para la Victoria - PJ",
+       54,
+       10,
+       0,
+       1
+      ],
+      [
+       "Pro",
+       17,
+       37,
+       0,
+       0
+      ],
+      [
+       "Unión Cívica Radical",
+       24,
+       16,
+       0,
+       0
+      ],
+      [
+       "Federal Unidos por una Nueva Argentina",
+       8,
+       10,
+       0,
+       0
+      ],
+      [
+       "Justicialista",
+       8,
+       10,
+       0,
+       0
+      ],
+      [
+       "Coalicion Civica",
+       1,
+       9,
+       0,
+       0
+      ],
+      [
+       "Frente Cívico por Santiago",
+       1,
+       5,
+       0,
+       0
+      ],
+      [
+       "Frente De La Concordia Misionero",
+       2,
+       3,
+       0,
+       0
+      ],
+      [
+       "Cordoba Federal",
+       0,
+       3,
+       1,
+       0
+      ],
+      [
+       "Peronismo para la Victoria",
+       4,
+       0,
+       0,
+       0
+      ],
+      [
+       "Unidad Justicialista",
+       0,
+       4,
+       0,
+       0
+      ],
+      [
+       "Evolucion Radical",
+       3,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (21 bloques)",
+       7,
+       18,
+       0,
+       0
+      ]
+     ]
+    },
+    {
+     "cam": "S",
+     "id": "361",
+     "t": "PROYECTO DE LEY EN REVISION SOBRE REGIMEN DE INTERRUPCION VOLUNTARIA DEL EMBARAZO.CD-22/18-PL",
+     "d": "2018-08-08",
+     "u": "https://www.senado.gob.ar/votaciones/detalleActa/361",
+     "tot": [
+      31,
+      38,
+      2,
+      1
+     ],
+     "b": [
+      [
+       "FRENTE DE TODOS",
+       10,
+       5,
+       0,
+       0
+      ],
+      [
+       "UCR - UNIÓN CÍVICA RADICAL",
+       3,
+       9,
+       0,
+       0
+      ],
+      [
+       "FRENTE PRO",
+       4,
+       5,
+       0,
+       0
+      ],
+      [
+       "JUSTICIALISTA",
+       5,
+       1,
+       1,
+       0
+      ],
+      [
+       "FRENTE NACIONAL Y POPULAR",
+       0,
+       6,
+       0,
+       0
+      ],
+      [
+       "FRENTE PARA LA VICTORIA - PJ",
+       3,
+       1,
+       0,
+       0
+      ],
+      [
+       "FRENTE CÍVICO POR SANTIAGO",
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       "MOVIMIENTO POPULAR NEUQUINO",
+       1,
+       0,
+       1,
+       0
+      ],
+      [
+       "AVANZAR SAN LUIS",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "FRENTE CÍVICO Y SOCIAL DE CATAMARCA",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE POPULAR",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "JUSTICIALISTA 8 DE OCTUBRE",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "Otros (10 bloques)",
+       4,
+       6,
+       0,
+       1
+      ]
+     ]
+    }
+   ],
+   "nota": "El Senado la rechazó."
+  },
+  {
+   "key": "etiquetado-2020",
+   "tema": "Salud",
+   "n": "Etiquetado frontal de alimentos (2020)",
+   "actas": [
+    {
+     "cam": "S",
+     "id": "1233",
+     "t": "Etiquetado frontal de alimentos.O.D. 375/2020",
+     "d": "2020-10-29",
+     "u": "https://www.senado.gob.ar/votaciones/detalleActa/1233",
+     "tot": [
+      64,
+      3,
+      0,
+      5
+     ],
+     "b": [
+      [
+       "FRENTE DE TODOS",
+       14,
+       1,
+       0,
+       2
+      ],
+      [
+       "UCR - UNIÓN CÍVICA RADICAL",
+       12,
+       1,
+       0,
+       1
+      ],
+      [
+       "FRENTE NACIONAL Y POPULAR",
+       10,
+       0,
+       0,
+       0
+      ],
+      [
+       "UNIDAD CIUDADANA",
+       9,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE PRO",
+       8,
+       0,
+       0,
+       0
+      ],
+      [
+       "UNIDAD FEDERAL",
+       3,
+       0,
+       0,
+       0
+      ],
+      [
+       "AVANZAR SAN LUIS",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE CÍVICO Y SOCIAL DE CATAMARCA",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "HAY FUTURO ARGENTINA",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "JUNTOS SOMOS RÍO NEGRO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "MOVIMIENTO NEUQUINO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "PRODUCCIÓN Y TRABAJO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (5 bloques)",
+       3,
+       0,
+       0,
+       2
+      ]
+     ]
+    }
+   ],
+   "nota": "No encontré el acta de Diputados bajo ese título."
+  },
+  {
+   "key": "ive-2020",
+   "tema": "Derechos",
+   "n": "Regulación del acceso a la interrupción voluntaria del embarazo (2020)",
+   "actas": [
+    {
+     "cam": "D",
+     "id": "4077",
+     "t": "O.D. 352 - LEY DE REGULACIÓN DEL ACCESO A LA I.V.E. Y A LA ATENCIÓN POSTABORTO.",
+     "d": "2020-12-11",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/4077",
+     "tot": [
+      131,
+      117,
+      6,
+      2
+     ],
+     "b": [
+      [
+       "Frente De Todos",
+       82,
+       32,
+       3,
+       1
+      ],
+      [
+       "Pro",
+       11,
+       40,
+       1,
+       1
+      ],
+      [
+       "Unión Cívica Radical",
+       27,
+       18,
+       1,
+       0
+      ],
+      [
+       "Coalicion Civica",
+       4,
+       9,
+       1,
+       0
+      ],
+      [
+       "Cordoba Federal",
+       0,
+       4,
+       0,
+       0
+      ],
+      [
+       "Consenso Federal",
+       1,
+       2,
+       0,
+       0
+      ],
+      [
+       "Frente De La Concordia Misionero",
+       1,
+       2,
+       0,
+       0
+      ],
+      [
+       "Acción Federal",
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       "Justicialista",
+       1,
+       1,
+       0,
+       0
+      ],
+      [
+       "Unidad y Equidad Federal",
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       "Frente Cívico y Social de Catamarca",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "Frente Progresista Cívico y Social",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "Otros (7 bloques)",
+       4,
+       3,
+       0,
+       0
+      ]
+     ]
+    },
+    {
+     "cam": "S",
+     "id": "1260",
+     "t": "Interrupción voluntaria del embarazo.CD-53/20-PL,O.D. 716/2020",
+     "d": "2020-12-29",
+     "u": "https://www.senado.gob.ar/votaciones/detalleActa/1260",
+     "tot": [
+      38,
+      29,
+      1,
+      4
+     ],
+     "b": [
+      [
+       "FRENTE DE TODOS",
+       12,
+       3,
+       0,
+       2
+      ],
+      [
+       "UCR - UNIÓN CÍVICA RADICAL",
+       5,
+       9,
+       0,
+       0
+      ],
+      [
+       "FRENTE NACIONAL Y POPULAR",
+       1,
+       8,
+       0,
+       1
+      ],
+      [
+       "UNIDAD CIUDADANA",
+       9,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE PRO",
+       5,
+       3,
+       0,
+       0
+      ],
+      [
+       "UNIDAD FEDERAL",
+       2,
+       0,
+       1,
+       0
+      ],
+      [
+       "AVANZAR SAN LUIS",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "CAMBIO FEDERAL",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "FRENTE CÍVICO Y SOCIAL DE CATAMARCA",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "JUNTOS SOMOS RÍO NEGRO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "MISIONES",
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       "MOVIMIENTO NEUQUINO",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (5 bloques)",
+       1,
+       3,
+       0,
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "key": "fmi-2022",
+   "tema": "Economía",
+   "n": "Programa de Facilidades Extendidas con el FMI (2022)",
+   "actas": [
+    {
+     "cam": "D",
+     "id": "4331",
+     "t": "O.D. 3 - OPERACIONES DE CRÉDITO PÚBLICO CONTENIDAS EN \"PROGRAMA DE FACILIDADES EXTENDIDAS\" ENTRE P.E. Y F.M.I.",
+     "d": "2022-03-11",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/4331",
+     "tot": [
+      202,
+      37,
+      13,
+      4
+     ],
+     "b": [
+      [
+       "Frente De Todos",
+       76,
+       28,
+       13,
+       0
+      ],
+      [
+       "Pro",
+       46,
+       0,
+       0,
+       4
+      ],
+      [
+       "Unión Cívica Radical",
+       33,
+       0,
+       0,
+       0
+      ],
+      [
+       "Evolucion Radical",
+       12,
+       0,
+       0,
+       0
+      ],
+      [
+       "Coalicion Civica",
+       11,
+       0,
+       0,
+       0
+      ],
+      [
+       "Encuentro Federal",
+       4,
+       0,
+       0,
+       0
+      ],
+      [
+       "Cordoba Federal",
+       3,
+       0,
+       0,
+       0
+      ],
+      [
+       "Identidad Bonaerense",
+       3,
+       0,
+       0,
+       0
+      ],
+      [
+       "Pts - Frente De Izquierda Y De Trabajadores - Unidad",
+       0,
+       3,
+       0,
+       0
+      ],
+      [
+       "Avanza Libertad",
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       "Frente De La Concordia Misionero",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "Juntos Somos Rio Negro",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (10 bloques)",
+       10,
+       4,
+       0,
+       0
+      ]
+     ]
+    },
+    {
+     "cam": "S",
+     "id": "1358",
+     "t": "Programa de Facilidades Extendidas para refinanciar la deuda con el FMI.CD-1/22-PL,O.D. 1/2022",
+     "d": "2022-03-17",
+     "u": "https://www.senado.gob.ar/votaciones/detalleActa/1358",
+     "tot": [
+      56,
+      13,
+      3,
+      0
+     ],
+     "b": [
+      [
+       "UCR - UNIÓN CÍVICA RADICAL",
+       18,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE NACIONAL Y POPULAR",
+       10,
+       2,
+       0,
+       0
+      ],
+      [
+       "UNIDAD CIUDADANA",
+       1,
+       7,
+       2,
+       0
+      ],
+      [
+       "FRENTE PRO",
+       7,
+       0,
+       0,
+       0
+      ],
+      [
+       "JUSTICIALISTA",
+       4,
+       1,
+       0,
+       0
+      ],
+      [
+       "UNIDAD FEDERAL",
+       1,
+       2,
+       0,
+       0
+      ],
+      [
+       "CAMBIO FEDERAL",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "CONVICCIÓN FEDERAL",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "LA LIBERTAD AVANZA",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "PROVINCIAS UNIDAS",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "DESPIERTA CHUBUT",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "HAY FUTURO ARGENTINA",
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (7 bloques)",
+       5,
+       1,
+       1,
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "key": "universitario-2025",
+   "tema": "Educación",
+   "n": "Financiamiento universitario (2025), incluida la insistencia tras el veto",
+   "actas": [
+    {
+     "cam": "D",
+     "id": "5702",
+     "t": "O.D. 924 - LEY DE FINANCIAMIENTO DE LA EDUCACIÓN UNIVERSITARIA Y RECOMPOSICIÓN DEL SALARIO DOCENTE. DICT. DE MAY. VOT. EN GRAL.",
+     "d": "2025-08-06",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/5702",
+     "tot": [
+      158,
+      75,
+      5,
+      18
+     ],
+     "b": [
+      [
+       "Union Por La Patria",
+       96,
+       0,
+       0,
+       2
+      ],
+      [
+       "La Libertad Avanza",
+       0,
+       37,
+       0,
+       1
+      ],
+      [
+       "Pro",
+       3,
+       28,
+       3,
+       1
+      ],
+      [
+       "Encuentro Federal",
+       14,
+       0,
+       1,
+       0
+      ],
+      [
+       "Democracia Para Siempre",
+       11,
+       0,
+       0,
+       1
+      ],
+      [
+       "Ucr - Union Civica Radical",
+       11,
+       0,
+       0,
+       3
+      ],
+      [
+       "Coalicion Civica",
+       6,
+       0,
+       0,
+       0
+      ],
+      [
+       "Liga Del Interior Eli",
+       0,
+       5,
+       0,
+       1
+      ],
+      [
+       "Independencia",
+       3,
+       0,
+       0,
+       0
+      ],
+      [
+       "Innovacion Federal",
+       3,
+       0,
+       0,
+       5
+      ],
+      [
+       "Izquierda Socialista Fit-unidad",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "Por Santa Cruz",
+       1,
+       1,
+       0,
+       0
+      ],
+      [
+       "Otros (12 bloques)",
+       8,
+       4,
+       1,
+       4
+      ]
+     ]
+    },
+    {
+     "cam": "S",
+     "id": "2571",
+     "t": "Financiamiento de la educación universitaria y recomposición del salario docente.O.D. 424/2025",
+     "d": "2025-08-21",
+     "u": "https://www.senado.gob.ar/votaciones/detalleActa/2571",
+     "tot": [
+      58,
+      10,
+      3,
+      1
+     ],
+     "b": [
+      [
+       "JUSTICIALISTA",
+       14,
+       0,
+       0,
+       0
+      ],
+      [
+       "UCR - UNIÓN CÍVICA RADICAL",
+       12,
+       1,
+       0,
+       0
+      ],
+      [
+       "LA LIBERTAD AVANZA",
+       1,
+       8,
+       0,
+       0
+      ],
+      [
+       "UNIDAD CIUDADANA",
+       8,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE NACIONAL Y POPULAR",
+       4,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE PRO",
+       1,
+       1,
+       2,
+       1
+      ],
+      [
+       "CONVICCIÓN FEDERAL",
+       3,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE RENOVADOR DE LA CONCORDIA SOCIAL",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "JUSTICIA SOCIAL FEDERAL",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "MOVERE SANTA CRUZ",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "PROVINCIAS UNIDAS",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "SIN ESPECIFICAR",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (6 bloques)",
+       5,
+       0,
+       1,
+       0
+      ]
+     ]
+    },
+    {
+     "cam": "D",
+     "id": "5766",
+     "t": "INSISTENCIA PROYECTO DE LEY 27.795.",
+     "d": "2025-09-17",
+     "u": "https://votaciones.hcdn.gob.ar/votacion/5766",
+     "tot": [
+      174,
+      67,
+      2,
+      14
+     ],
+     "b": [
+      [
+       "Union Por La Patria",
+       96,
+       0,
+       0,
+       2
+      ],
+      [
+       "La Libertad Avanza",
+       0,
+       34,
+       0,
+       3
+      ],
+      [
+       "Pro",
+       6,
+       25,
+       1,
+       3
+      ],
+      [
+       "Encuentro Federal",
+       14,
+       0,
+       0,
+       1
+      ],
+      [
+       "Ucr - Union Civica Radical",
+       13,
+       0,
+       0,
+       1
+      ],
+      [
+       "Democracia Para Siempre",
+       11,
+       0,
+       0,
+       1
+      ],
+      [
+       "Innovacion Federal",
+       8,
+       0,
+       0,
+       0
+      ],
+      [
+       "Liga Del Interior Eli",
+       1,
+       5,
+       0,
+       0
+      ],
+      [
+       "Coalicion Civica",
+       5,
+       0,
+       0,
+       1
+      ],
+      [
+       "Coherencia",
+       4,
+       0,
+       0,
+       0
+      ],
+      [
+       "Independencia",
+       3,
+       0,
+       0,
+       0
+      ],
+      [
+       "Mid - Movimiento De Integracion Y Desarrollo",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (12 bloques)",
+       11,
+       3,
+       1,
+       2
+      ]
+     ]
+    },
+    {
+     "cam": "S",
+     "id": "2598",
+     "t": "Insistencia en la sanción original del proyecto de ley registrado bajo el número 27.795, que fuera vetado totalmente por el Poder Ejecutivo ",
+     "d": "2025-10-02",
+     "u": "https://www.senado.gob.ar/votaciones/detalleActa/2598",
+     "tot": [
+      58,
+      7,
+      4,
+      3
+     ],
+     "b": [
+      [
+       "JUSTICIALISTA",
+       14,
+       0,
+       0,
+       0
+      ],
+      [
+       "UCR - UNIÓN CÍVICA RADICAL",
+       12,
+       0,
+       1,
+       0
+      ],
+      [
+       "LA LIBERTAD AVANZA",
+       1,
+       7,
+       0,
+       1
+      ],
+      [
+       "UNIDAD CIUDADANA",
+       8,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE PRO",
+       2,
+       0,
+       3,
+       0
+      ],
+      [
+       "CONVICCIÓN FEDERAL",
+       3,
+       0,
+       0,
+       0
+      ],
+      [
+       "FRENTE NACIONAL Y POPULAR",
+       3,
+       0,
+       0,
+       1
+      ],
+      [
+       "FRENTE RENOVADOR DE LA CONCORDIA SOCIAL",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "JUSTICIA SOCIAL FEDERAL",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "MOVERE SANTA CRUZ",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "PROVINCIAS UNIDAS",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "SIN ESPECIFICAR",
+       2,
+       0,
+       0,
+       0
+      ],
+      [
+       "Otros (6 bloques)",
+       5,
+       0,
+       0,
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

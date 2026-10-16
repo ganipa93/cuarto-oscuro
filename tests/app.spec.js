@@ -52,6 +52,15 @@ test("versión completa y enlace compartido reproduce el resultado", async ({ pa
   expect(errs.join("\n")).toBe("");
 });
 
+test("votos históricos en la línea de tiempo", async ({ page }) => {
+  await page.goto("/#linea");
+  await expect(page.locator("#histcard")).toBeVisible();
+  await page.selectOption("#hsel", { label: "Matrimonio: modificación del Código Civil (2010)" });
+  await expect(page.locator("#hdetail")).toContainText("126 a favor, 110 en contra");
+  await page.selectOption("#hsel", { label: "Interrupción voluntaria del embarazo (2018)" });
+  await expect(page.locator("#hdetail table")).toHaveCount(2);
+});
+
 test("enlace inválido vuelve al inicio y la línea de tiempo carga", async ({ page }) => {
   await page.goto("/#r/s/zzz/1");
   await expect(page.locator("#start-short")).toBeVisible();

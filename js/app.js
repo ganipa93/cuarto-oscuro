@@ -50,9 +50,10 @@
     getJSON("data/questions.json"), getJSON("data/parties.json"), getJSON("data/votes.json"),
     getJSON("data/dnu.json"), getJSON("data/timeline.json"), getJSON("data/content.json"), getJSON("data/meta.json"),
     getJSON("data/distritos.json").catch(function () { return null; }),
-    getJSON("data/diputados.json").catch(function () { return null; })
+    getJSON("data/diputados.json").catch(function () { return null; }),
+    getJSON("data/historicas.json").catch(function () { return null; })
   ]).then(function (r) {
-    D.AX = r[0].axes; D.OPT = r[0].options; D.Q = r[0].questions; D.P = r[1]; D.V = r[2]; D.DNU = r[3]; D.TL = r[4]; D.C = r[5]; D.M = r[6]; D.DIST = r[7]; D.DIP = r[8];
+    D.AX = r[0].axes; D.OPT = r[0].options; D.Q = r[0].questions; D.P = r[1]; D.V = r[2]; D.DNU = r[3]; D.TL = r[4]; D.C = r[5]; D.M = r[6]; D.DIST = r[7]; D.DIP = r[8]; D.HIST = r[9];
     init();
   }).catch(function (e) {
     var b = $("loaderr");
@@ -418,8 +419,29 @@
     t.appendChild(tb); wrap.appendChild(t); c.appendChild(wrap);
     var ul = el("ul", "small muted notes"); D.DNU.notes.forEach(function (h) { var li = el("li"); li.innerHTML = h; ul.appendChild(li); }); c.appendChild(ul);
     box.appendChild(c);
+    renderHist();
     show("timeline", "t-tl"); document.title = "Leyes y decretos · Cuarto Oscuro";
   }
+  function renderHist() {
+    var card = $("histcard");
+    if (!D.HIST) { card.hidden = true; return; }
+    card.hidden = false;
+    $("hist-note").textContent = D.HIST.nota + " Datos de ¿Cómo votó? (comovoto.dev.ar), licencia MIT.";
+    var sel = $("hsel");
+    if (!sel.options.length) {
+      D.HIST.items.forEach(function (it, k) { var o = el("option", null, it.n); o.value = k; sel.appendChild(o); });
+      sel.addEventListener("change", fillHist);
+    }
+    fillHist();
+  }
+  function fillHist() {
+    var it = D.HIST.items[Number($("hsel").value || 0)], box = $("hdetail"); box.innerHTML = "";
+    box.style.cssText = "display:flex;flex-direction:column;gap:12px;margin-top:8px";
+    if (it.nota) box.appendChild(el("p", "small muted", it.nota));
+    it.actas.forEach(function (a) { actaTable(box, a.cam === "D" ? "Diputados" : "Senado", a); });
+    box.appendChild(el("p", "small")).appendChild(reportLink("Votación histórica " + it.n));
+  }
+
   function fillTL() {
     var ol = $("tl"); ol.innerHTML = "";
     D.TL.items.forEach(function (i) {

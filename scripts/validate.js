@@ -10,6 +10,7 @@ const links = (arr, where) => (arr || []).forEach((x, i) => {
 });
 
 const Q = rd("questions.json"), P = rd("parties.json"), V = rd("votes.json"), T = rd("timeline.json"), M = rd("meta.json");
+let HI = null; try { HI = rd("historicas.json"); } catch (e) { /* opcional */ }
 let DP = null; try { DP = rd("diputados.json"); } catch (e) { /* opcional */ }
 let D = null; try { D = rd("distritos.json"); } catch (e) { /* opcional */ }
 
@@ -54,6 +55,15 @@ if (DP) Object.entries(DP.actas).forEach(([k, a]) => {
   const t = a.b.reduce((s, r) => s.map((x, i) => x + r[i + 1]), [0, 0, 0, 0]);
   if (t.some((x, i) => x !== a.tot[i])) err(`acta ${k}: los bloques suman ${t} y el total dice ${a.tot}`);
   if (!isUrl(a.u)) err(`acta ${k}: url inválida`);
+});
+
+if (HI) HI.items.forEach((it) => {
+  if (!it.key || !it.n || !it.actas.length) err(`histórica ${it.key}: incompleta`);
+  it.actas.forEach((a) => {
+    const t = a.b.reduce((s, r) => s.map((x, i) => x + r[i + 1]), [0, 0, 0, 0]);
+    if (t.some((x, i) => x !== a.tot[i])) err(`histórica ${it.key} ${a.cam}${a.id}: los bloques suman ${t} y el total dice ${a.tot}`);
+    if (!isUrl(a.u) || !isDate(a.d)) err(`histórica ${it.key} ${a.id}: url o fecha inválida`);
+  });
 });
 
 T.items.forEach((i, k) => {
