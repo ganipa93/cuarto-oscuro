@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cuarto Oscuro</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: una sola columna tipo boleta; pregunta por pantalla, resultado con mapa y ranking */
+:root {
+  --bg: #eef1f5;
+  --paper: #ffffff;
+  --ink: #14213d;
+  --muted: #5b6678;
+  --line: #d3dae4;
+  --accent: #1f4fd8;
+  --accent-ink: #ffffff;
+  --mark: #d9820b;
+  --soft: #e3e9f6;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1624; --paper: #172033; --ink: #e8edf6; --muted: #9aa6ba; --line: #2b3850;
+    --accent: #7ea2ff; --accent-ink: #0b1226; --mark: #f2b04a; --soft: #22304d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1624; --paper: #172033; --ink: #e8edf6; --muted: #9aa6ba; --line: #2b3850;
+  --accent: #7ea2ff; --accent-ink: #0b1226; --mark: #f2b04a; --soft: #22304d;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.5;
+  padding-block: 28px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.12; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 7vw, 3rem); letter-spacing: -0.02em; }
+h2 { font-size: 1.45rem; }
+h3 { font-size: 1.05rem; }
+p { margin: 0; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 22px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+button { font: inherit; cursor: pointer; }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.btn { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 4px; padding: 12px 20px; font-weight: 600; align-self: flex-start; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.progress { height: 6px; background: var(--soft); border-radius: 3px; overflow: hidden; }
+.progress > i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .25s ease; }
+.qnum { font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); }
+.qtext { font-family: var(--font-display); font-size: clamp(1.3rem, 4.5vw, 1.7rem); font-weight: 500; line-height: 1.25; text-wrap: balance; }
+.opts { display: grid; gap: 8px; }
+.opt { text-align: left; background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 4px; padding: 13px 14px; display: flex; gap: 12px; align-items: center; }
+.opt:hover { border-color: var(--accent); }
+.opt .box { width: 18px; height: 18px; border: 2px solid var(--muted); border-radius: 3px; flex: none; position: relative; }
+.opt[aria-pressed="true"] { border-color: var(--accent); background: var(--soft); }
+.opt[aria-pressed="true"] .box { border-color: var(--accent); background: var(--accent); }
+.opt[aria-pressed="true"] .box::after { content: "✕"; position: absolute; inset: 0; color: var(--accent-ink); font-size: 12px; line-height: 14px; text-align: center; font-weight: 700; }
+.axes { display: grid; gap: 18px; }
+.axis .labels { display: flex; justify-content: space-between; gap: 12px; font-size: 0.88rem; color: var(--muted); }
+.axis .labels b { color: var(--ink); font-weight: 600; }
+.track { position: relative; height: 10px; background: var(--soft); border-radius: 5px; margin-block: 8px; }
+.track::before { content: ""; position: absolute; left: 50%; top: -3px; bottom: -3px; width: 2px; background: var(--line); }
+.track .pin { position: absolute; top: 50%; width: 18px; height: 18px; border-radius: 50%; background: var(--mark); border: 3px solid var(--paper); box-shadow: 0 0 0 1px var(--mark); transform: translate(-50%, -50%); }
+.axis .val { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
+.match { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: baseline; padding-block: 10px; border-top: 1px solid var(--line); }
+.match:first-child { border-top: 0; }
+.match .name { font-family: var(--font-display); font-weight: 700; font-size: 1.08rem; min-width: 0; overflow-wrap: anywhere; }
+.match .tag { grid-column: 1; font-size: 0.85rem; color: var(--muted); }
+.match .pct { font-family: var(--font-mono); font-size: 1.05rem; grid-row: 1; grid-column: 2; }
+.match .bar { grid-column: 1 / -1; height: 6px; background: var(--soft); border-radius: 3px; overflow: hidden; }
+.match .bar i { display: block; height: 100%; background: var(--accent); }
+.match.top .bar i { background: var(--mark); }
+.match .nt { grid-column: 1 / -1; font-size: 0.84rem; color: var(--muted); }
+.ev { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 3px; padding: 1px 6px; margin-left: 8px; vertical-align: 2px; color: var(--muted); font-weight: 400; }
+.ev.a { border-color: var(--accent); color: var(--accent); }
+.match .cp { grid-column: 1 / -1; font-size: 0.88rem; border-left: 3px solid var(--line); padding-left: 10px; }
+.match .cp b { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; display: block; margin-bottom: 2px; }
+.match .lk { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.82rem; }
+.match .lk a { color: var(--accent); overflow-wrap: anywhere; }
+.mapwrap { overflow-x: auto; }
+svg { display: block; max-width: 100%; height: auto; }
+.ink { fill: var(--ink); } .mutedf { fill: var(--muted); } .linef { stroke: var(--line); }
+.notes li { margin-bottom: 6px; }
+ul { margin: 0; padding-left: 20px; }
+[data-view] { display: none; }
+[data-view].on { display: flex; flex-direction: column; gap: 20px; }
+</style>
+</head>
+<body>
+
+
+<main>
+  <header>
+    <p class="eyebrow">Argentina · partidos políticos</p>
+    <h1>Cuarto Oscuro</h1>
+  </header>
+
+  <section data-view="intro" class="on">
+    <div class="card">
+      <h2>Cuarenta y cuatro afirmaciones, cuatro ejes, 25 partidos</h2>
+      <p>Respondé qué tan de acuerdo estás con cada frase. Al final vas a ver en qué punto de los ejes de economía, valores, mundo y orden te ubicás, y cuáles de los partidos reconocidos quedan más cerca de ese punto.</p>
+      <ul class="small muted notes">
+        <li>Tarda unos diez minutos. Las respuestas no se guardan ni se envían a ningún lado.</li>
+        <li>Las posiciones de los partidos salen de sus documentos cuando pude leerlos (declaraciones de principios, bases y plataformas). Las cartas orgánicas son estatutos internos y casi no dicen nada sobre ideología. Cada partido indica si su ubicación se apoya en un documento propio, en el estatuto o es una estimación.</li>
+        <li>Para varios partidos sumé lo que dijeron sus referentes en debates, cierres de campaña y entrevistas de 2022 a 2026, parafraseado desde notas de prensa y con enlace. También usé cuatro votaciones del Congreso (Ley Bases, Presupuesto 2026, reforma laboral, Régimen Penal Juvenil, reforma de los DNU, Ley de Glaciares y emergencia en discapacidad), que muestran qué hicieron los bloques y no solo qué dijeron. No cubre todas las campañas ni todos los partidos.</li>
+        <li>Los partidos son heterogéneos y los textos fundacionales pueden estar desactualizados, así que es una aproximación y no una verdad oficial.</li>
+        <li>La Justicia Electoral reconoce partidos nacionales y cientos de partidos de distrito. Acá hay una selección de 25 partidos nacionales, no el padrón completo.</li>
+        <li>En cada partido vas a ver también cómo votaron sus legisladores en siete votaciones y qué proyectos presentaron, cuando encontré fuentes. Solo algunos partidos tienen legisladores nacionales, y muchos legisladores integran bloques mixtos.</li>
+        <li>El resultado mide cercanía de ideas. No es una recomendación de voto.</li>
+      </ul>
+      <button class="btn" id="start">Empezar</button>
+    </div>
+  </section>
+
+  <section data-view="quiz">
+    <div class="card">
+      <div class="row" style="justify-content:space-between">
+        <span class="qnum" id="qnum">1 / 44</span>
+        <button class="btn ghost" id="back" style="padding:6px 12px;font-size:.9rem">Volver</button>
+      </div>
+      <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+      <p class="qtext" id="qtext" aria-live="polite"></p>
+      <div class="opts" id="opts"></div>
+    </div>
+  </section>
+
+  <section data-view="result">
+    <div class="card">
+      <p class="eyebrow">Tu ubicación</p>
+      <h2 id="headline">Tu perfil</h2>
+      <div class="axes" id="axes"></div>
+    </div>
+
+    <div class="card">
+      <h2>Partidos más cercanos</h2>
+      <p class="small muted">Afinidad calculada por distancia en los cuatro ejes. 100% sería coincidir exactamente con la ubicación estimada del partido.</p>
+      <div id="top"></div>
+      <button class="btn ghost" id="toggle">Ver los 25</button>
+      <div id="rest" hidden></div>
+    </div>
+
+    <div class="card">
+      <h2>Tus respuestas frente a las votaciones</h2>
+      <p class="small muted">Relaciono algunas de tus respuestas con siete votaciones reales del Congreso. Es una aproximación: una ley incluye muchos artículos y tus respuestas no cubren todos.</p>
+      <ul class="small notes" id="votebox"></ul>
+    </div>
+
+    <div class="card">
+      <h2>Mapa: economía y valores</h2>
+      <p class="small muted">Los puntos grises son partidos; el naranja sos vos. Los tres más cercanos llevan nombre.</p>
+      <div class="mapwrap" id="map"></div>
+    </div>
+
+    <div class="card">
+      <h3>Qué campañas están relevadas</h3>
+      <ul class="small muted notes">
+        <li>Debates presidenciales y balotaje de 2023 (Milei, Massa, Bullrich, Schiaretti, Bregman).</li>
+        <li>Campaña legislativa 2025: cierres de La Libertad Avanza, Fuerza Patria y Frente de Izquierda, la campaña porteña de Provincias Unidas y entrevistas a referentes del Partido Libertario y el Partido Socialista.</li>
+        <li>Declaraciones de 2024 a 2026 de Bullrich, Macri, Carrió, Massa, Schiaretti, Kicillof, Abal Medina y del Partido Socialista.</li>
+        <li>Nuevas en esta versión: Frente Renovador, Nuevo Encuentro, Patria Grande, Humanista, MID, Demócrata, Demócrata Progresista, UCeDé y Partido de la Victoria, con fuentes de prensa de 2022 a 2026 (algunas son una sola nota).</li>
+        <li>No encontré declaraciones recientes y verificables de Libres del Sur, Frente Grande, Intransigente, Comunista, Izquierda Socialista ni MST más allá de sus documentos y de lo que votó el Frente de Izquierda. Tampoco hay cobertura de campañas provinciales ni municipales.</li>
+        <li>Las notas son periodísticas y de distinto signo; algunas resumen a un solo referente, que no necesariamente representa a todo el partido.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Decretos de necesidad y urgencia desde 1983</h3>
+      <p class="small muted">No existe un listado único de todos los decretos que pueda resumirse acá: son cientos y varían por metodología. Lo que sigue son las cifras que pude verificar.</p>
+      <div style="overflow-x:auto"><table class="small" style="border-collapse:collapse;width:100%;min-width:320px">
+        <thead><tr><th style="text-align:left;padding:4px 8px 4px 0">Presidente</th><th style="text-align:right;padding:4px 8px">DNU</th><th style="text-align:left;padding:4px 0 4px 8px">Dato</th></tr></thead>
+        <tbody>
+          <tr><td>Alfonsín</td><td style="text-align:right;padding:2px 8px">sin dato</td><td style="padding-left:8px">Según Chequeado los usó muy poco; el Plan Austral fue por DNU.</td></tr>
+          <tr><td>Menem</td><td style="text-align:right;padding:2px 8px">195</td><td style="padding-left:8px">casi 19 por año</td></tr>
+          <tr><td>De la Rúa</td><td style="text-align:right;padding:2px 8px">59</td><td style="padding-left:8px">casi 30 por año</td></tr>
+          <tr><td>Duhalde</td><td style="text-align:right;padding:2px 8px">154</td><td style="padding-left:8px">0,3 por día</td></tr>
+          <tr><td>Néstor Kirchner</td><td style="text-align:right;padding:2px 8px">236</td><td style="padding-left:8px">0,14 por día</td></tr>
+          <tr><td>Cristina Kirchner</td><td style="text-align:right;padding:2px 8px">78</td><td style="padding-left:8px">casi 10 por año</td></tr>
+          <tr><td>Macri</td><td style="text-align:right;padding:2px 8px">71</td><td style="padding-left:8px">casi 18 por año (el artículo trae también 78)</td></tr>
+          <tr><td>Alberto Fernández</td><td style="text-align:right;padding:2px 8px">177</td><td style="padding-left:8px">76 en 2020</td></tr>
+          <tr><td>Milei</td><td style="text-align:right;padding:2px 8px">62 hasta agosto de 2025</td><td style="padding-left:8px">50 en su primer año (informe de ACIJ)</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="small muted notes">
+        <li>Fuente de las cifras de 1989 a 2023: <a href="https://chequeado.com/el-explicador/el-dnu-de-javier-milei-cuales-son-los-presidentes-que-mas-usaron-esta-herramienta-entre-1989-y-2023/">Chequeado</a>, con datos de SAIJ. Otras metodologías, por ejemplo las que cuentan decretos con distinto criterio, dan números distintos.</li>
+        <li>Milei: <a href="https://noticias.perfil.com/noticias/politica/milei-historico-nunca-un-presidente-tuvo-tantos-decretos-rechazados.phtml">Noticias (Perfil), agosto de 2025</a> contó 62 DNU y 5 decretos anulados por ambas cámaras (el DNU 656/2024 de fondos reservados de inteligencia y cuatro decretos delegados). El <a href="https://hoydia.com.ar/politica/nacional/un-informe-advierte-que-milei-es-el-presidente-que-mas-dnu-firmo-en-los-ultimos-cuatro-gobiernos/">informe de ACIJ</a> calcula 50 en su primer año, frente a 44 por año de Alberto Fernández, 17,5 de Macri y 11,75 de Cristina Kirchner (2011-2024).</li>
+        <li>15/10/2026: la oposición convocó a una sesión especial en Diputados para tratar la deuda familiar, la emergencia en discapacidad y la derogación del DNU 70/23, y no logró quórum: había 121 diputados presentes, 8 menos que los necesarios (<a href="https://www.parlamentario.com/2026/10/15/la-oposicion-no-consiguio-quorum-y-se-cayo-la-sesion-para-voltear-el-dnu-70-23/">Parlamentario</a>). El decreto sigue vigente.</li>
+        <li>El DNU 70/2023, de más de 300 reformas de desregulación económica, fue el primero de su gobierno y dio origen a buena parte del debate sobre estos decretos.</li>
+        <li>Reforma del régimen de DNU (ley 26.122): el Senado la aprobó el 4/9/2025 (<a href="https://www.letrap.com.ar/politica/ley-anti-dnu-la-oposicion-aprobo-la-reforma-mayoria-especial-y-milei-le-pide-auxilio-martin-menem-n5418559">Letra P</a>) y Diputados la aprobó en general el 8/10/2025 pero rechazó el artículo del plazo automático de 90 días, por lo que volvió al Senado (<a href="https://www.lmneuquen.com/pais/la-camara-diputados-aprobo-el-proyecto-que-limita-los-dnu-javier-milei-pero-debe-volver-al-senado-n1212318">LM Neuquén</a>). No verifiqué su desenlace posterior.</li>
+        <li>Para el texto de cada decreto y ley consultá el buscador oficial <a href="https://servicios.infoleg.gob.ar/">InfoLEG</a>. No relevé uno por uno todos los proyectos debatidos desde 1983: son miles y no pude verificarlos con fuentes confiables. Elegí en cambio un conjunto de leyes y decretos emblemáticos como preguntas y votaciones.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Senado: votos nominales relevados</h3>
+      <p class="small muted">Las actas del Senado muestran el voto de cada senador y el conteo por bloque. Las usé directamente. Los bloques del Senado no son partidos: "Justicialista" y "Frente PRO" corresponden a esos espacios, y las cifras de otros bloques provinciales no se asignan a ningún partido de la lista.</p>
+      <ul class="small muted notes">
+        <li><a href="https://www.senado.gob.ar/votaciones/detalleActa/2623">Modernización laboral, en general, 11/2/2026</a>: 42 a 30. LLA 21, PRO 3, UCR 10 y Provincias Unidas 2 a favor; Justicialista 0 a 21.</li>
+        <li><a href="https://www.senado.gob.ar/votaciones/detalleActa/2678">Modernización laboral, aceptación de los cambios de Diputados, 27/2/2026</a>: 42 a 28 con 2 abstenciones (las dos de Movere Santa Cruz).</li>
+        <li><a href="https://www.senado.gob.ar/votaciones/detalleActa/2665">Régimen Penal Juvenil, en general, 27/2/2026</a>: 44 a 27 con 1 abstención (de Provincias Unidas). Convicción Federal votó 1 a favor y 2 en contra.</li>
+        <li><a href="https://www.senado.gob.ar/votaciones/detalleActa/2608">Presupuesto 2026, artículos 1 a 10, 26/12/2025</a>: 46 a 25 con 1 abstención. Los votos del Justicialista fueron 0 a 21.</li>
+        <li><a href="https://www.senado.gob.ar/votaciones/detalleActa/2657">Reforma de la Ley de Glaciares, en general, 26/2/2026</a>: 40 a 31 con 1 abstención. PRO dividido (1 a 2) y UCR 8 a 2.</li>
+        <li><a href="https://www.senado.gob.ar/votaciones/detalleActa/2578">Reforma de los DNU, artículos 1 a 3, 4/9/2025</a>: 56 a 8 con 2 abstenciones y 6 ausentes (mayoría absoluta).</li>
+        <li><a href="https://www.senado.gob.ar/votaciones/detalleActa/2575">Emergencia en discapacidad, habilitación para tratar la insistencia, 4/9/2025</a>: 62 a 8 (dos tercios). Los 8 votos en contra fueron de LLA.</li>
+        <li>Listado completo de actas: <a href="https://www.senado.gob.ar/votaciones/actas">senado.gob.ar/votaciones/actas</a>.</li>
+      </ul>
+      <p class="small muted">Para Diputados el sitio de votaciones nominales (votaciones.hcdn.gob.ar) no permite la lectura automática, así que sus cifras salen de la prensa y de Parlamentario, no de las actas.</p>
+    </div>
+
+    <div class="card">
+      <h3>Votaciones del Congreso consideradas</h3>
+      <p class="small muted">Lo que votaron los bloques pesa distinto que lo que dicen los referentes. Los bloques no coinciden exactamente con los partidos, y algunos diputados votaron distinto de su bloque.</p>
+      <ul class="small muted notes">
+        <li><a href="https://chequeado.com/el-explicador/diputados-sanciono-la-ley-bases-y-el-paquete-fiscal-como-voto-cada-bloque/">Ley Bases, Diputados, 28/6/2024</a>: 147 a 107 y 2 abstenciones. A favor LLA, PRO, UCR y la mayoría de Hacemos, Innovación Federal y Coalición Cívica; en contra Unión por la Patria y el Frente de Izquierda.</li>
+        <li><a href="https://www.canal26.com/politica/2025/12/19/que-voto-cada-diputado-de-cara-a-la-aprobacion-del-presupuesto-2026-quienes-dieron-el-visto-bueno-y-quienes-estuvieron-en-contra/">Presupuesto 2026, Diputados, diciembre de 2025</a>: 132 afirmativos. A favor LLA (94), PRO (12), UCR (6), Innovación Federal y MID; en contra Unión por la Patria (88) y el Frente de Izquierda; Provincias Unidas mayormente se abstuvo. El Gobierno perdió el artículo que derogaba las leyes de financiamiento universitario y emergencia en discapacidad.</li>
+        <li><a href="https://www.canal26.com/politica/2026/02/20/media-sancion-a-la-reforma-laboral-como-voto-cada-diputado/">Reforma laboral, Diputados, 20/2/2026</a>: 135 a 115. A favor LLA, PRO, UCR, MID y bloques aliados a gobernadores; en contra Unión por la Patria y el Frente de Izquierda; Provincias Unidas se dividió. El Senado la sancionó el 27/2 por 42 a 28.</li>
+        <li>Reforma de los DNU: Senado 56 a 8 con 2 abstenciones (4/9/2025) y Diputados 140 a 80 con 17 abstenciones (8/10/2025). Detalle y enlaces en la tarjeta de decretos.</li>
+        <li><a href="https://www.canal26.com/politica/2026/02/28/regimen-penal-juvenil-asi-voto-cada-senador-la-ley-que-bajara-la-edad-de-imputabilidad-a-14-anos/">Régimen Penal Juvenil</a>: Diputados 149 a 100 (12/2/2026) y Senado 44 a 27 con 1 abstención (27/2/2026). Baja la edad de imputabilidad de 16 a 14 años para delitos graves, con tope de 15 años de pena y sanciones alternativas.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Documentos consultados</h3>
+      <ul class="small muted notes">
+        <li>La Libertad Avanza: <a href="https://cnnespanol.cnn.com/wp-content/uploads/2023/08/ALIANZA-LLA-acta-constitutiva-FINAL-4-Plataforma-Electoral-Nacional-1.pdf">Bases y plataforma electoral nacional 2023</a></li>
+        <li>Partido Obrero: <a href="https://old.pjn.gov.ar/cne/secelec/document/plataformas/2041-7-PlataformaElectoralPO.pdf">Plataforma electoral, distrito Chubut</a></li>
+        <li>Coalición Cívica ARI: <a href="https://old.pjn.gov.ar/cne/secelec/document/bases/222-11-COALICION%20CIVICA-ARI_bases.pdf">Bases de acción política</a></li>
+        <li>Partido Justicialista: <a href="https://old.pjn.gov.ar/cne/secelec/document/declara/275-8-Principios-002.pdf">Principios</a> (distrito Entre Ríos)</li>
+        <li>Partido Comunista: <a href="https://old.pjn.gov.ar/cne/secelec/document/declara/432-12-PARTIDO%20COMUNISTA%20-%20DECLARACION%20DE%20PRINCIPIOS.pdf">Declaración de principios</a></li>
+        <li>Partido Socialista: <a href="https://old.pjn.gov.ar/cne/secelec/document/declara/224-11-PS_decl.pdf">Declaración de principios</a></li>
+        <li>Izquierda Socialista: <a href="https://old.pjn.gov.ar/cne/secelec/document/bases/694-1-IS%20CF%20Bases_de_accion.pdf">Bases de acción política</a></li>
+        <li>MST: <a href="https://old.pjn.gov.ar/cne/secelec/document/bases/2094-11-Bases_MST.pdf">Bases de acción política</a></li>
+        <li>UCeDé: <a href="https://old.pjn.gov.ar/cne/secelec/document/plataformas/154-5-platUCD.pdf">Plataforma electoral</a></li>
+        <li>Cartas orgánicas (PRO, UCR, Frente Grande, Partido Intransigente, PTS): <a href="https://www.argentina.gob.ar/partidos-politicos/cartas-organicas">Dirección Nacional Electoral</a></li>
+      </ul>
+      <p class="small muted">Varios documentos de la Justicia Electoral no pudieron abrirse desde la herramienta de consulta. Los partidos con etiqueta "estimado" quedan sin verificar contra su propio texto.</p>
+    </div>
+
+    <div class="card">
+      <h3>Cómo leer esto</h3>
+      <p class="small muted">Un partido puede incluir sectores muy distintos, y una misma etiqueta (por ejemplo, peronismo o radicalismo) cubre posiciones amplias. Si el resultado te sorprende, probablemente se debe a que alguna de las 44 frases dejó afuera un tema que para vos pesa más. Podés repetir el test cambiando respuestas dudosas.</p>
+      <button class="btn" id="again">Repetir el test</button>
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  var AX = [
+    { k: "Economía", lo: "Estado presente", hi: "Mercado libre" },
+    { k: "Valores", lo: "Progresista", hi: "Conservador" },
+    { k: "Mundo", lo: "Soberanista", hi: "Aperturista" },
+    { k: "Orden", lo: "Garantista", hi: "Mano dura" }
+  ];
+  // t: frase, a: eje, s: signo (+1 si estar de acuerdo empuja hacia el extremo derecho)
+  var Q = [
+    { t: "El Estado debería reducir el gasto público de forma drástica, aunque eso implique achicar servicios.", a: 0, s: 1 },
+    { t: "El aborto legal, seguro y gratuito es un derecho que el Estado tiene que garantizar.", a: 1, s: -1 },
+    { t: "Argentina debería alinear su política exterior con Estados Unidos e Israel.", a: 2, s: 1 },
+    { t: "Hay que bajar la edad de punibilidad para los menores que cometen delitos graves.", a: 3, s: 1 },
+    { t: "Las empresas estratégicas (energía, correo, aerolínea de bandera) deben ser del Estado.", a: 0, s: -1 },
+    { t: "La educación sexual integral debería ser obligatoria en todas las escuelas.", a: 1, s: -1 },
+    { t: "Hay que proteger la industria nacional con aranceles frente a las importaciones.", a: 2, s: -1 },
+    { t: "Las fuerzas de seguridad necesitan más respaldo legal para usar la fuerza.", a: 3, s: 1 },
+    { t: "Hay que subir los impuestos a los sectores de mayores ingresos para financiar políticas sociales.", a: 0, s: -1 },
+    { t: "La familia tradicional es la base de la sociedad y el Estado debería promoverla.", a: 1, s: 1 },
+    { t: "Un acuerdo amplio de libre comercio (con la Unión Europea o Estados Unidos) le conviene al país.", a: 2, s: 1 },
+    { t: "Los juicios por delitos de lesa humanidad de la última dictadura deben continuar.", a: 3, s: -1 },
+    { t: "La mejor forma de reducir la pobreza es dejar crecer al mercado con pocas regulaciones.", a: 0, s: 1 },
+    { t: "La religión debería tener un lugar más visible en la vida pública.", a: 1, s: 1 },
+    { t: "Argentina debe cumplir sus acuerdos con el FMI aunque eso implique ajuste.", a: 2, s: 1 },
+    { t: "Los cortes de calle y piquetes deberían sancionarse con firmeza.", a: 3, s: 1 },
+    { t: "Los sindicatos y los convenios colectivos protegen a los trabajadores y no conviene flexibilizarlos.", a: 0, s: -1 },
+    { t: "Las políticas de género y diversidad deben ser una prioridad del Estado.", a: 1, s: -1 },
+    { t: "La soberanía sobre Malvinas debería ser un eje central de la política exterior.", a: 2, s: -1 },
+    { t: "Las Fuerzas Armadas deberían tener un rol más activo en la seguridad interior.", a: 3, s: 1 },
+    { t: "Una reforma laboral que flexibilice contratos e indemnizaciones ayuda a crear empleo formal.", a: 0, s: 1 },
+    { t: "Las personas deberían poder cambiar su género registral con un simple trámite administrativo.", a: 1, s: -1 },
+    { t: "Argentina debería retirarse de organismos internacionales como la OMS o el Acuerdo de París si no le convienen.", a: 2, s: 1 },
+    { t: "Hay que endurecer las penas y construir más cárceles.", a: 3, s: 1 },
+    { t: "Las jubilaciones y las universidades públicas deben tener financiamiento garantizado por ley, aunque aumente el déficit.", a: 0, s: -1 },
+    { t: "El Código Penal no debería tener figuras específicas como el femicidio.", a: 1, s: 1 },
+    { t: "La integración regional (Mercosur, vínculos con Brasil y Latinoamérica) debería pesar más que los acuerdos con Estados Unidos.", a: 2, s: -1 },
+    { t: "Debería ser más fácil para los civiles tener y portar armas.", a: 3, s: 1 },
+    { t: "Hay que bajar o eliminar impuestos y retenciones, aunque baje la recaudación.", a: 0, s: 1 },
+    { t: "El matrimonio entre personas del mismo sexo debería seguir plenamente reconocido por la ley.", a: 1, s: -1 },
+    { t: "Argentina debería mantener equidistancia entre Estados Unidos y China.", a: 2, s: -1 },
+    { t: "El consumo personal de drogas debería despenalizarse.", a: 3, s: -1 },
+    { t: "Un presidente puede gobernar por decreto de necesidad y urgencia cuando el Congreso bloquea reformas que considera urgentes.", a: 3, s: 1 },
+    { t: "Los decretos de necesidad y urgencia deberían caer automáticamente si el Congreso no los ratifica en 90 días.", a: 3, s: -1 },
+    { t: "Las privatizaciones de los años 90 (YPF, teléfonos, Aerolíneas, jubilaciones) fueron un acierto.", a: 0, s: 1 },
+    { t: "La estatización de YPF en 2012 fue una buena decisión.", a: 0, s: -1 },
+    { t: "Las jubilaciones deberían volver a un sistema de capitalización privada, como las AFJP.", a: 0, s: 1 },
+    { t: "La Ley de Medios, que limitó la concentración de medios audiovisuales, fue una buena idea.", a: 0, s: -1 },
+    { t: "La convertibilidad (un peso, un dólar) fue positiva para el país.", a: 2, s: 1 },
+    { t: "Argentina debería salir del Mercosur para negociar tratados por su cuenta.", a: 2, s: 1 },
+    { t: "El Estado debería ser laico, sin vínculos institucionales ni financiamiento a la Iglesia católica.", a: 1, s: -1 },
+    { t: "Hay que dar amnistía o indulto a los condenados por delitos de la última dictadura.", a: 3, s: 1 },
+    { t: "Cada provincia debería poder autorizar actividades productivas, como la minería, en zonas de glaciares y ambiente periglacial.", a: 0, s: 1 },
+    { t: "La emergencia en discapacidad (pensiones y prestaciones) debe garantizarse por ley aunque aumente el gasto.", a: 0, s: -1 }
+  ];
+  var OPT = [
+    { l: "Muy en desacuerdo", v: -2 }, { l: "En desacuerdo", v: -1 }, { l: "Neutral / no sé", v: 0 },
+    { l: "De acuerdo", v: 1 }, { l: "Muy de acuerdo", v: 2 }
+  ];
+  // [Economía, Valores, Mundo, Orden] de -2 a +2.
+  // ev: A = leí un documento programático propio; B = leí solo la carta orgánica (estatuto, sin ideología) y estimé por trayectoria;
+  // C = no pude leer documentos del partido, estimación por trayectoria.
+  var P = [
+    { n: "La Libertad Avanza", f: "Libertarismo de derecha", c: [2, 1.7, 1.7, 1.8], cp: "2023: Milei ratificó que dolarizaría y cerraría el Banco Central, cuestionó la cifra de 30.000 desaparecidos y dijo que en los años 70 hubo una guerra con excesos del Estado. 2025: cerró la campaña en Rosario prometiendo estabilidad, lucha contra el narcotráfico y un Congreso que sostenga sus reformas; Santilli puso la seguridad como prioridad. Votaciones: sus diputados votaron a favor de la Ley Bases (2024), el Presupuesto 2026, la reforma laboral (135 a 115 en Diputados, 2026) y el Régimen Penal Juvenil, que baja de 16 a 14 años la edad de imputabilidad para delitos graves. En Davos 2025 Milei criticó la agenda feminista y ambientalista.", lk: [["Davos 2025", "https://hoydia.com.ar/politica/fuerte-critica-del-presidente-a-la-agenda-feminista-y-del-ambientalismo-en-davos"], ["Ley Bases: voto por bloque", "https://chequeado.com/el-explicador/diputados-sanciono-la-ley-bases-y-el-paquete-fiscal-como-voto-cada-bloque/"], ["Reforma laboral: votos en Diputados", "https://www.canal26.com/politica/2026/02/20/media-sancion-a-la-reforma-laboral-como-voto-cada-diputado/"], ["Régimen Penal Juvenil: votos en el Senado", "https://www.canal26.com/politica/2026/02/28/regimen-penal-juvenil-asi-voto-cada-senador-la-ley-que-bajara-la-edad-de-imputabilidad-a-14-anos/"], ["Debate presidencial 2023", "https://www.ellitoral.com/politica/debate-presidencial-argentina-elecciones-2023-dijo-milei-massa-bullrich-schiaretti-bregman-frases_0_X4DcGE2EMb.html"], ["Balotaje 2023", "https://eleconomista.com.ar/politica/objetivo-balotaje-massa-milei-cruzaron-golpes-picante-debate-presidencial-n68255"], ["Cierres de campaña 2025", "https://www.canal26.com/politica/2025/10/23/donde-cierran-campana-la-libertad-avanza-y-fuerza-patria-en-la-antesala-de-las-elecciones-del-26-de-octubre/"]], vv: [1, 1, 1, 1, -1, 1, -1], vt: "Su bloque votó a favor de las cuatro leyes del cuadro y es el principal impulsor de la agenda del Gobierno en el Congreso. Votó en contra de limitar los DNU (reforma de 2025). Senado (actas nominales): sus 21 senadores votaron a favor de la reforma laboral definitiva (27/2/2026, 42 a 28), del Régimen Penal Juvenil (44 a 27), del Presupuesto 2026 (artículos 1 a 10, 46 a 25) y de la reforma de la Ley de Glaciares (40 a 31); en la reforma de los DNU (4/9/2025) sus 8 senadores presentes votaron en contra.", pj: "Gran parte de lo que se trata en el Congreso viene del Poder Ejecutivo y no de legisladores individuales. Para sesiones extraordinarias (diciembre de 2025) el Gobierno nombró el Presupuesto 2026, la reforma laboral, la Ley de Inocencia Fiscal, una reforma del Código Penal con penas más duras y delitos imprescriptibles, parte de la reforma tributaria y cambios a la Ley de Glaciares. En febrero de 2026 preparaba unas 50 iniciativas más: Ley de Libertad Educativa, un compromiso de estabilidad fiscal que prohibiría el déficit, una ley de protección de la propiedad privada y una reforma política que podría suspender o eliminar las PASO.", pl: [["Agenda de extraordinarias, dic. 2025", "https://www.canal26.com/politica/2025/12/05/en-detalle-todas-las-reformas-que-javier-milei-quiere-aprobar-en-las-sesiones-extraordinarias/"], ["Unos 50 proyectos, feb. 2026", "https://www.diariodecuyo.com.ar/argentina/reformas-2026-el-gobierno-acelera-y-prepara-medio-centenar-de-proyectos-para-el-congreso-1836257.html"]], ev: "A", nt: "Plataforma 2023: recorte del gasto, privatizaciones, flexibilización laboral, dolarización, apertura comercial unilateral, baja de la edad de imputabilidad y fin de la obligatoriedad de la ESI." },
+    { n: "PRO", f: "Centroderecha liberal", c: [1.2, 0.4, 1.2, 1.6], cp: "2023: Bullrich criticó eliminar el Banco Central y los vouchers educativos de Milei, y reconoció su militancia juvenil en los 70. 2024: dijo que La Libertad Avanza ya había absorbido al PRO y que el PRO no debe ser oposición. Octubre de 2025: siete diputados cercanos a Bullrich dejaron el bloque del PRO para sumarse a LLA, lo que muestra una división interna sobre ese rumbo. Votaciones: apoyó la Ley Bases, el Presupuesto 2026 (12 diputados), la reforma laboral y el Régimen Penal Juvenil. Junio de 2026 (Letra P): Macri dijo que el rumbo del Gobierno es correcto pero pidió ejemplaridad, criticó el rechazo presidencial a la nominación judicial de Michelli y no descartó una candidatura en 2027. En octubre de 2025 el PRO había anunciado que tendría candidato propio.", lk: [["Ley Bases: voto por bloque", "https://chequeado.com/el-explicador/diputados-sanciono-la-ley-bases-y-el-paquete-fiscal-como-voto-cada-bloque/"], ["Reforma laboral: votos en Diputados", "https://www.canal26.com/politica/2026/02/20/media-sancion-a-la-reforma-laboral-como-voto-cada-diputado/"], ["Debate 2023", "https://misionesonline.net/2023/10/08/segundo-debate-presidencial-elecciones-2023/"], ["Entrevista a Bullrich 2024", "https://www.lmneuquen.com/pais/patricia-bullrich-los-tapones-punta-la-libertad-avanza-ya-absorbio-al-pro-n1128927"], ["Ruptura del bloque 2025", "https://www.tiempodesanjuan.com/politica/bullrich-rompe-el-pro-y-se-lleva-7-diputados-nacionales-la-libertad-avanza-n415625/amp"]], vv: [1, 1, 1, 1, 0, 0, 1], vt: "Sus diputados votaron a favor de las cuatro leyes. En julio de 2026 el Consejo del PRO condicionó su apoyo futuro a que se traten sus propios proyectos. En la reforma de los DNU (2025), sus senadores votaron a favor salvo una excepción y en Diputados no firmó dictamen. Senado (actas nominales): el bloque Frente PRO votó 3 a 0 a favor de la reforma laboral, el Régimen Penal Juvenil y el Presupuesto; en la Ley de Glaciares votó dividido (1 a favor, 2 en contra); en la reforma de los DNU votó 5 a 0 a favor.", pj: "Julio de 2026, agenda anunciada por el PRO. En Diputados (bloque de Ritondo): mayores penas por vandalismo rural, un plan de prevención del suicidio adolescente (Giampieri), desalojos más rápidos y sanciones a la usurpación, penas más duras por homicidio de menores durante un robo y bloqueadores de señal en cárceles. En el Senado: penas para denuncias falsas de violencia de género (Losada), actualizar la Ley de Salud Mental y cambiar el régimen de zona fría. También exige tratar Ficha Limpia y el financiamiento de partidos.", pl: [["Agenda del PRO, Letra P", "https://www.letrap.com.ar/mauricio-macri-lanzo-una-agenda-el-congreso-condicionar-javier-milei-n5424927/amp"]], ev: "B", nt: "La carta orgánica es solo un estatuto interno. Ubicación estimada por trayectoria." },
+    { n: "Unión Cívica Radical", f: "Radicalismo, centro", c: [0.4, -0.1, 0.4, 0.4], cp: "2025: Lousteau y Manes compitieron en la Ciudad con Ciudadanos Unidos (Provincias Unidas) defendiendo la educación y la salud públicas, la eficiencia estatal y el federalismo frente al gobierno nacional. En esa elección la UCR pasó de 14 a 6 diputados. Votaciones: sus bloques apoyaron la Ley Bases, la reforma laboral (10 senadores radicales a favor), el Régimen Penal Juvenil y el Presupuesto 2026 (6 diputados). Su discurso de campaña 2025 era más federalista y defensor de lo público que sus votos.", lk: [["Ley Bases: voto por bloque", "https://chequeado.com/el-explicador/diputados-sanciono-la-ley-bases-y-el-paquete-fiscal-como-voto-cada-bloque/"], ["Reforma laboral: votos en Diputados", "https://www.canal26.com/politica/2026/02/20/media-sancion-a-la-reforma-laboral-como-voto-cada-diputado/"], ["Campaña porteña 2025", "https://sumapolitica.com.ar/lousteau-y-manes-llevan-el-grito-federal-de-pullaro-y-los-gobernadores-a-las-elecciones-de-caba/"], ["Resultados UCR y CC", "https://www.lanacion.com.ar/politica/elecciones-2025-la-ucr-y-la-coalicion-civica-sufrieron-un-recorte-significativo-de-poder-nid27102025"]], vv: [1, 1, 1, 1, 0, 1, 1], vt: "El bloque radical votó a favor de las cuatro leyes, pero no es homogéneo: en octubre de 2024 doce diputados formaron un bloque propio (\"verdadero radicalismo\") por su disconformidad con la cercanía a Milei. En la reforma de los DNU (2025) hubo mayoría radical a favor en el Senado, con excepciones y ausencias; en Diputados el bloque que conducía De Loredo impulsó la abstención. Senado (actas nominales): sus 10 senadores votaron a favor de la reforma laboral, el Régimen Penal Juvenil y el Presupuesto 2026; en la Ley de Glaciares votaron 8 a favor y 2 en contra; en la reforma de los DNU, 9 a favor y 4 ausentes.", pj: "Agosto de 2024: el bloque que conducía De Loredo planeaba impulsar una reforma laboral que eliminara la cuota sindical obligatoria (con Tetaz presidiendo la comisión de Trabajo) y una iniciativa para agravar penas a quienes usan menores para delinquir, y algunos legisladores proponían que la sanción penal juvenil no fuera la primera respuesta. Fines de 2025: el diputado Lisandro Nieri (UCR, Mendoza) presentó un proyecto de eutanasia.", pl: [["Agenda del bloque UCR, ago. 2024", "https://www.letrap.com.ar/politica/la-ucr-aflojo-sus-internas-logro-el-financiamiento-universidades-y-prepara-una-agenda-propia-n5410581"], ["Ruptura del bloque, oct. 2024", "https://www.perfil.com/noticias/politica/finalmente-se-rompio-el-bloque-de-la-ucr-12-diputados-armaran-una-bancada-propia-disconformes-con-la-cercania-con-milei.phtml"]], ev: "B", nt: "La carta orgánica no tiene contenido programático; solo menciona democracia republicana y derechos humanos." },
+    { n: "Coalición Cívica ARI", f: "Centro republicano", c: [-0.3, -0.8, 0.4, -0.2], cp: "2025: la Coalición Cívica quedó sexta en la Ciudad con 1,83% y perdió las cuatro bancas bonaerenses que ponía en juego. Carrió dijo que su partido dio la batalla sabiendo que no tendría votos y que su causa republicana está por encima de los resultados. Votaciones: mayormente a favor de la Ley Bases; en el Presupuesto 2026 se abstuvo en general y votó en contra por artículos; en el Régimen Penal Juvenil impulsó cambios para separar a menores de adultos. Mayo de 2026 (El Ancasti): Carrió, retirada formalmente, dijo que Milei no tendrá un nuevo mandato, pidió que \"estabilice su temperamento\" y que se le dé tiempo.", lk: [["Ley Bases: voto por bloque", "https://chequeado.com/el-explicador/diputados-sanciono-la-ley-bases-y-el-paquete-fiscal-como-voto-cada-bloque/"], ["Presupuesto 2026: votos", "https://www.canal26.com/politica/2025/12/19/que-voto-cada-diputado-de-cara-a-la-aprobacion-del-presupuesto-2026-quienes-dieron-el-visto-bueno-y-quienes-estuvieron-en-contra/"], ["Resultados UCR y CC", "https://www.lanacion.com.ar/politica/elecciones-2025-la-ucr-y-la-coalicion-civica-sufrieron-un-recorte-significativo-de-poder-nid27102025"]], vv: [1, 0, null, 0, null, null, null], vt: "Votos divididos: mayormente a favor de la Ley Bases, abstención en general y rechazo por artículos en el Presupuesto 2026, y cambios propios al Régimen Penal Juvenil. No encontré su voto en la reforma laboral. En la reforma de los DNU (2025) firmó un dictamen propio y su diputado López habló a favor.", pj: "Julio de 2026: Ferraro rechazó la reforma política del Gobierno por considerarla una \"ley de lemas encubierta\" y propuso hacer optativas las PASO y debatir el financiamiento de campañas. No encontré un proyecto de ley propio reciente.", pl: [["Ferraro sobre la reforma política", "https://diariojornada.com.ar/419680/politica/la_coalicion_civica_rechaza_la_reforma_politica_del_gobierno"]], ev: "A", nt: "Bases de acción política: reforma tributaria progresiva, salud y educación universales, anticorrupción, inclusión de minorías y nuevas identidades. Es un texto fundacional y puede no reflejar su posición actual." },
+    { n: "Partido Justicialista", f: "Peronismo", c: [-1.2, -0.2, -1.1, -0.3], cp: "2023: Massa defendió su gestión en Economía, acusó a Milei de querer destruir el Banco Central y calificó a Thatcher como enemiga de la Argentina. 2025: Kicillof cerró la campaña diciendo que la motosierra fue un engaño y acusando influencia de JP Morgan en Economía; Taiana propuso debatir en el Hospital Garrahan por el desfinanciamiento de la salud. Votaciones: Unión por la Patria votó en contra de la Ley Bases, el Presupuesto 2026 (88 diputados), la reforma laboral y, en su mayoría, el Régimen Penal Juvenil, que criticó como punitivo y sin financiamiento. 2026: Kicillof arma el Movimiento Derecho al Futuro y preside el PJ bonaerense tras un acuerdo con el kirchnerismo.", lk: [["Ley Bases: voto por bloque", "https://chequeado.com/el-explicador/diputados-sanciono-la-ley-bases-y-el-paquete-fiscal-como-voto-cada-bloque/"], ["Presupuesto 2026: votos", "https://www.canal26.com/politica/2025/12/19/que-voto-cada-diputado-de-cara-a-la-aprobacion-del-presupuesto-2026-quienes-dieron-el-visto-bueno-y-quienes-estuvieron-en-contra/"], ["Reforma laboral: votos en Diputados", "https://www.canal26.com/politica/2026/02/20/media-sancion-a-la-reforma-laboral-como-voto-cada-diputado/"], ["Balotaje 2023", "https://eleconomista.com.ar/politica/objetivo-balotaje-massa-milei-cruzaron-golpes-picante-debate-presidencial-n68255"], ["Cierres de campaña 2025", "https://www.canal26.com/politica/2025/10/23/donde-cierran-campana-la-libertad-avanza-y-fuerza-patria-en-la-antesala-de-las-elecciones-del-26-de-octubre/"], ["Taiana y Santilli", "https://www.infobae.com/politica/2025/10/06/elecciones-2025-en-vivo-jorge-taiana-le-respondio-a-santilli-y-acepto-un-debate-de-candidatos/"]], vv: [-1, -1, -1, -1, 1, -1, 1], vt: "Unión por la Patria votó en contra de las cuatro leyes (en el Régimen Penal Juvenil hubo votos aislados a favor del artículo de los 14 años). Hay un grupo dialoguista dentro del bloque que se diferencia del kirchnerismo en la reforma laboral. Apoyó limitar los DNU: la reforma pasó el Senado 56 a 8 con 2 abstenciones (4/9/2025) y Diputados la aprobó en general 140 a 80 con 17 abstenciones (8/10/2025). Senado (actas nominales): el bloque Justicialista votó 0 a 21 contra la reforma laboral definitiva, el Régimen Penal Juvenil y el Presupuesto 2026 (artículos 1 a 10); 2 a 19 en contra en Glaciares; y 14 a 0 a favor de limitar los DNU y de habilitar la insistencia en la emergencia en discapacidad.", pj: "18 de febrero de 2026: el bloque presentó una \"contrarreforma\" laboral con jornada máxima de 7 horas, 10% de las ganancias para los trabajadores, derecho a desconexión, presunción de relación laboral para repartidores de apps, salario mínimo igual a la canasta básica familiar y prohibición de decisiones automatizadas por algoritmos. Enero de 2026: un grupo liderado por Michel y Tolosa Paz propuso un crédito de ANSES para refinanciar deudas familiares y una reforma laboral alternativa con jornada de 40 horas. Mayo de 2026: Pichetto, Strada, Palazzo, Siley y Cisneros presentaron una ley de salvataje para pymes con emergencia por un año y 50% de baja en tarifas.", pl: [["Contrarreforma laboral, feb. 2026", "https://www.tiempodesanjuan.com/politica/el-proyecto-reforma-laboral-del-peronismo-jornada-mas-corta-participacion-ganancias-licencias-ampliadas-y-aguinaldo-monotributistas-n423431"], ["Grupo dialoguista, ene. 2026", "https://www.letrap.com.ar/politica/diputados-un-grupo-rebelde-union-la-patria-arma-su-propia-agenda-y-desafia-la-conduccion-n5421543"], ["Salvataje pymes, mayo 2026", "https://eleconomista.com.ar/politica/pichetto-presento-proyecto-salvataje-nacional-mipymes-n94751"]], ev: "A", nt: "Los principios hablan de justicia social, soberanía plena y unidad americana, sin fijar política económica. El partido agrupa sectores muy distintos." },
+    { n: "Frente Renovador", f: "Peronismo moderado", c: [-0.4, 0.2, -0.2, 0.5], cp: "Diciembre de 2025 (C5N): tras la derrota legislativa, Massa dijo que quiere reordenar el peronismo, se reunió con la CGT por la reforma laboral y planteó discutir los costos impositivos de las empresas. Propone su propia reforma tributaria, una nueva ley de coparticipación y combatir el trabajo informal, y pide a la oposición ofrecer propuestas alternativas. Algunos diputados cercanos apoyaron el artículo de los 14 años en el Régimen Penal Juvenil pero no la votación general.", lk: [["Régimen Penal Juvenil: votos en el Senado", "https://www.canal26.com/politica/2026/02/28/regimen-penal-juvenil-asi-voto-cada-senador-la-ley-que-bajara-la-edad-de-imputabilidad-a-14-anos/"]], vv: [null, null, null, 0, null, null, null], vt: "Sus diputados integran el bloque de Unión por la Patria; algunos respaldaron el artículo de los 14 años del Régimen Penal Juvenil pero no la votación general. No pude separar su voto individual en las otras leyes.", ev: "C", nt: "No pude leer un documento propio. Estimación por trayectoria y por sus posiciones públicas de 2025." },
+    { n: "Hacemos", f: "Peronismo federal, centro", c: [0.4, 0.1, 0, 0.5], cp: "2023: Schiaretti dijo que los dos últimos gobiernos dañaron la economía y propuso terminar con los privilegios del AMBA en el reparto de recursos. Votaciones: la mayoría de su bloque (Hacemos Coalición Federal) votó a favor de la Ley Bases. 2026: Schiaretti dijo que respaldaría públicamente la reforma laboral y no estuvo en la votación del 20 de febrero; Llaryora dio libertad de acción a los diputados cordobeses.", lk: [["Ley Bases: voto por bloque", "https://chequeado.com/el-explicador/diputados-sanciono-la-ley-bases-y-el-paquete-fiscal-como-voto-cada-bloque/"], ["Debate presidencial 2023", "https://www.ellitoral.com/politica/debate-presidencial-argentina-elecciones-2023-dijo-milei-massa-bullrich-schiaretti-bregman-frases_0_X4DcGE2EMb.html"]], vv: [1, null, 0, null, null, null, null], vt: "La mayoría de su bloque votó a favor de la Ley Bases. En la reforma laboral hubo división: Schiaretti dijo que la apoyaría y se ausentó, y algunos diputados cordobeses la aprobaron en general con rechazos por artículos.", ev: "C", nt: "No pude leer un documento propio. Estimación por trayectoria." },
+    { n: "Partido Libertario", f: "Liberalismo libertario", c: [1.8, 0.2, 1.4, 1.2], cp: "2025 (Córdoba): Spaccesi y Cassinerio se presentaron como el partido de Milei sin los Menem. Apoyaron sus reformas y propusieron bajar la edad de imputabilidad, endurecer penas, proteger legalmente a las fuerzas de seguridad, reformar el sistema previsional y repartir los subsidios de transporte y energía entre los 24 distritos.", lk: [["Entrevista en AM 1050", "https://www.lavozdesanjusto.com.ar/somos-el-partido-de-milei-sin-los-menem-remarcaron-spaccesi-y-cassinerio"]], ev: "C", nt: "No pude leer su declaración de principios. Estimación por trayectoria." },
+    { n: "UCeDé", f: "Liberalismo conservador", c: [1.2, 0.9, 0.6, 0.5], cp: "Diciembre de 2024 (La Política Online): Fernando Burlando, que encabezó su lista bonaerense bajo la presidencia de Andrés Passamonti, dijo defender principios liberales \"sin extremismos\".", lk: [], ev: "A", nt: "Plataforma sin fecha y de fiabilidad dudosa: empresa privada, federalismo, valores cristianos y protección de la familia. Moderé la ubicación previa." },
+    { n: "Partido Demócrata", f: "Conservadurismo liberal", c: [1.2, 0.8, 1, 0.8], cp: "2025 (Mendoza, Sitio Andino): fue uno de los primeros apoyos provinciales de Milei. Amenazó con romper con LLA si esta se aliaba con la UCR de Cornejo, a quien calificó de populista e intervencionista. Se sumó a un frente libertario con el Partido Libertario y busca un frente \"liberal puro\".", lk: [], ev: "C", nt: "No pude leer su plataforma. Estimación por trayectoria y por sus posiciones públicas de 2025 en Mendoza." },
+    { n: "Demócrata Progresista", f: "Liberalismo progresista", c: [0.3, -0.7, 0.6, -0.5], cp: "Enero de 2025 (prensa santafesina): se sumó a Unidos para Cambiar Santa Fe, la alianza del gobernador Pullaro, con Gabriel Real como secretario general. No encontré declaraciones de contenido ideológico.", lk: [], ev: "C", nt: "No pude leer su declaración de principios. Estimación por trayectoria." },
+    { n: "MID", f: "Desarrollismo", c: [0.7, 0.3, -0.4, 0.5], cp: "2022 (Mendoza, Sitio Andino): planteó el desarrollo a través del crecimiento productivo, la minería y los recursos naturales, rechazó los populismos de derecha e izquierda y buscó alianzas con radicales gobernables. Votaciones: integró el bloque que votó a favor del Presupuesto 2026, la reforma laboral y el Régimen Penal Juvenil.", lk: [["Reforma laboral: votos en Diputados", "https://www.canal26.com/politica/2026/02/20/media-sancion-a-la-reforma-laboral-como-voto-cada-diputado/"]], vv: [null, 1, 1, 1, null, null, null], vt: "Integró el bloque que votó a favor del Presupuesto 2026, la reforma laboral y el Régimen Penal Juvenil (dentro de Fuerzas del Cambio). No encontré su voto en la Ley Bases.", ev: "C", nt: "No pude leer su declaración de principios. Estimación por trayectoria, discurso de 2022 y votos de 2025-2026." },
+    { n: "Partido Socialista", f: "Socialdemocracia", c: [-0.9, -1.2, 0, -1.0], cp: "2025: Paulón, que compitió en la Ciudad por Movimiento Ciudadano, defendió un socialismo democrático y dijo que Milei degrada al Congreso y se acerca a un esquema autocrático. 2026: el presidente provincial del PS dijo que el partido está en la vereda opuesta a Milei, aunque integra la alianza de Pullaro en Santa Fe.", lk: [["Entrevista a Paulón 2025", "https://www.letrap.com.ar/politica/esteban-paulon-la-ciudad-buenos-aires-sigue-siendo-abierta-diversa-y-progresista-n5419317"], ["Aniversario del PS 2026", "https://www.lapoliticaonline.com/santa-fe/los-socialistas-le-advierten-a-pullaron-que-no-aceptaran-un-acuerdo-con-milei/"]], vv: [-1, null, null, null, null, null, null], vt: "Sus diputados Fein y Paulón votaron en contra de la Ley Bases. Paulón integra el bloque Provincias Unidas, que se abstuvo mayormente en el Presupuesto 2026 y se dividió en la reforma laboral; no pude aislar su voto personal en esas leyes.", pj: "26 de mayo de 2026: Paulón presentó un proyecto para regular la Asistencia Médica para Morir (eutanasia y suicidio asistido) para personas con enfermedades graves e incurables, a partir de los 16 años, con equipo interdisciplinario y registro nacional.", pl: [["Proyecto de eutanasia, Ámbito", "https://www.ambito.com/politica/diputados-presentaron-un-proyecto-legalizar-la-eutanasia-y-la-muerte-asistida-n6281785"]], ev: "A", nt: "El texto que leí es la declaración histórica de 1896 (propiedad colectiva de los medios de producción, vía electoral). Mantuve una ubicación socialdemócrata moderna." },
+    { n: "Frente Grande", f: "Centroizquierda", c: [-1.3, -1.3, -1.2, -1.2], ev: "B", nt: "La carta orgánica es organizativa: exige paridad de género y excluye a procesados por corrupción. Ubicación estimada." },
+    { n: "Nuevo Encuentro", f: "Centroizquierda", c: [-1.3, -1.5, -1.2, -1.2], cp: "Enero de 2024 (Letra P): Sabbatella calificó de inconstitucionales el DNU 70/23 y la ley ómnibus, dijo que el Gobierno estaba \"cocinando la entrega total del país\" y criticó su postura sobre el cambio climático y el feminismo.", lk: [], ev: "C", nt: "No pude leer un documento propio. Estimación por trayectoria." },
+    { n: "Partido Intransigente", f: "Centroizquierda nacional", c: [-1.5, -0.6, -1.5, -0.8], ev: "A", nt: "Su carta orgánica denuncia la dependencia y propone un humanismo liberador con socialización de la riqueza y del poder." },
+    { n: "Libres del Sur", f: "Centroizquierda", c: [-1.2, -1.2, -1.2, -1], ev: "C", nt: "No pude leer un documento propio. Estimación por trayectoria." },
+    { n: "Partido de la Victoria", f: "Peronismo de izquierda", c: [-1.5, -1, -1.4, -0.6], cp: "2026: Abal Medina sostuvo, según el título de El Economista, que si el peronismo no cambia será funcional a Milei, y pidió cuidar a Kicillof de las internas.", lk: [["Abal Medina, El Economista", "https://eleconomista.com.ar/politica/abal-medina-si-cambia-peronismo-sera-funcional-milei-n93078"]], ev: "C", nt: "No encontré un documento propio. Estimación por trayectoria." },
+    { n: "Patria Grande", f: "Izquierda popular", c: [-1.7, -1.6, -1.5, -1.2], cp: "2024-2025 (Letra P y A24): Grabois impulsó un partido propio en Entre Ríos fuera del PJ con un \"Plan de Desarrollo Humano\" de ocho ejes (salud, educación, trabajo, integración sociourbana, desarrollo económico, ambiente y feminismo). En 2023 compitió contra Massa en las PASO de Unión por la Patria; en agosto de 2025 aún no confirmaba su ingreso a Fuerza Patria.", lk: [], ev: "C", nt: "No encontré un documento propio. Estimación por trayectoria." },
+    { n: "Partido Humanista", f: "Humanismo", c: [-1, -1.7, -0.8, -1.6], cp: "Marzo de 2025 (comunicado difundido por Pressenza): en su comunicado por el aniversario se definió como Humanismo Universalista, defendió los derechos de mujeres, disidencias, pueblos indígenas, migrantes y minorías, llamó a la solidaridad no violenta y criticó a Milei, Trump y Musk. No incluye propuestas económicas ni de seguridad.", lk: [], ev: "C", nt: "No encontré un documento propio. Estimación por trayectoria." },
+    { n: "Partido Comunista", f: "Comunismo", c: [-1.9, -0.9, -1.9, -1.2], ev: "A", nt: "Declaración de principios: revolución socialista, antiimperialismo e internacionalismo. No fija posiciones sobre familia ni seguridad." },
+    { n: "Partido Obrero", f: "Izquierda trotskista", c: [-2, -1.7, -2, -1.9], cp: "2023: Solano propuso romper con el FMI, no pagar la deuda, estatizar banca y comercio exterior, un salario mínimo igual a la canasta familiar, jubilación del 82% móvil y elección popular de jueces. Rechazó la oferta de Milei de sumar a la izquierda a su gobierno. Votaciones: el Frente de Izquierda votó en contra de la Ley Bases, el Presupuesto 2026, la reforma laboral y el Régimen Penal Juvenil. 2025 (Santa Fe, Letra P): Carla Deiana encabezó una campaña que propuso nacionalizar la hidrovía, revocatoria de mandatos, elección popular de jueces y derogar la reforma previsional provincial.", lk: [["Ley Bases: voto por bloque", "https://chequeado.com/el-explicador/diputados-sanciono-la-ley-bases-y-el-paquete-fiscal-como-voto-cada-bloque/"], ["Reforma laboral: votos en Diputados", "https://www.canal26.com/politica/2026/02/20/media-sancion-a-la-reforma-laboral-como-voto-cada-diputado/"], ["Programa 2023", "https://www.tiempoar.com.ar/ta_article/partido-obrero-mst-jorge-macri/amp/"], ["Respuesta a Milei", "https://eleconomista.com.ar/politica/la-izquierda-respondio-propuestas-javier-milei-integrar-su-eventual-gobierno-n67620"]], vv: [-1, -1, -1, -1, 1, null, null], vt: "Los diputados del Frente de Izquierda votaron en contra de las cuatro leyes del cuadro. El Frente de Izquierda firmó el dictamen mayoritario de la reforma de los DNU.", pj: "Julio de 2026: Del Caño, Bregman, Del Plá y Pitrola (Frente de Izquierda) presentaron un proyecto de emergencia financiera de dos años para hogares endeudados: suspensión de embargos de salario, quita de deuda según ingresos y tope a las tasas de préstamos y tarjetas según los salarios registrados.", pl: [["Condonación de deudas familiares", "https://www.analisisdigital.com.ar/economia/2026/07/24/el-frente-de-izquierda-presento-un-proyecto-para-condonar-deudas-de-familias-endeudadas"]], ev: "A", nt: "Plataforma (distrito Chubut): estatización de banca, petroleras y comercio exterior, no pago de la deuda, salida del FMI, aborto legal, rechazo a bajar la imputabilidad." },
+    { n: "PTS", f: "Izquierda trotskista", c: [-2, -1.8, -2, -2], cp: "2023: Bregman defendió que la ESI siga siendo obligatoria y ratificó la cifra de 30.000 desaparecidos. 2025: cerró la campaña frente a la Embajada de Estados Unidos denunciando sometimiento al FMI y a Trump; Del Caño propuso una oposición sin beneficios para el Gobierno. Votaciones: el bloque del Frente de Izquierda votó en contra de la Ley Bases (con 5 diputados) y de la reforma laboral. Abril de 2024: Del Caño criticó el capítulo laboral de la ley.", lk: [["Ley Bases: voto por bloque", "https://chequeado.com/el-explicador/diputados-sanciono-la-ley-bases-y-el-paquete-fiscal-como-voto-cada-bloque/"], ["Reforma laboral: votos en Diputados", "https://www.canal26.com/politica/2026/02/20/media-sancion-a-la-reforma-laboral-como-voto-cada-diputado/"], ["Debate presidencial 2023", "https://www.ellitoral.com/politica/debate-presidencial-argentina-elecciones-2023-dijo-milei-massa-bullrich-schiaretti-bregman-frases_0_X4DcGE2EMb.html"], ["Cierre de campaña 2025", "https://www.letrap.com.ar/politica/frente-izquierda-myriam-bregman-y-del-cano-cerraron-su-campana-frente-la-embajada-estados-unidos-n5419673"]], vv: [-1, -1, -1, -1, 1, null, null], vt: "Los diputados del Frente de Izquierda votaron en contra de las cuatro leyes del cuadro. El Frente de Izquierda firmó el dictamen mayoritario de la reforma de los DNU.", pj: "Julio de 2026: el proyecto de emergencia financiera para familias endeudadas lo encabezó Del Caño junto con Bregman, Del Plá y Pitrola. Mayo de 2026: Bregman y Del Caño volvieron a presentar un proyecto para legalizar la marihuana, según la prensa de la época.", pl: [["Condonación de deudas familiares", "https://www.analisisdigital.com.ar/economia/2026/07/24/el-frente-de-izquierda-presento-un-proyecto-para-condonar-deudas-de-familias-endeudadas"], ["Legalización de la marihuana, mayo 2026", "https://www.pregon.com.ar/nota/-66254/2026/05/la-izquierda-reaviva-el-debate-en-el-congreso-por-la-legalizaciyoacuten-de-la-marihuana"]], ev: "B", nt: "La carta orgánica es organizativa, con identidad socialista. Ubicación estimada por el programa conocido del Frente de Izquierda." },
+    { n: "Izquierda Socialista", f: "Izquierda trotskista", c: [-1.8, -1.4, -1.8, -1.3], vv: [-1, -1, -1, -1, 1, null, null], vt: "Su diputado integra el bloque del Frente de Izquierda, que votó en contra de las cuatro leyes. El Frente de Izquierda firmó el dictamen mayoritario de la reforma de los DNU.", ev: "A", nt: "Bases: planificación estatal, nacionalización de banca y energía, moratoria de la deuda, política exterior independiente. No trata seguridad." },
+    { n: "MST", f: "Izquierda trotskista", c: [-1.8, -1.4, -1.8, -1.3], ev: "A", nt: "Bases casi idénticas a las de Izquierda Socialista; tampoco tratan seguridad pública." }
+  ];
+
+  // Votaciones: q = [índice de pregunta, signo]; estar de acuerdo con la pregunta (con ese signo) empuja a favor de la ley.
+  var VOTES = [
+    { n: "Ley Bases (2024)", q: [[0, 1], [4, -1], [12, 1], [28, 1]], rel: "gasto público, empresas estatales, mercado y baja de impuestos" },
+    { n: "Presupuesto 2026", q: [[0, 1], [24, -1], [28, 1]], rel: "gasto público, financiamiento de jubilaciones y universidades, e impuestos" },
+    { n: "Reforma laboral (2026)", q: [[20, 1], [16, -1], [12, 1]], rel: "flexibilización laboral, sindicatos y regulación del mercado" },
+    { n: "Régimen Penal Juvenil (2026)", q: [[3, 1], [23, 1]], rel: "edad de punibilidad y dureza de las penas" },
+    { n: "Reforma de los DNU (2025)", q: [[32, -1], [33, 1]], rel: "el uso y los límites de los decretos de necesidad y urgencia" },
+    { n: "Ley de Glaciares (Senado, 2026)", q: [[42, 1]], rel: "el uso productivo de zonas con glaciares" },
+    { n: "Emergencia en discapacidad (Senado, 2025)", q: [[43, 1]], rel: "el financiamiento de la emergencia en discapacidad" }
+  ];
+  function stances() {
+    return VOTES.map(function (v) {
+      var t = 0; v.q.forEach(function (x) { t += x[1] * (ans[x[0]] || 0); });
+      var m = t / v.q.length;
+      return m >= 0.5 ? 1 : (m <= -0.5 ? -1 : 0);
+    });
+  }
+
+  var views = {};
+  [].forEach.call(document.querySelectorAll("[data-view]"), function (el) { views[el.getAttribute("data-view")] = el; });
+  function show(name) { for (var k in views) views[k].classList.toggle("on", k === name); window.scrollTo(0, 0); }
+  var $ = function (id) { return document.getElementById(id); };
+
+  var ans = [], i = 0;
+
+  function renderQ() {
+    $("qnum").textContent = (i + 1) + " / " + Q.length;
+    $("bar").style.width = (i / Q.length * 100) + "%";
+    $("qtext").textContent = Q[i].t;
+    $("back").style.visibility = i === 0 ? "hidden" : "visible";
+    var box = $("opts"); box.innerHTML = "";
+    OPT.forEach(function (o) {
+      var b = document.createElement("button");
+      b.className = "opt"; b.type = "button";
+      b.setAttribute("aria-pressed", ans[i] === o.v ? "true" : "false");
+      b.innerHTML = '<span class="box"></span><span></span>';
+      b.lastChild.textContent = o.l;
+      b.addEventListener("click", function () {
+        ans[i] = o.v;
+        if (i < Q.length - 1) { i++; renderQ(); } else { finish(); }
+      });
+      box.appendChild(b);
+    });
+  }
+
+  function score() {
+    var sum = [0, 0, 0, 0], n = [0, 0, 0, 0];
+    Q.forEach(function (q, k) { sum[q.a] += q.s * (ans[k] || 0); n[q.a]++; });
+    return sum.map(function (s, a) { return s / n[a]; });
+  }
+
+  function side(v, a) {
+    var m = Math.abs(v);
+    if (m < 0.35) return "equilibrado";
+    var name = v < 0 ? AX[a].lo : AX[a].hi;
+    return (m > 1.2 ? "marcadamente " : "") + name.toLowerCase();
+  }
+
+  function finish() {
+    var me = score();
+    $("bar").style.width = "100%";
+    var parts = me.map(function (v, a) { return AX[a].k.toLowerCase() + ": " + side(v, a); });
+    $("headline").textContent = parts.join(" · ");
+
+    var ax = $("axes"); ax.innerHTML = "";
+    me.forEach(function (v, a) {
+      var d = document.createElement("div"); d.className = "axis";
+      var pos = (v + 2) / 4 * 100;
+      d.innerHTML = '<div class="labels"><span>' + AX[a].lo + '</span><b>' + AX[a].k + '</b><span>' + AX[a].hi + '</span></div>' +
+        '<div class="track"><span class="pin" style="left:' + pos.toFixed(1) + '%"></span></div>' +
+        '<div class="val">' + (v > 0 ? "+" : "") + v.toFixed(1) + ' de −2 a +2</div>';
+      ax.appendChild(d);
+    });
+
+    var st = stances();
+    var ranked = P.map(function (p) {
+      var d = 0; for (var a = 0; a < 4; a++) d += Math.pow(p.c[a] - me[a], 2);
+      d = Math.sqrt(d);
+      var ok = 0, n = 0;
+      if (p.vv) st.forEach(function (x, k) { var y = p.vv[k]; if (x !== 0 && y !== null && y !== 0) { n++; if (x === y) ok++; } });
+      return { p: p, pct: Math.round(Math.max(0, 1 - d / 6) * 100), vm: [ok, n] };
+    }).sort(function (x, y) { return y.pct - x.pct; });
+
+    function row(r, top) {
+      var d = document.createElement("div"); d.className = "match" + (top ? " top" : "");
+      var nm = document.createElement("span"); nm.className = "name"; nm.textContent = r.p.n;
+      var bd = document.createElement("span"); bd.className = "ev " + r.p.ev.toLowerCase();
+      bd.textContent = r.p.ev === "A" ? "doc. propio" : (r.p.ev === "B" ? "estatuto" : "estimado");
+      nm.appendChild(bd);
+      var pc = document.createElement("span"); pc.className = "pct"; pc.textContent = r.pct + "%";
+      var tg = document.createElement("span"); tg.className = "tag"; tg.textContent = r.p.f;
+      var br = document.createElement("div"); br.className = "bar"; br.innerHTML = '<i style="width:' + r.pct + '%"></i>';
+      var nt = document.createElement("span"); nt.className = "nt"; nt.textContent = r.p.nt;
+      d.appendChild(nm); d.appendChild(pc); d.appendChild(tg); d.appendChild(nt);
+      if (r.p.cp) {
+        var cp = document.createElement("div"); cp.className = "cp";
+        var cb = document.createElement("b"); cb.textContent = "Campañas y dichos";
+        cp.appendChild(cb); cp.appendChild(document.createTextNode(r.p.cp)); d.appendChild(cp);
+        var lk = document.createElement("div"); lk.className = "lk";
+        r.p.lk.forEach(function (l) {
+          var a = document.createElement("a"); a.href = l[1]; a.target = "_blank"; a.rel = "noopener"; a.textContent = l[0]; lk.appendChild(a);
+        });
+        d.appendChild(lk);
+      }
+      if (r.p.vt) {
+        var vt = document.createElement("div"); vt.className = "cp";
+        var vb = document.createElement("b"); vb.textContent = "Cómo votan sus legisladores";
+        vt.appendChild(vb); vt.appendChild(document.createTextNode(r.p.vt));
+        if (r.vm && r.vm[1] > 0) {
+          var mm = document.createElement("div"); mm.className = "vm";
+          mm.textContent = "Según tus respuestas, coincidís con su voto en " + r.vm[0] + " de " + r.vm[1] + " votaciones en las que tenés una postura clara.";
+          vt.appendChild(mm);
+        }
+        d.appendChild(vt);
+      }
+      if (r.p.pj) {
+        var pj = document.createElement("div"); pj.className = "cp";
+        var pb = document.createElement("b"); pb.textContent = "Proyectos que presentan";
+        pj.appendChild(pb); pj.appendChild(document.createTextNode(r.p.pj)); d.appendChild(pj);
+        if (r.p.pl) {
+          var pk = document.createElement("div"); pk.className = "lk";
+          r.p.pl.forEach(function (l) {
+            var a = document.createElement("a"); a.href = l[1]; a.target = "_blank"; a.rel = "noopener"; a.textContent = l[0]; pk.appendChild(a);
+          });
+          d.appendChild(pk);
+        }
+      } else if (r.p.vt) {
+        var np = document.createElement("div"); np.className = "cp";
+        var nb = document.createElement("b"); nb.textContent = "Proyectos que presentan";
+        np.appendChild(nb); np.appendChild(document.createTextNode("No encontré proyectos recientes de sus legisladores en fuentes verificables."));
+        d.appendChild(np);
+      }
+      d.appendChild(br);
+      return d;
+    }
+    var top = $("top"), rest = $("rest"); top.innerHTML = ""; rest.innerHTML = "";
+    ranked.slice(0, 5).forEach(function (r, k) { top.appendChild(row(r, k < 3)); });
+    ranked.slice(5).forEach(function (r) { rest.appendChild(row(r, false)); });
+    var vb = $("votebox"); vb.innerHTML = "";
+    VOTES.forEach(function (v, k) {
+      var li = document.createElement("li");
+      var me2 = st[k] === 1 ? "tendrías una postura a favor" : (st[k] === -1 ? "tendrías una postura en contra" : "tu postura no es clara");
+      var fav = [], con = [];
+      P.forEach(function (p) { if (p.vv && p.vv[k] === 1) fav.push(p.n); if (p.vv && p.vv[k] === -1) con.push(p.n); });
+      li.innerHTML = "<b></b><br><span></span>";
+      li.firstChild.textContent = v.n + ": " + me2;
+      li.lastChild.textContent = "Según tus respuestas sobre " + v.rel + ". Bloques a favor: " + (fav.join(", ") || "ninguno relevado") + ". En contra: " + (con.join(", ") || "ninguno relevado") + ".";
+      vb.appendChild(li);
+    });
+    rest.hidden = true; $("toggle").textContent = "Ver los 25";
+
+    drawMap(me, ranked.slice(0, 3).map(function (r) { return r.p.n; }));
+    show("result");
+  }
+
+  function drawMap(me, topNames) {
+    var W = 560, H = 440, L = 44, R = 16, T = 16, B = 44;
+    var iw = W - L - R, ih = H - T - B;
+    function X(e) { return L + (e + 2) / 4 * iw; }
+    function Y(v) { return T + (2 - v) / 4 * ih; }
+    var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Mapa de partidos en los ejes de economía y valores">';
+    s += '<rect x="' + L + '" y="' + T + '" width="' + iw + '" height="' + ih + '" fill="none" class="linef" stroke-width="1"/>';
+    s += '<line x1="' + X(0) + '" y1="' + T + '" x2="' + X(0) + '" y2="' + (T + ih) + '" class="linef" stroke-width="1"/>';
+    s += '<line x1="' + L + '" y1="' + Y(0) + '" x2="' + (L + iw) + '" y2="' + Y(0) + '" class="linef" stroke-width="1"/>';
+    s += '<text x="' + L + '" y="' + (H - 18) + '" font-size="12" class="mutedf">← Estado presente</text>';
+    s += '<text x="' + (L + iw) + '" y="' + (H - 18) + '" font-size="12" text-anchor="end" class="mutedf">Mercado libre →</text>';
+    s += '<text x="' + (L + iw / 2) + '" y="' + (H - 4) + '" font-size="12" text-anchor="middle" class="ink">Economía</text>';
+    s += '<text x="12" y="' + (T + 12) + '" font-size="12" class="mutedf" transform="rotate(-90 12 ' + (T + 12) + ')" text-anchor="end">Conservador →</text>';
+    s += '<text x="12" y="' + (T + ih) + '" font-size="12" class="mutedf" transform="rotate(-90 12 ' + (T + ih) + ')">← Progresista</text>';
+    P.forEach(function (p) {
+      var x = X(p.c[0]), y = Y(p.c[1]), isTop = topNames.indexOf(p.n) > -1;
+      s += '<circle cx="' + x + '" cy="' + y + '" r="' + (isTop ? 6 : 4.5) + '" fill="' + (isTop ? "var(--accent)" : "var(--muted)") + '" fill-opacity="' + (isTop ? 1 : 0.55) + '"><title>' + p.n + '</title></circle>';
+      if (isTop) {
+        var right = x < L + iw * 0.7;
+        s += '<text x="' + (right ? x + 10 : x - 10) + '" y="' + (y + 4) + '" font-size="12" font-weight="600" text-anchor="' + (right ? "start" : "end") + '" class="ink">' + p.n + '</text>';
+      }
+    });
+    var mx = X(me[0]), my = Y(me[1]);
+    s += '<circle cx="' + mx + '" cy="' + my + '" r="9" fill="var(--mark)" stroke="var(--paper)" stroke-width="3"/>';
+    s += '<text x="' + mx + '" y="' + (my - 15) + '" font-size="13" font-weight="700" text-anchor="middle" fill="var(--mark)">Vos</text>';
+    s += '</svg>';
+    $("map").innerHTML = s;
+  }
+
+  $("start").addEventListener("click", function () { ans = []; i = 0; renderQ(); show("quiz"); });
+  $("back").addEventListener("click", function () { if (i > 0) { i--; renderQ(); } });
+  $("again").addEventListener("click", function () { ans = []; i = 0; renderQ(); show("quiz"); });
+  $("toggle").addEventListener("click", function () {
+    var r = $("rest"); r.hidden = !r.hidden;
+    this.textContent = r.hidden ? "Ver los 25" : "Mostrar menos";
+  });
+})();
+</script>
+
+</body>
+</html>
