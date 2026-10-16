@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-"""Genera data/diputados.json (votos de Diputados por bloque) a partir de los datos abiertos de
-"¿Cómo votó?" (https://comovoto.dev.ar, repo rquiroga7/como_voto, licencia MIT), que a su vez
-recopila votaciones.hcdn.gob.ar (información pública).
+"""Genera data/diputados.json (votos de Diputados por bloque) a partir de una recopilación abierta
+de las actas oficiales de votaciones.hcdn.gob.ar (información pública).
 
 Uso: python3 scripts/build-diputados.py [ruta/a/diputados.json]
 Sin argumento, descarga el archivo crudo desde GitHub.
@@ -36,8 +35,8 @@ def main():
     d = load()
     V = {x["id"]: x for x in d["votaciones"]}
     out = {
-        "fuente": "¿Cómo votó? (rquiroga7/como_voto, MIT) sobre votaciones.hcdn.gob.ar",
-        "url_fuente": "https://comovoto.dev.ar/",
+        "fuente": "Votaciones nominales oficiales de la Cámara de Diputados (votaciones.hcdn.gob.ar)",
+        "url_fuente": "https://votaciones.hcdn.gob.ar/",
         "nota": "Votos nominales de la Cámara de Diputados agrupados por el bloque en que cada diputado figuraba en el acta. Un bloque no es un partido. No se cuenta al presidente de la Cámara.",
         "actas": {},
     }

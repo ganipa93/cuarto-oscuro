@@ -36,6 +36,6 @@
   "MST: <a href=\"https://old.pjn.gov.ar/cne/secelec/document/bases/2094-11-Bases_MST.pdf\">Bases de acción política</a>",
   "UCeDé: <a href=\"https://old.pjn.gov.ar/cne/secelec/document/plataformas/154-5-platUCD.pdf\">Plataforma electoral</a>",
   "Cartas orgánicas (PRO, UCR, Frente Grande, Partido Intransigente, PTS): <a href=\"https://www.argentina.gob.ar/partidos-politicos/cartas-organicas\">Dirección Nacional Electoral</a>",
-  "<a href=\"https://comovoto.dev.ar/\" target=\"_blank\" rel=\"noopener\">¿Cómo votó?</a> (Rodrigo Quiroga, <a href=\"https://github.com/rquiroga7/como_voto\" target=\"_blank\" rel=\"noopener\">código MIT</a>): recopilación de las actas nominales de Diputados y del Senado a partir de votaciones.hcdn.gob.ar y senado.gob.ar. De ahí salen las tablas de Diputados por bloque; los recuentos se rehacen desde los votos individuales y se contrastan con los totales de la prensa."
+  "<a href=\"https://votaciones.hcdn.gob.ar/\" target=\"_blank\" rel=\"noopener\">Votaciones de la Cámara de Diputados</a> y <a href=\"https://www.senado.gob.ar/votaciones/\" target=\"_blank\" rel=\"noopener\">del Senado</a>: actas nominales oficiales. De ahí salen las tablas por bloque; los recuentos se rehacen desde los votos individuales y se contrastan con los totales de la prensa."
  ]
 }

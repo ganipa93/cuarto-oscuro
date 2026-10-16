@@ -301,7 +301,7 @@
     if (v.acta && D.V.actas[v.acta]) { actaTable(box, "Senado", D.V.actas[v.acta]); any = true; }
     (v.actasD || []).forEach(function (k) { var x = D.DIP && D.DIP.actas[k]; if (x) { actaTable(box, "Diputados", x); any = true; } });
     if (!any) box.appendChild(el("p", "small muted", "No tengo el acta nominal de esta votación: las cifras salen de la prensa."));
-    if (D.DIP && (v.actasD || []).length) box.appendChild(el("p", "small muted", "Diputados: " + D.DIP.nota + " Datos de ¿Cómo votó? (comovoto.dev.ar), licencia MIT."));
+    if (D.DIP && (v.actasD || []).length) box.appendChild(el("p", "small muted", "Diputados: " + D.DIP.nota + " Fuente: votaciones nominales oficiales de Diputados (votaciones.hcdn.gob.ar)."));
     box.appendChild(Object.assign(el("p", "small"), {})).appendChild(reportLink("Votación " + v.n));
     var pl = D.P.filter(function (p) { return p.vv && p.vv[v.id] != null; });
     if (pl.length) {
@@ -356,7 +356,7 @@
     var box = $("extra"); box.innerHTML = "";
     box.style.cssText = "display:flex;flex-direction:column;gap:20px";
     box.appendChild(listCard("Qué campañas están relevadas", D.C.scope));
-    var nota = el("p", "small muted", "Las actas del Senado muestran el voto de cada senador y el conteo por bloque. Los bloques del Senado no son partidos: \"Justicialista\" y \"Frente PRO\" se asignaron al PJ y al PRO, y los bloques provinciales no se asignaron a ningún partido de la lista. Las tablas de Diputados por bloque salen de los datos abiertos de ¿Cómo votó? (comovoto.dev.ar), que recopila el sitio oficial de votaciones de Diputados; los totales coinciden con los de la prensa. En Diputados los bloques tampoco son partidos.");
+    var nota = el("p", "small muted", "Las actas del Senado muestran el voto de cada senador y el conteo por bloque. Los bloques del Senado no son partidos: \"Justicialista\" y \"Frente PRO\" se asignaron al PJ y al PRO, y los bloques provinciales no se asignaron a ningún partido de la lista. Las tablas de Diputados por bloque salen de las votaciones nominales oficiales de Diputados (votaciones.hcdn.gob.ar); los totales coinciden con los de la prensa. En Diputados los bloques tampoco son partidos.");
     box.appendChild(listCard("Senado: votos nominales relevados", D.C.senado, nota));
     box.appendChild(listCard("Votaciones del Congreso consideradas", D.C.congreso));
     box.appendChild(listCard("Documentos consultados", D.C.docs));
@@ -426,7 +426,7 @@
     var card = $("histcard");
     if (!D.HIST) { card.hidden = true; return; }
     card.hidden = false;
-    $("hist-note").textContent = D.HIST.nota + " Datos de ¿Cómo votó? (comovoto.dev.ar), licencia MIT.";
+    $("hist-note").textContent = D.HIST.nota + " Fuente: votaciones nominales oficiales de Diputados (votaciones.hcdn.gob.ar).";
     var sel = $("hsel");
     if (!sel.options.length) {
       D.HIST.items.forEach(function (it, k) { var o = el("option", null, it.n); o.value = k; sel.appendChild(o); });

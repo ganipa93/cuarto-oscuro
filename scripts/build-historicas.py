@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Genera data/historicas.json: votos nominales por bloque de leyes emblemáticas (Diputados y Senado),
-a partir de los datos abiertos de ¿Cómo votó? (https://comovoto.dev.ar, repo rquiroga7/como_voto, MIT).
+a partir de una recopilación abierta de las actas oficiales de votaciones.hcdn.gob.ar y senado.gob.ar.
 Uso: python3 scripts/build-historicas.py [dir con diputados.json y senadores.json]
 Códigos de voto: 1 afirmativo, 2 negativo, 3 abstención, 4 ausente, 5 presidente (no se cuenta).
 Los títulos son los del acta; no se agrega contexto que no esté en la fuente."""
@@ -50,7 +50,7 @@ def main():
     base = sys.argv[1] if len(sys.argv) > 1 else None
     D, S = load(base, "diputados.json"), load(base, "senadores.json")
     out = {
-        "fuente": "¿Cómo votó? (rquiroga7/como_voto, MIT) sobre votaciones.hcdn.gob.ar y senado.gob.ar",
+        "fuente": "Votaciones nominales oficiales de la Cámara de Diputados (votaciones.hcdn.gob.ar) y del Senado (senado.gob.ar)",
         "nota": "Votos nominales agrupados por el bloque en que cada legislador figuraba en el acta (se muestran los 12 bloques más grandes). Un bloque no es un partido. No se cuenta al presidente de la cámara. Los títulos son los del acta.",
         "items": [],
     }

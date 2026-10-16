@@ -38,4 +38,4 @@ npm test
 Para actualizar: editar el JSON, cambiar `asof` y `meta.updated`, correr `npm test` y hacer push a `main` (Vercel despliega solo).
 
 ## Límites
-Las votaciones nominales de Diputados vienen de los datos abiertos de [¿Cómo votó?](https://comovoto.dev.ar/) (MIT), porque el sitio oficial no permite la lectura automatizada; `python3 scripts/build-diputados.py` regenera `data/diputados.json` y `python3 scripts/build-historicas.py` regenera `data/historicas.json` (13 leyes emblemáticas, 2008-2025). Los bloques no son partidos. Las posiciones de los partidos son estimaciones.
+Las votaciones nominales de Diputados son las actas oficiales de [votaciones.hcdn.gob.ar](https://votaciones.hcdn.gob.ar/) y [senado.gob.ar](https://www.senado.gob.ar/votaciones/); se obtuvieron de una recopilación abierta, porque el sitio oficial no permite la lectura automatizada; `python3 scripts/build-diputados.py` regenera `data/diputados.json` y `python3 scripts/build-historicas.py` regenera `data/historicas.json` (13 leyes emblemáticas, 2008-2025). Los bloques no son partidos. Las posiciones de los partidos son estimaciones.
