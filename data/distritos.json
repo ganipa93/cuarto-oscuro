@@ -1,0 +1,890 @@
+{
+ "nota": "Esto no es el padrón completo: la Justicia Electoral reconoce además muchos partidos de distrito y hay más de 2.000 municipios. Acá figuran el gobierno de cada provincia, la fuerza con la que ganó y las fuerzas rivales que la prensa nombra, con fuente y fecha. Los gobernadores salen de una nota de octubre de 2026 y de la cobertura de cada elección; las fuerzas y resultados son los de esa elección y pueden haber cambiado. No ubiqué a estos partidos en los ejes: sin documentos propios relevados no hay base para estimarlo. Los municipios cargados son pocos y verificados; podés proponer más desde el enlace de cada ficha.",
+ "distritos": [
+  {
+   "n": "Buenos Aires",
+   "slug": "buenos-aires",
+   "gobierno": "Axel Kicillof",
+   "fuerzas": "Peronismo. Kicillof es presidente del PJ bonaerense y lanzó en 2025 su propio espacio, el Movimiento Derecho al Futuro.",
+   "partidos": [
+    {
+     "n": "Partido Justicialista bonaerense",
+     "nt": "Presidido por Kicillof según Perfil (28/4/2026).",
+     "src": [
+      [
+       "Perfil, 28/4/2026",
+       "https://www.perfil.com/noticias/modo-fontevecchia/tension-en-el-pj-armado-federal-y-nuevas-disputas-el-mapa-politico-rumbo-a-2027-ya-se-mueve-en-las-provincias-modof.phtml"
+      ]
+     ],
+     "nacional": "partido-justicialista"
+    },
+    {
+     "n": "Movimiento Derecho al Futuro",
+     "nt": "Espacio propio de Kicillof lanzado en febrero de 2025; busca integrarse al peronismo.",
+     "src": [
+      [
+       "La Nación, 22/2/2025",
+       "https://www.lanacion.com.ar/politica/axel-kicillof-lanzo-un-movimiento-propio-acompanado-por-intendentes-legisladores-y-sindicatos-nid22022025"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "La Nación: Kicillof lanzó un movimiento propio",
+     "https://www.lanacion.com.ar/politica/axel-kicillof-lanzo-un-movimiento-propio-acompanado-por-intendentes-legisladores-y-sindicatos-nid22022025"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Catamarca",
+   "slug": "catamarca",
+   "gobierno": "Raúl Jalil",
+   "fuerzas": "Peronismo de Catamarca. Jalil armó un bloque propio en Diputados al romper con Unión por la Patria. También compiten la UCR, el Frente Cívico y La Libertad Avanza.",
+   "partidos": [
+    {
+     "n": "Peronismo catamarqueño",
+     "nt": "Conducido por Jalil, Lucía Corpacci y Gustavo Saadi, el \"triángulo de hierro\" según Letra P. Hay una corriente interna, Grupo Esperanza.",
+     "src": [
+      [
+       "Letra P, 10/7/2026",
+       "https://www.letrap.com.ar/politica/catamarca-el-hermano-raul-jalil-y-un-ministro-provincial-pelean-la-intendencia-la-capital-n5425054"
+      ]
+     ],
+     "nacional": "partido-justicialista"
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Letra P, 10/7/2026",
+     "https://www.letrap.com.ar/politica/catamarca-el-hermano-raul-jalil-y-un-ministro-provincial-pelean-la-intendencia-la-capital-n5425054"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Chaco",
+   "slug": "chaco",
+   "gobierno": "Leandro Zdero",
+   "fuerzas": "Juntos por el Cambio en 2023, con Zdero afiliado a la UCR. Su rival fue el Frente Chaqueño del peronista Jorge Capitanich. En la capital, Resistencia, el candidato de Juntos por el Cambio era Roy Nikisch.",
+   "partidos": [
+    {
+     "n": "Juntos por el Cambio (Chaco)",
+     "nt": "Frente con el que Zdero ganó en 2023.",
+     "src": [
+      [
+       "Letra P, 14/9/2023",
+       "https://www.letrap.com.ar/politica/leandro-zdero-cerro-la-campana-chaco-maximiliano-pullaro-y-gustavo-valdes-n5403124"
+      ]
+     ],
+     "nacional": "union-civica-radical"
+    },
+    {
+     "n": "Frente Chaqueño",
+     "nt": "Frente peronista que respaldó a Capitanich en 2023.",
+     "src": [
+      [
+       "Letra P, 14/9/2023",
+       "https://www.letrap.com.ar/politica/leandro-zdero-cerro-la-campana-chaco-maximiliano-pullaro-y-gustavo-valdes-n5403124"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Letra P, 14/9/2023",
+     "https://www.letrap.com.ar/politica/leandro-zdero-cerro-la-campana-chaco-maximiliano-pullaro-y-gustavo-valdes-n5403124"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Chubut",
+   "slug": "chubut",
+   "gobierno": "Ignacio Torres",
+   "fuerzas": "Juntos por el Cambio en 2023. Rivales: Arriba Chubut (frente centrado en el peronismo provincial, liderado por Juan Pablo Luque), Por la Libertad Independiente Chubutense (vinculado por el artículo a Milei), el Frente de Izquierda y GEN.",
+   "partidos": [
+    {
+     "n": "Arriba Chubut",
+     "nt": "Frente peronista encabezado por Juan Pablo Luque, intendente de Comodoro Rivadavia.",
+     "src": [
+      [
+       "Diario de Cuyo, 30/7/2023",
+       "https://www.diariodecuyo.com.ar/argentina/Comicios-en-Chubut-gana-el-candidato-de-Juntos-por-el-Cambio-20230730-0021.html"
+      ]
+     ]
+    },
+    {
+     "n": "Generación para un Encuentro Nacional (GEN)",
+     "nt": "Presentó a Oscar Petersen como candidato a gobernador en 2023.",
+     "src": [
+      [
+       "Diario de Cuyo, 30/7/2023",
+       "https://www.diariodecuyo.com.ar/argentina/Comicios-en-Chubut-gana-el-candidato-de-Juntos-por-el-Cambio-20230730-0021.html"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Diario de Cuyo, 30/7/2023",
+     "https://www.diariodecuyo.com.ar/argentina/Comicios-en-Chubut-gana-el-candidato-de-Juntos-por-el-Cambio-20230730-0021.html"
+    ]
+   ],
+   "asof": "2026-10-16",
+   "municipios": [
+    {
+     "n": "Comodoro Rivadavia",
+     "jefe": "Juan Pablo Luque (intendente en 2023, según la nota)",
+     "nt": "Encabezó Arriba Chubut en la elección provincial de 2023.",
+     "src": [
+      [
+       "Diario de Cuyo, 30/7/2023",
+       "https://www.diariodecuyo.com.ar/argentina/Comicios-en-Chubut-gana-el-candidato-de-Juntos-por-el-Cambio-20230730-0021.html"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "n": "Ciudad de Buenos Aires",
+   "slug": "caba",
+   "gobierno": "Jorge Macri (jefe de Gobierno)",
+   "fuerzas": "PRO, dentro de Juntos por el Cambio en la elección de 2023. Su rival en esa elección fue Leandro Santoro, de Unión por la Patria, que se retiró del balotaje.",
+   "partidos": [
+    {
+     "n": "PRO",
+     "nt": "Partido del jefe de Gobierno según la cobertura de la elección de 2023.",
+     "src": [
+      [
+       "Bloomberg Línea, 24/10/2023",
+       "https://www.bloomberglinea.com/2023/10/24/santoro-se-bajo-del-balotaje-en-la-ciudad-de-buenos-aires-jorge-macri-sera-jefe-de-gobierno/"
+      ]
+     ],
+     "nacional": "pro"
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Bloomberg Línea, 24/10/2023",
+     "https://www.bloomberglinea.com/2023/10/24/santoro-se-bajo-del-balotaje-en-la-ciudad-de-buenos-aires-jorge-macri-sera-jefe-de-gobierno/"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Corrientes",
+   "slug": "corrientes",
+   "gobierno": "Juan Pablo Valdés",
+   "fuerzas": "Vamos Corrientes, oficialismo provincial. Ganó en primera vuelta en agosto de 2025 con alrededor del 52,7%. Segundo quedó el peronismo y tercero Encuentro por Corrientes (Eco), de Ricardo Colombi.",
+   "partidos": [
+    {
+     "n": "Vamos Corrientes",
+     "nt": "Oficialismo provincial, liderado por la familia Valdés.",
+     "src": [
+      [
+       "Dólar Hoy, 1/9/2025",
+       "https://dolarhoy.com/economia/valdes-gana-en-corrientes-2025-202591115557"
+      ]
+     ]
+    },
+    {
+     "n": "Encuentro por Corrientes (Eco)",
+     "nt": "Fuerza de Ricardo Colombi; tercera en 2025.",
+     "src": [
+      [
+       "Dólar Hoy, 1/9/2025",
+       "https://dolarhoy.com/economia/valdes-gana-en-corrientes-2025-202591115557"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Dólar Hoy, 1/9/2025",
+     "https://dolarhoy.com/economia/valdes-gana-en-corrientes-2025-202591115557"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Córdoba",
+   "slug": "cordoba",
+   "gobierno": "Martín Llaryora",
+   "fuerzas": "Hacemos Unidos por Córdoba, descripto como peronismo no kirchnerista. El rival principal en 2023 fue Luis Juez, de Juntos por el Cambio. También compitió Encuentro Vecinal Córdoba.",
+   "partidos": [
+    {
+     "n": "Hacemos Unidos por Córdoba",
+     "nt": "Frente oficialista, heredero de Juan Schiaretti.",
+     "src": [
+      [
+       "Diario de Cuyo, 26/6/2023",
+       "https://diariodecuyo.com.ar/argentina/El-schiarettismo-canta-victoria-en-la-renida-eleccion-de-Cordoba-20230626-0001.html"
+      ]
+     ],
+     "nacional": "hacemos"
+    },
+    {
+     "n": "Encuentro Vecinal Córdoba",
+     "nt": "Obtuvo cerca del 3% en la elección provincial de 2023.",
+     "src": [
+      [
+       "Diario de Cuyo, 26/6/2023",
+       "https://diariodecuyo.com.ar/argentina/El-schiarettismo-canta-victoria-en-la-renida-eleccion-de-Cordoba-20230626-0001.html"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Diario de Cuyo, 26/6/2023",
+     "https://diariodecuyo.com.ar/argentina/El-schiarettismo-canta-victoria-en-la-renida-eleccion-de-Cordoba-20230626-0001.html"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Entre Ríos",
+   "slug": "entre-rios",
+   "gobierno": "Rogelio Frigerio",
+   "fuerzas": "Juntos por el Cambio, con el sello Juntos por Entre Ríos, que puso fin a 20 años de gestión peronista en 2023. Su rival fue Adán Bahl, intendente de Paraná, por Más para Entre Ríos.",
+   "partidos": [
+    {
+     "n": "Juntos por Entre Ríos",
+     "nt": "Sello de Juntos por el Cambio con el que ganó Frigerio en 2023.",
+     "src": [
+      [
+       "Ámbito, 22/10/2023",
+       "https://www.ambito.com/politica/entre-rios-un-final-ajustado-rogelio-frigerio-gana-la-gobernacion-n5852936"
+      ]
+     ]
+    },
+    {
+     "n": "Más para Entre Ríos",
+     "nt": "Frente peronista de Adán Bahl en 2023.",
+     "src": [
+      [
+       "Ámbito, 22/10/2023",
+       "https://www.ambito.com/politica/entre-rios-un-final-ajustado-rogelio-frigerio-gana-la-gobernacion-n5852936"
+      ]
+     ]
+    },
+    {
+     "n": "Patria Grande (proceso de formación)",
+     "nt": "Juan Grabois armó un sello propio en Entre Ríos fuera de la interna del PJ.",
+     "src": [
+      [
+       "Letra P",
+       "https://www.letrap.com.ar/entre-rios/juan-grabois-se-despega-la-interna-del-pj-y-arma-sello-propio-rios-n5412163"
+      ]
+     ],
+     "nacional": "patria-grande"
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Ámbito, 22/10/2023",
+     "https://www.ambito.com/politica/entre-rios-un-final-ajustado-rogelio-frigerio-gana-la-gobernacion-n5852936"
+    ]
+   ],
+   "asof": "2026-10-16",
+   "municipios": [
+    {
+     "n": "Paraná",
+     "jefe": "Adán Bahl (intendente en 2023, según la nota)",
+     "nt": "Fue candidato a gobernador por Más para Entre Ríos.",
+     "src": [
+      [
+       "Ámbito, 22/10/2023",
+       "https://www.ambito.com/politica/entre-rios-un-final-ajustado-rogelio-frigerio-gana-la-gobernacion-n5852936"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "n": "Formosa",
+   "slug": "formosa",
+   "gobierno": "Gildo Insfrán",
+   "fuerzas": "Partido Justicialista, que ganó con casi 70% en 2023 en su octavo mandato consecutivo. La oposición fue el Frente Amplio Formoseño (Juntos por el Cambio) y Libertad, Trabajo y Progreso, de Francisco Paoltroni.",
+   "partidos": [
+    {
+     "n": "Partido Justicialista de Formosa",
+     "nt": "Gobierna la provincia; ganó también la legislatura y los municipios en 2023, según La Nación.",
+     "src": [
+      [
+       "La Nación, 26/6/2023",
+       "https://www.lanacion.com.ar/politica/quien-gano-en-las-elecciones-2023-en-formosa-nid26062023/"
+      ]
+     ],
+     "nacional": "partido-justicialista"
+    },
+    {
+     "n": "Libertad, Trabajo y Progreso",
+     "nt": "Espacio de Francisco Paoltroni.",
+     "src": [
+      [
+       "La Nación, 26/6/2023",
+       "https://www.lanacion.com.ar/politica/quien-gano-en-las-elecciones-2023-en-formosa-nid26062023/"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "La Nación, 26/6/2023",
+     "https://www.lanacion.com.ar/politica/quien-gano-en-las-elecciones-2023-en-formosa-nid26062023/"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Jujuy",
+   "slug": "jujuy",
+   "gobierno": "Carlos Sadir",
+   "fuerzas": "Frente Cambia Jujuy (cerca de 49,5% en 2023). Segundo quedó el Frente Justicialista y tercero el Frente de Izquierda – Unidad. Sadir sigue el modelo de Gerardo Morales; La Libertad Avanza tiene su propio espacio.",
+   "partidos": [
+    {
+     "n": "Frente Cambia Jujuy",
+     "nt": "Frente oficialista.",
+     "src": [
+      [
+       "Buenos Aires Herald, 8/5/2023",
+       "https://buenosairesherald.com/politics/local-elections-radicals-hold-jujuy-fdt-re-elected-in-la-rioja-passalacqua-returns-in-misiones"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Buenos Aires Herald, 8/5/2023",
+     "https://buenosairesherald.com/politics/local-elections-radicals-hold-jujuy-fdt-re-elected-in-la-rioja-passalacqua-returns-in-misiones"
+    ],
+    [
+     "Perfil, 28/4/2026",
+     "https://www.perfil.com/noticias/modo-fontevecchia/tension-en-el-pj-armado-federal-y-nuevas-disputas-el-mapa-politico-rumbo-a-2027-ya-se-mueve-en-las-provincias-modof.phtml"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "La Pampa",
+   "slug": "la-pampa",
+   "gobierno": "Sergio Ziliotto",
+   "fuerzas": "Frente Justicialista Pampeano (Frejupa), del peronismo. Rivales en 2023: la UCR por Juntos por el Cambio (Martín Berhongaray), Comunidad Organizada (con figuras del PRO) y el Frente de Izquierda.",
+   "partidos": [
+    {
+     "n": "Frente Justicialista Pampeano",
+     "nt": "Oficialismo provincial.",
+     "src": [
+      [
+       "Canal 26, 15/5/2023",
+       "https://www.canal26.com/politica/2023/05/15/elecciones-en-la-pampa-se-impuso-ziliotto-y-el-peronismo-retiene-la-gobernacion/"
+      ]
+     ],
+     "nacional": "partido-justicialista"
+    },
+    {
+     "n": "Comunidad Organizada",
+     "nt": "Frente con figuras del PRO; tercero en 2023.",
+     "src": [
+      [
+       "Canal 26, 15/5/2023",
+       "https://www.canal26.com/politica/2023/05/15/elecciones-en-la-pampa-se-impuso-ziliotto-y-el-peronismo-retiene-la-gobernacion/"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Canal 26, 15/5/2023",
+     "https://www.canal26.com/politica/2023/05/15/elecciones-en-la-pampa-se-impuso-ziliotto-y-el-peronismo-retiene-la-gobernacion/"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "La Rioja",
+   "slug": "la-rioja",
+   "gobierno": "Ricardo Quintela",
+   "fuerzas": "Frente de Todos en 2023 (51%). Segundo quedó Juntos por el Cambio (Felipe Álvarez) y La Libertad Avanza (Martín Menem) dividió el voto de la derecha.",
+   "partidos": [
+    {
+     "n": "Frente de Todos (La Rioja)",
+     "nt": "Frente con el que Quintela fue reelecto.",
+     "src": [
+      [
+       "Buenos Aires Herald, 8/5/2023",
+       "https://buenosairesherald.com/politics/local-elections-radicals-hold-jujuy-fdt-re-elected-in-la-rioja-passalacqua-returns-in-misiones"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Buenos Aires Herald, 8/5/2023",
+     "https://buenosairesherald.com/politics/local-elections-radicals-hold-jujuy-fdt-re-elected-in-la-rioja-passalacqua-returns-in-misiones"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Mendoza",
+   "slug": "mendoza",
+   "gobierno": "Alfredo Cornejo",
+   "fuerzas": "Radicalismo, dentro de Juntos por el Cambio (39,5% en 2023). Segundo quedó Omar De Marchi, ex-PRO acercado a Milei, y tercero el peronista Omar Parisi (Elegí Mendoza). En Mendoza también está el Partido Demócrata, aliado de Milei.",
+   "partidos": [
+    {
+     "n": "Cambia Mendoza (UCR)",
+     "nt": "Frente oficialista, identificado con la UCR.",
+     "src": [
+      [
+       "Bloomberg Línea, 25/9/2023",
+       "https://www.bloomberglinea.com/2023/09/25/elecciones-mendoza-2023-gana-cornejo-bullrich-se-ilusiona-y-el-peronismo-queda-tercero/"
+      ]
+     ],
+     "nacional": "union-civica-radical"
+    },
+    {
+     "n": "Partido Demócrata de Mendoza",
+     "nt": "Fue uno de los primeros apoyos provinciales de Milei y amenazó con romper si LLA pactaba con Cornejo.",
+     "src": [
+      [
+       "Sitio Andino",
+       "https://www.sitioandino.com.ar/politica/el-primer-aliado-milei-mendoza-amenaza-romper-si-hay-pacto-cornejo-n5698518"
+      ]
+     ],
+     "nacional": "partido-democrata"
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Bloomberg Línea, 25/9/2023",
+     "https://www.bloomberglinea.com/2023/09/25/elecciones-mendoza-2023-gana-cornejo-bullrich-se-ilusiona-y-el-peronismo-queda-tercero/"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Misiones",
+   "slug": "misiones",
+   "gobierno": "Hugo Passalacqua",
+   "fuerzas": "Frente Renovador de la Concordia Social, un espacio de centro y alianza multipartidaria (64% en 2023). Rival: Juntos por el Cambio. El PJ misionero aparece en el esquema vinculado a Carlos Rovira.",
+   "partidos": [
+    {
+     "n": "Frente Renovador de la Concordia Social",
+     "nt": "Oficialismo provincial.",
+     "src": [
+      [
+       "Buenos Aires Herald, 8/5/2023",
+       "https://buenosairesherald.com/politics/local-elections-radicals-hold-jujuy-fdt-re-elected-in-la-rioja-passalacqua-returns-in-misiones"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Buenos Aires Herald, 8/5/2023",
+     "https://buenosairesherald.com/politics/local-elections-radicals-hold-jujuy-fdt-re-elected-in-la-rioja-passalacqua-returns-in-misiones"
+    ],
+    [
+     "Perfil, 28/4/2026",
+     "https://www.perfil.com/noticias/modo-fontevecchia/tension-en-el-pj-armado-federal-y-nuevas-disputas-el-mapa-politico-rumbo-a-2027-ya-se-mueve-en-las-provincias-modof.phtml"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Neuquén",
+   "slug": "neuquen",
+   "gobierno": "Rolando Figueroa",
+   "fuerzas": "Comunidad (35,6% en 2023), que desplazó al Movimiento Popular Neuquino tras 60 años en el gobierno. También compitieron el Frente de Todos, Cumplir, Juntos por el Cambio y el Frente de Izquierda.",
+   "partidos": [
+    {
+     "n": "Comunidad",
+     "nt": "Partido de Figueroa.",
+     "src": [
+      [
+       "Letra P, 16/4/2023",
+       "https://www.letrap.com.ar/politica/el-mpn-perdio-el-invicto-60-anos-batacazo-historico-neuquen-n5399411"
+      ]
+     ]
+    },
+    {
+     "n": "Movimiento Popular Neuquino (MPN)",
+     "nt": "Partido provincial que gobernó durante 60 años; en 2023 llevó a Marcos Koopmann.",
+     "src": [
+      [
+       "Letra P, 16/4/2023",
+       "https://www.letrap.com.ar/politica/el-mpn-perdio-el-invicto-60-anos-batacazo-historico-neuquen-n5399411"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Letra P, 16/4/2023",
+     "https://www.letrap.com.ar/politica/el-mpn-perdio-el-invicto-60-anos-batacazo-historico-neuquen-n5399411"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Río Negro",
+   "slug": "rio-negro",
+   "gobierno": "Alberto Weretilneck",
+   "fuerzas": "Juntos Somos Río Negro (más del 40% con las listas aliadas en 2023). Rivales: Juntos por el Cambio (Cambia Río Negro), Vamos con Todos, Primero Río Negro (apoyado por Milei) y Unidad para la Victoria.",
+   "partidos": [
+    {
+     "n": "Juntos Somos Río Negro",
+     "nt": "Partido provincial del gobernador.",
+     "src": [
+      [
+       "La Nación, 16/4/2023",
+       "https://lanacion.com.ar/politica/alberto-weretilneck-arranca-con-ventaja-en-rio-negro-pero-menor-a-la-esperada-nid16042023"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "La Nación, 16/4/2023",
+     "https://lanacion.com.ar/politica/alberto-weretilneck-arranca-con-ventaja-en-rio-negro-pero-menor-a-la-esperada-nid16042023"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Salta",
+   "slug": "salta",
+   "gobierno": "Gustavo Sáenz",
+   "fuerzas": "Una alianza heterogénea que lo reeligió en 2023 con 47,3%. Segundo quedó Miguel Nanni (UCR, Juntos por el Cambio) y tercero el Frente Avancemos. En la capital ganó Emiliano Durand (Frente Vamos Salta).",
+   "partidos": [
+    {
+     "n": "Frente Vamos Salta",
+     "nt": "Frente del intendente de la capital, Emiliano Durand.",
+     "src": [
+      [
+       "Letra P, 15/5/2023",
+       "https://www.letrap.com.ar/politica/el-doble-triunfo-saenz-logro-su-reeleccion-y-freno-el-avance-del-clan-romero-n5400161"
+      ]
+     ]
+    },
+    {
+     "n": "Frente Unidos por Salta",
+     "nt": "Frente de Bettina Romero, derrotada en la capital en 2023.",
+     "src": [
+      [
+       "Letra P, 15/5/2023",
+       "https://www.letrap.com.ar/politica/el-doble-triunfo-saenz-logro-su-reeleccion-y-freno-el-avance-del-clan-romero-n5400161"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Letra P, 15/5/2023",
+     "https://www.letrap.com.ar/politica/el-doble-triunfo-saenz-logro-su-reeleccion-y-freno-el-avance-del-clan-romero-n5400161"
+    ]
+   ],
+   "asof": "2026-10-16",
+   "municipios": [
+    {
+     "n": "Salta (capital)",
+     "jefe": "Emiliano Durand (electo en 2023)",
+     "nt": "Ganó con 37,5% por el Frente Vamos Salta sobre Bettina Romero.",
+     "src": [
+      [
+       "Letra P, 15/5/2023",
+       "https://www.letrap.com.ar/politica/el-doble-triunfo-saenz-logro-su-reeleccion-y-freno-el-avance-del-clan-romero-n5400161"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "n": "San Juan",
+   "slug": "san-juan",
+   "gobierno": "Marcelo Orrego",
+   "fuerzas": "Partido Producción y Trabajo, que él dirige, dentro de Juntos por el Cambio (sublema Cambia San Juan). Puso fin a 20 años de peronismo; el rival fue el peronista Frente San Juan por Todos.",
+   "partidos": [
+    {
+     "n": "Producción y Trabajo",
+     "nt": "Partido de Orrego.",
+     "src": [
+      [
+       "Diario Uno, 3/7/2023",
+       "https://www.diariouno.com.ar/politica/elecciones-2023-que-partido-es-marcelo-orrego-n1128845"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Diario Uno, 3/7/2023",
+     "https://www.diariouno.com.ar/politica/elecciones-2023-que-partido-es-marcelo-orrego-n1128845"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "San Luis",
+   "slug": "san-luis",
+   "gobierno": "Claudio Poggi",
+   "fuerzas": "Cambia San Luis, dentro de Juntos por el Cambio. El rival fue Unión por San Luis, con Jorge Fernández.",
+   "partidos": [
+    {
+     "n": "Cambia San Luis",
+     "nt": "Frente de Poggi; derrotó al oficialismo de los Rodríguez Saá.",
+     "src": [
+      [
+       "Baenegocios, 11/6/2023",
+       "https://www.baenegocios.com/politica/juntos-por-el-cambio-derrota-al-oficialismo-en-san-luis-20230611-0082.html"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Baenegocios, 11/6/2023",
+     "https://www.baenegocios.com/politica/juntos-por-el-cambio-derrota-al-oficialismo-en-san-luis-20230611-0082.html"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Santa Cruz",
+   "slug": "santa-cruz",
+   "gobierno": "Claudio Vidal",
+   "fuerzas": "Frente Por Santa Cruz (46,5% en 2023), que cortó 32 años de dominio kirchnerista. El rival fue Unión por la Patria (43,8%).",
+   "partidos": [
+    {
+     "n": "Por Santa Cruz",
+     "nt": "Frente del petrolero Claudio Vidal.",
+     "src": [
+      [
+       "Noticias NQN, 14/8/2023",
+       "https://www.noticiasnqn.com.ar/amp/noticias/2023/08/14/280940-el-petrolero-claudio-vidal-derroto-al-kirchnerismo-y-puso-fin-a-32-anos-de-dominio-en-santa-cruz"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Noticias NQN, 14/8/2023",
+     "https://www.noticiasnqn.com.ar/amp/noticias/2023/08/14/280940-el-petrolero-claudio-vidal-derroto-al-kirchnerismo-y-puso-fin-a-32-anos-de-dominio-en-santa-cruz"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Santa Fe",
+   "slug": "santa-fe",
+   "gobierno": "Maximiliano Pullaro",
+   "fuerzas": "Juntos por el Cambio con la lista Unidos para Cambiar Santa Fe (58,4% en 2023). La integra el Frente Progresista Cívico y Social. Rival: el peronismo de Omar Perotti, con Marcelo Lewandowski.",
+   "partidos": [
+    {
+     "n": "Unidos para Cambiar Santa Fe",
+     "nt": "Coalición oficialista; incluye al Partido Demócrata Progresista.",
+     "src": [
+      [
+       "Bloomberg Línea, 10/9/2023",
+       "https://www.bloomberglinea.com/2023/09/11/elecciones-2023-pullaro-arraso-en-santa-fe-e-ilusiona-a-juntos-por-el-cambio/"
+      ],
+      [
+       "La Capital, 4/7/2024",
+       "https://www.lacapital.com.ar/politica/el-pdp-renovo-sus-autoridades-territorio-santafesino-n10141799.html"
+      ]
+     ],
+     "nacional": "democrata-progresista"
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Bloomberg Línea, 10/9/2023",
+     "https://www.bloomberglinea.com/2023/09/11/elecciones-2023-pullaro-arraso-en-santa-fe-e-ilusiona-a-juntos-por-el-cambio/"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Santiago del Estero",
+   "slug": "santiago-del-estero",
+   "gobierno": "Elías Suárez",
+   "fuerzas": "Frente Cívico. Ganó la elección de octubre de 2025 con más del 70%; fue jefe de Gabinete de Gerardo Zamora y su esposa. El PJ local quedó muy lejos en las legislativas (18%).",
+   "partidos": [
+    {
+     "n": "Frente Cívico de Santiago",
+     "nt": "Fuerza provincial de Zamora y Suárez, por fuera del PJ local.",
+     "src": [
+      [
+       "La Nación, 26/10/2025",
+       "https://www.lanacion.com.ar/politica/quien-gano-las-elecciones-para-gobernador-en-santiago-del-estero-nid26102025/"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "La Nación, 26/10/2025",
+     "https://www.lanacion.com.ar/politica/quien-gano-las-elecciones-para-gobernador-en-santiago-del-estero-nid26102025/"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Tierra del Fuego",
+   "slug": "tierra-del-fuego",
+   "gobierno": "Gustavo Melella",
+   "fuerzas": "Forja, dentro del Frente de Todos en 2023 (51%). Melella viene de la UCR y se identifica como \"K radical\". Segundo quedó Héctor Stefani, del PRO.",
+   "partidos": [
+    {
+     "n": "Forja",
+     "nt": "Partido de Melella.",
+     "src": [
+      [
+       "Buenos Aires Herald, 15/5/2023",
+       "https://buenosairesherald.com/politics/elections/salta-la-pampa-and-tierra-del-fuego-governors-win-re-election"
+      ]
+     ]
+    },
+    {
+     "n": "PRO (Tierra del Fuego)",
+     "nt": "Principal fuerza de Juntos por el Cambio en la provincia en 2023.",
+     "src": [
+      [
+       "Buenos Aires Herald, 15/5/2023",
+       "https://buenosairesherald.com/politics/elections/salta-la-pampa-and-tierra-del-fuego-governors-win-re-election"
+      ]
+     ],
+     "nacional": "pro"
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Buenos Aires Herald, 15/5/2023",
+     "https://buenosairesherald.com/politics/elections/salta-la-pampa-and-tierra-del-fuego-governors-win-re-election"
+    ]
+   ],
+   "asof": "2026-10-16"
+  },
+  {
+   "n": "Tucumán",
+   "slug": "tucuman",
+   "gobierno": "Osvaldo Jaldo",
+   "fuerzas": "Frente de Todos en 2023, con Jaldo y Miguel Acevedo. Segundo, Juntos por el Cambio; tercero, Fuerza Republicana (Ricardo Bussi, con apoyo de Milei).",
+   "partidos": [
+    {
+     "n": "Fuerza Republicana",
+     "nt": "Partido de Ricardo Bussi; tercero en 2023.",
+     "src": [
+      [
+       "Baenegocios, 11/6/2023",
+       "https://www.baenegocios.com/politica/por-amplio-margen-la-formula-a-gobernador-que-encabezo-osvaldo-jaldo-se-alzo-con-el-triunfo-en-tucuman-20230611-0061.html"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Gobernadores aliados, rivales y opositores (11/10/2026)",
+     "https://www.newsdigitales.com/nota/347171/gobernadores-aliados-rivales-y-opositores-el-mapa-que-milei-busca-ordenar-para-2027/"
+    ],
+    [
+     "Baenegocios, 11/6/2023",
+     "https://www.baenegocios.com/politica/por-amplio-margen-la-formula-a-gobernador-que-encabezo-osvaldo-jaldo-se-alzo-con-el-triunfo-en-tucuman-20230611-0061.html"
+    ]
+   ],
+   "asof": "2026-10-16"
+  }
+ ]
+}

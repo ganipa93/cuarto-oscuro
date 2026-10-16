@@ -37,8 +37,9 @@ test("versión completa y enlace compartido reproduce el resultado", async ({ pa
   const errs = watch(page);
   await page.goto("/");
   await page.click("#start-full");
-  await expect(page.locator("#qnum")).toHaveText("1 / 44");
-  await answerAll(page, 44, (i) => (i * 3) % 5);
+  const total = Number((await page.locator("#qnum").textContent()).split("/")[1]);
+  expect(total).toBeGreaterThan(44);
+  await answerAll(page, total, (i) => (i * 3) % 5);
   const url = page.url();
   const first = await page.locator("#list .match .name").first().textContent();
   await page.goto("/");
@@ -61,6 +62,41 @@ test("enlace inválido vuelve al inicio y la línea de tiempo carga", async ({ p
   await expect(page.locator("#dnucard table")).toBeVisible();
 });
 
+test("método, comparar partidos y provincias", async ({ page }) => {
+  const errs = watch(page);
+  await page.goto("/#metodo");
+  await expect(page.locator("#mcard table tbody tr")).toHaveCount(25);
+  await page.goto("/#comparar/la-libertad-avanza/partido-obrero");
+  await expect(page.locator("#cmp table")).toBeVisible();
+  await expect(page.locator("#cmp-b")).toHaveValue("partido-obrero");
+  await page.goto("/#distritos/mendoza");
+  await expect(page.locator("#ddetail h3").first()).toContainText("Mendoza");
+  await page.selectOption("#dsel", "tucuman");
+  await expect(page).toHaveURL(/#distritos\/tucuman/);
+  await expect(page.locator("#ddetail")).toContainText("Osvaldo Jaldo");
+  expect(errs.join("\n")).toBe("");
+});
+
+test("comparar con otra persona, 'qué pesó más' y enlace viejo de 44 preguntas", async ({ page }) => {
+  const errs = watch(page);
+  await page.goto("/");
+  await page.click("#start-short");
+  await answerAll(page, 15, (i) => (i % 2 ? 4 : 0));
+  await expect(page.locator("#why h3")).toHaveCount(4);
+  const mine = page.url();
+  await page.fill("#friend-in", mine.replace(/\/r\/s\//, "/r/s/").replace(/[01]\/?$/, "0"));
+  await page.click("#friend-go");
+  await expect(page.locator("#friend table")).toBeVisible();
+  await page.fill("#friend-in", "no es un enlace");
+  await page.click("#friend-go");
+  await expect(page.locator("#friend .err")).toBeVisible();
+  const old = "/#r/f/" + "2".repeat(44) + "/" + "0".repeat(44);
+  await page.goto(old);
+  await page.reload();
+  await expect(page.locator("#headline")).toBeVisible();
+  expect(errs.join("\n")).toBe("");
+});
+
 for (const scheme of ["light", "dark"]) {
   test("accesibilidad (axe) en modo " + scheme, async ({ page }) => {
     await page.emulateMedia({ colorScheme: scheme });
@@ -71,6 +107,15 @@ for (const scheme of ["light", "dark"]) {
     await answerAll(page, 15, () => 3);
     await expect(page.locator("#headline")).toBeVisible();
     r = await new AxeBuilder({ page }).analyze();
+    expect(r.violations.filter((v) => ["serious", "critical"].includes(v.impact))).toEqual([]);
+  });
+}
+
+for (const route of ["#metodo", "#comparar", "#distritos/cordoba", "#linea"]) {
+  test("accesibilidad (axe) en " + route, async ({ page }) => {
+    await page.goto("/" + route);
+    await page.waitForSelector("[data-view].on h2");
+    const r = await new AxeBuilder({ page }).analyze();
     expect(r.violations.filter((v) => ["serious", "critical"].includes(v.impact))).toEqual([]);
   });
 }

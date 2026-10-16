@@ -5,7 +5,8 @@
   "description": "Test de ideología política argentina con partidos, votaciones y fuentes.",
   "scripts": {
     "start": "serve -l 4173 .",
-    "test": "playwright test"
+    "validate": "node scripts/validate.js",
+    "test": "node scripts/validate.js && playwright test"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",

@@ -12,6 +12,14 @@
   function say(msg) { $("status").textContent = ""; setTimeout(function () { $("status").textContent = msg; }, 30); }
   function safe(fn) { try { return fn(); } catch (e) { return null; } }
 
+  var REPO = "https://github.com/ganipa93/cuarto-oscuro";
+  function reportLink(what) {
+    var a = el("a", "report", "Reportar un error o proponer una fuente");
+    a.href = REPO + "/issues/new?title=" + encodeURIComponent("Revisar: " + what) +
+      "&body=" + encodeURIComponent("Dato: " + what + "\n\n¿Qué está mal o qué falta?\n\nFuente (enlace):\n");
+    a.target = "_blank"; a.rel = "noopener"; return a;
+  }
+
   var views = {};
   [].forEach.call(document.querySelectorAll("[data-view]"), function (v) { views[v.getAttribute("data-view")] = v; });
   function show(name, focusId) {
@@ -40,9 +48,10 @@
   function getJSON(p) { return fetch(p).then(function (r) { if (!r.ok) throw new Error(p); return r.json(); }); }
   Promise.all([
     getJSON("data/questions.json"), getJSON("data/parties.json"), getJSON("data/votes.json"),
-    getJSON("data/dnu.json"), getJSON("data/timeline.json"), getJSON("data/content.json"), getJSON("data/meta.json")
+    getJSON("data/dnu.json"), getJSON("data/timeline.json"), getJSON("data/content.json"), getJSON("data/meta.json"),
+    getJSON("data/distritos.json").catch(function () { return null; })
   ]).then(function (r) {
-    D.AX = r[0].axes; D.OPT = r[0].options; D.Q = r[0].questions; D.P = r[1]; D.V = r[2]; D.DNU = r[3]; D.TL = r[4]; D.C = r[5]; D.M = r[6];
+    D.AX = r[0].axes; D.OPT = r[0].options; D.Q = r[0].questions; D.P = r[1]; D.V = r[2]; D.DNU = r[3]; D.TL = r[4]; D.C = r[5]; D.M = r[6]; D.DIST = r[7];
     init();
   }).catch(function (e) {
     var b = $("loaderr");
@@ -72,6 +81,7 @@
     });
     $("copy").addEventListener("click", copyLink);
     $("png").addEventListener("click", downloadCard);
+    $("friend-go").addEventListener("click", compareFriend);
     buildChips("chips", CHIPS, "all", function (v) { $("list").setAttribute("data-filter", v); });
     window.addEventListener("hashchange", route);
     route();
@@ -124,30 +134,38 @@
     D.Q.forEach(function (q) { a += S.ans[q.id] == null ? "-" : String(S.ans[q.id] + 2); w += S.wt[q.id] ? "1" : "0"; });
     return "#r/" + (S.mode === "short" ? "s" : "f") + "/" + a + "/" + w;
   }
-  function decodeHash(h) {
-    var m = /^#r\/([sf])\/([0-4-]+)\/([01]+)$/.exec(h);
-    if (!m || m[2].length !== D.Q.length || m[3].length !== D.Q.length) return false;
-    S.mode = m[1] === "s" ? "short" : "full"; S.ans = {}; S.wt = {};
+  function parseHash(h) {
+    var m = /^#r\/([sf])\/([0-4-]+)\/([01]+)$/.exec(h || "");
+    if (!m || m[2].length > D.Q.length || m[3].length !== m[2].length) return null;
+    // enlaces viejos (con menos preguntas) se completan: las preguntas nuevas van al final
+    while (m[2].length < D.Q.length) { m[2] += "-"; m[3] += "0"; }
+    var o = { mode: m[1] === "s" ? "short" : "full", ans: {}, wt: {} };
     D.Q.forEach(function (q, k) {
-      var c = m[2].charAt(k); if (c !== "-") S.ans[q.id] = Number(c) - 2;
-      if (m[3].charAt(k) === "1") S.wt[q.id] = true;
+      var c = m[2].charAt(k); if (c !== "-") o.ans[q.id] = Number(c) - 2;
+      if (m[3].charAt(k) === "1") o.wt[q.id] = true;
     });
-    return true;
+    return o;
+  }
+  function decodeHash(h) {
+    var o = parseHash(h); if (!o) return false;
+    S.mode = o.mode; S.ans = o.ans; S.wt = o.wt; return true;
   }
 
-  function score() {
+  function score(ans, wt) {
+    ans = ans || S.ans; wt = wt || S.wt;
     var sum = [0, 0, 0, 0], den = [0, 0, 0, 0];
     D.Q.forEach(function (q) {
-      if (S.ans[q.id] == null) return;
-      var w = S.wt[q.id] ? 2 : 1;
-      sum[q.a] += w * q.s * S.ans[q.id]; den[q.a] += w;
+      if (ans[q.id] == null) return;
+      var w = wt[q.id] ? 2 : 1;
+      sum[q.a] += w * q.s * ans[q.id]; den[q.a] += w;
     });
     return sum.map(function (s, a) { return den[a] ? s / den[a] : 0; });
   }
-  function stances() {
+  function stances(ans) {
+    ans = ans || S.ans;
     return D.V.defs.map(function (v) {
       var t = 0, n = 0;
-      v.q.forEach(function (x) { if (S.ans[x[0]] != null) { t += x[1] * S.ans[x[0]]; n++; } });
+      v.q.forEach(function (x) { if (ans[x[0]] != null) { t += x[1] * ans[x[0]]; n++; } });
       if (!n) return 0;
       var m = t / n; return m >= 0.5 ? 1 : (m <= -0.5 ? -1 : 0);
     });
@@ -159,15 +177,17 @@
   }
 
   // ---------- resultado ----------
-  function computeResult() {
-    S.me = score(); S.st = stances();
-    S.ranked = D.P.map(function (p) {
-      var d = 0; for (var a = 0; a < 4; a++) d += Math.pow(p.c[a] - S.me[a], 2);
+  function rank(me, st) {
+    return D.P.map(function (p) {
+      var d = 0; for (var a = 0; a < 4; a++) d += Math.pow(p.c[a] - me[a], 2);
       d = Math.sqrt(d);
       var ok = 0, n = 0;
-      if (p.vv) S.st.forEach(function (x, k) { var y = p.vv[k]; if (x !== 0 && y != null && y !== 0) { n++; if (x === y) ok++; } });
+      if (p.vv) st.forEach(function (x, k) { var y = p.vv[k]; if (x !== 0 && y != null && y !== 0) { n++; if (x === y) ok++; } });
       return { p: p, pct: Math.round(Math.max(0, 1 - d / 6) * 100), vm: [ok, n] };
     }).sort(function (x, y) { return y.pct - x.pct; });
+  }
+  function computeResult() {
+    S.me = score(); S.st = stances(); S.ranked = rank(S.me, S.st);
   }
 
   function renderResult() {
@@ -189,6 +209,7 @@
     note.hidden = false;
     note.textContent = (S.mode === "short" ? "Versión corta" : "Versión completa") + " · " + answered + " respuestas" + (nw ? " · " + nw + " marcadas como importantes" : "") + ".";
     S.all = false; renderList();
+    renderWhy(); $("friend").innerHTML = ""; $("friend-in").value = "";
     renderVotebox(); renderExplorer(); drawMap();
     renderExtra();
   }
@@ -203,6 +224,7 @@
     if (p.ct) { var c = el("div", "ct"); c.appendChild(el("b", null, "Para mirar con atención")); c.appendChild(document.createTextNode(p.ct)); d.appendChild(c); }
     sections(p, d, r);
     var more = el("div", "more"); more.appendChild(Object.assign(el("a", null, "Ver ficha completa de " + p.n), { href: "#partido/" + p.slug }));
+    more.appendChild(document.createTextNode(" · ")); more.appendChild(reportLink("Partido " + p.n));
     d.appendChild(more);
     d.appendChild(el("span", "asof", "Datos al " + fmtDate(p.asof)));
     var br = el("div", "bar"); br.innerHTML = '<i style="width:' + r.pct + '%"></i>'; d.appendChild(br);
@@ -274,6 +296,7 @@
     } else {
       box.appendChild(el("p", "small muted", "No tengo el acta nominal de esta votación: las cifras salen de la prensa."));
     }
+    box.appendChild(Object.assign(el("p", "small"), {})).appendChild(reportLink("Votación " + v.n));
     var pl = D.P.filter(function (p) { return p.vv && p.vv[v.id] != null; });
     if (pl.length) {
       box.appendChild(el("h3", null, "Cómo se alinean los partidos con legisladores"));
@@ -367,6 +390,9 @@
       });
       box.appendChild(ul);
     }
+    var ac = el("p", "small");
+    ac.appendChild(Object.assign(el("a", null, "Comparar con otro partido"), { href: "#comparar/" + p.slug + "/" + (D.P[0].slug === p.slug ? D.P[1].slug : D.P[0].slug) }));
+    ac.appendChild(document.createTextNode(" · ")); ac.appendChild(reportLink("Partido " + p.n)); box.appendChild(ac);
     box.appendChild(el("p", "small muted", "Datos relevados hasta el " + fmtDate(p.asof) + ". No es una recomendación de voto."));
     show("party", "p-name"); document.title = p.n + " · Cuarto Oscuro";
   }
@@ -398,6 +424,155 @@
       var l = el("div"); l.style.cssText = "display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.85rem;margin-top:4px";
       i.src.forEach(function (x) { l.appendChild(link(x[0], x[1])); }); li.appendChild(l); ol.appendChild(li);
     });
+  }
+
+
+  // ---------- qué pesó más ----------
+  function renderWhy() {
+    var box = $("why"); box.innerHTML = "";
+    var den = [0, 0, 0, 0], labels = {};
+    D.OPT.forEach(function (o) { labels[o.v] = o.l; });
+    D.Q.forEach(function (q) { if (S.ans[q.id] != null) den[q.a] += S.wt[q.id] ? 2 : 1; });
+    D.AX.forEach(function (ax, a) {
+      var items = D.Q.filter(function (q) { return q.a === a && S.ans[q.id] != null && S.ans[q.id] !== 0; }).map(function (q) {
+        return { q: q, c: (S.wt[q.id] ? 2 : 1) * q.s * S.ans[q.id] / den[a] };
+      }).sort(function (x, y) { return Math.abs(y.c) - Math.abs(x.c); }).slice(0, 2);
+      var h = el("h3", null, ax.k + " (" + side(S.me[a], a) + ")"); box.appendChild(h);
+      if (!items.length) { box.appendChild(el("p", "small muted", "Sin respuestas que te muevan de este eje.")); return; }
+      var ul = el("ul", "small notes");
+      items.forEach(function (it) {
+        var li = el("li");
+        li.appendChild(document.createTextNode("“" + it.q.t + "” — respondiste: " + labels[S.ans[it.q.id]] + (S.wt[it.q.id] ? " (marcada como importante)" : "") + ". Empuja hacia " + (it.c * 1 > 0 ? ax.hi : ax.lo).toLowerCase() + "."));
+        ul.appendChild(li);
+      });
+      box.appendChild(ul);
+    });
+  }
+
+  // ---------- comparar con otra persona ----------
+  function compareFriend() {
+    var box = $("friend"); box.innerHTML = "";
+    var m = /#r\/[sf]\/[0-4-]+\/[01]+/.exec($("friend-in").value);
+    var o = m && parseHash(m[0]);
+    if (!o) { box.appendChild(el("p", "err", "No reconozco ese enlace. Tiene que ser un enlace de resultado de este sitio (con #r/…).")); return; }
+    var me2 = score(o.ans, o.wt), st2 = stances(o.ans), r2 = rank(me2, st2);
+    var d = 0; for (var a = 0; a < 4; a++) d += Math.pow(S.me[a] - me2[a], 2);
+    var pct = Math.round(Math.max(0, 1 - Math.sqrt(d) / 6) * 100);
+    box.appendChild(el("p", null, "Cercanía entre ustedes: " + pct + "% (calculada igual que la de los partidos)."));
+    var wrap = el("div", "tablewrap"), t = el("table");
+    t.innerHTML = "<thead><tr><th>Eje</th><th class='n'>Vos</th><th class='n'>La otra persona</th></tr></thead>";
+    var tb = el("tbody");
+    D.AX.forEach(function (ax, k) {
+      var tr = el("tr"); tr.appendChild(el("td", null, ax.k));
+      tr.appendChild(el("td", "n", (S.me[k] > 0 ? "+" : "") + S.me[k].toFixed(1) + " " + side(S.me[k], k)));
+      tr.appendChild(el("td", "n", (me2[k] > 0 ? "+" : "") + me2[k].toFixed(1) + " " + side(me2[k], k))); tb.appendChild(tr);
+    });
+    t.appendChild(tb); wrap.appendChild(t); box.appendChild(wrap);
+    box.appendChild(el("p", "small muted", "Partidos más cercanos de la otra persona: " + r2.slice(0, 3).map(function (r) { return r.p.n + " (" + r.pct + "%)"; }).join(", ") + "."));
+    say("Comparación lista");
+  }
+
+  // ---------- comparar partidos ----------
+  function renderCompare(sa, sb) {
+    var A = $("cmp-a"), B = $("cmp-b");
+    if (!A.options.length) {
+      D.P.forEach(function (p) { [A, B].forEach(function (s) { var o = el("option", null, p.n); o.value = p.slug; s.appendChild(o); }); });
+      var go = function () { location.hash = "#comparar/" + A.value + "/" + B.value; };
+      A.addEventListener("change", go); B.addEventListener("change", go);
+    }
+    A.value = sa && D.P.some(function (p) { return p.slug === sa; }) ? sa : D.P[0].slug;
+    B.value = sb && D.P.some(function (p) { return p.slug === sb; }) ? sb : D.P[1].slug;
+    var pa = D.P.filter(function (p) { return p.slug === A.value; })[0], pb = D.P.filter(function (p) { return p.slug === B.value; })[0];
+    var box = $("cmp"); box.innerHTML = "";
+    var wrap = el("div", "tablewrap"), t = el("table");
+    t.innerHTML = "<thead><tr><th></th><th></th><th></th></tr></thead>";
+    t.querySelector("th:nth-child(2)").textContent = pa.n; t.querySelector("th:nth-child(3)").textContent = pb.n;
+    var tb = el("tbody");
+    function line(l, x, y) { var tr = el("tr"); tr.appendChild(el("td", null, l)); tr.appendChild(el("td", null, x)); tr.appendChild(el("td", null, y)); tb.appendChild(tr); }
+    function pos(p, k) { var v = p.c[k]; return (v > 0 ? "+" : "") + v + " " + side(v, k); }
+    line("Familia", pa.f, pb.f);
+    line("Evidencia", pa.ev === "A" ? "documento propio" : (pa.ev === "B" ? "estatuto" : "estimada"), pb.ev === "A" ? "documento propio" : (pb.ev === "B" ? "estatuto" : "estimada"));
+    D.AX.forEach(function (ax, k) { line(ax.k, pos(pa, k), pos(pb, k)); });
+    var vl = function (p, k) { var x = p.vv ? p.vv[k] : null; return x == null ? "sin dato" : (x === 1 ? "a favor" : (x === -1 ? "en contra" : "dividido")); };
+    D.V.defs.forEach(function (v, k) { line(v.n, vl(pa, k), vl(pb, k)); });
+    line("Datos al", fmtDate(pa.asof), fmtDate(pb.asof));
+    t.appendChild(tb); wrap.appendChild(t); box.appendChild(wrap);
+    var d = 0; for (var a = 0; a < 4; a++) d += Math.pow(pa.c[a] - pb.c[a], 2);
+    box.appendChild(el("p", "small muted", "Cercanía entre ambos en los cuatro ejes: " + Math.round(Math.max(0, 1 - Math.sqrt(d) / 6) * 100) + "%. Las posiciones son estimaciones."));
+    var l = el("p", "small");
+    l.appendChild(Object.assign(el("a", null, "Ficha de " + pa.n), { href: "#partido/" + pa.slug })); l.appendChild(document.createTextNode(" · "));
+    l.appendChild(Object.assign(el("a", null, "Ficha de " + pb.n), { href: "#partido/" + pb.slug })); box.appendChild(l);
+    show("compare", "t-compare"); document.title = "Comparar partidos · Cuarto Oscuro";
+  }
+
+  // ---------- método ----------
+  function renderMethod() {
+    var box = $("mcard"); box.innerHTML = "";
+    var h = el("h2", null, "Cómo se calcula"); h.id = "t-method"; h.tabIndex = -1; box.appendChild(h);
+    [
+      "Cada afirmación pertenece a uno de cuatro ejes y tiene un signo: estar de acuerdo empuja hacia un extremo del eje o hacia el otro. Las respuestas van de −2 (muy en desacuerdo) a +2 (muy de acuerdo).",
+      "Tu posición en cada eje es el promedio ponderado de tus respuestas de ese eje, con signo. Una respuesta marcada como importante pesa el doble. Si no respondiste nada de un eje, queda en 0.",
+      "Cada partido tiene una posición estimada en los mismos cuatro ejes, entre −2 y +2. La afinidad es 100% menos la distancia euclídea en 4 dimensiones dividida por 6, con piso en 0%.",
+      "La evidencia de cada partido se marca así: A, la ubicación se apoya en un documento programático propio; B, solo en el estatuto o carta orgánica, que casi nunca habla de ideología; C, es una estimación a partir de declaraciones y votos. Una ubicación C es la más discutible.",
+      "La coincidencia de votos relaciona algunas de tus respuestas con votaciones reales. Solo cuenta las votaciones donde tu postura es clara y el partido votó a favor o en contra de manera definida.",
+      "Nada de esto es una verdad oficial ni una recomendación de voto. Si no estás de acuerdo con una ubicación o con un dato, podés reportarlo desde la ficha del partido: cada corrección necesita una fuente."
+    ].forEach(function (t) { box.appendChild(el("p", null, t)); });
+    box.appendChild(el("h3", null, "Posiciones estimadas de cada partido"));
+    var wrap = el("div", "tablewrap"), t = el("table");
+    t.innerHTML = "<thead><tr><th>Partido</th>" + D.AX.map(function (a) { return "<th class='n'>" + a.k + "</th>"; }).join("") + "<th>Ev.</th><th>Datos al</th></tr></thead>";
+    var tb = el("tbody");
+    D.P.forEach(function (p) {
+      var tr = el("tr"), c = el("td"); c.appendChild(Object.assign(el("a", null, p.n), { href: "#partido/" + p.slug })); tr.appendChild(c);
+      p.c.forEach(function (v) { tr.appendChild(el("td", "n", (v > 0 ? "+" : "") + v)); });
+      tr.appendChild(el("td", null, p.ev)); tr.appendChild(el("td", null, fmtDate(p.asof))); tb.appendChild(tr);
+    });
+    t.appendChild(tb); wrap.appendChild(t); box.appendChild(wrap);
+    var l = el("p", "small"); l.appendChild(link("Ver los datos y el código en GitHub", REPO)); box.appendChild(l);
+    show("method", "t-method"); document.title = "Método · Cuarto Oscuro";
+  }
+
+
+  // ---------- provincias ----------
+  function renderDistricts(slug) {
+    var sel = $("dsel");
+    if (!D.DIST) { $("dist-note").textContent = "No pude cargar los datos de provincias."; show("districts", "t-dist"); return; }
+    $("dist-note").textContent = D.DIST.nota;
+    if (!sel.options.length) {
+      D.DIST.distritos.forEach(function (d) { var o = el("option", null, d.n); o.value = d.slug; sel.appendChild(o); });
+      sel.addEventListener("change", function () { location.hash = "#distritos/" + sel.value; });
+    }
+    var d = D.DIST.distritos.filter(function (x) { return x.slug === slug; })[0] || D.DIST.distritos[0];
+    sel.value = d.slug;
+    var box = $("ddetail"); box.innerHTML = "";
+    box.style.cssText = "display:flex;flex-direction:column;gap:12px;margin-top:12px";
+    box.appendChild(el("h3", null, d.n + ": " + d.gobierno));
+    box.appendChild(el("p", null, d.fuerzas));
+    box.appendChild(el("h3", null, "Fuerzas mencionadas"));
+    var ul = el("ul", "small notes");
+    d.partidos.forEach(function (p) {
+      var li = el("li"); li.appendChild(el("b", null, p.n + ". ")); li.appendChild(document.createTextNode(p.nt + " "));
+      if (p.nacional) {
+        var np = D.P.filter(function (x) { return x.slug === p.nacional; })[0];
+        if (np) { li.appendChild(document.createTextNode("Partido nacional vinculado: ")); li.appendChild(Object.assign(el("a", null, np.n), { href: "#partido/" + np.slug })); li.appendChild(document.createTextNode(". ")); }
+      }
+      (p.src || []).forEach(function (x, k) { if (k) li.appendChild(document.createTextNode(" · ")); li.appendChild(link(x[0], x[1])); });
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    if (d.municipios && d.municipios.length) {
+      box.appendChild(el("h3", null, "Municipios cargados"));
+      var u2 = el("ul", "small notes");
+      d.municipios.forEach(function (m) {
+        var li = el("li"); li.appendChild(el("b", null, m.n + ": ")); li.appendChild(document.createTextNode(m.jefe + ". " + m.nt + " "));
+        m.src.forEach(function (x) { li.appendChild(link(x[0], x[1])); }); u2.appendChild(li);
+      });
+      box.appendChild(u2);
+    }
+    box.appendChild(el("h3", null, "Fuentes"));
+    var l = el("div", "lk"); l.style.cssText = "display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.88rem";
+    d.src.forEach(function (x) { l.appendChild(link(x[0], x[1])); }); box.appendChild(l);
+    var f = el("p", "small muted", "Datos al " + fmtDate(d.asof) + ". "); f.appendChild(reportLink("Distrito " + d.n)); box.appendChild(f);
+    show("districts", "t-dist"); document.title = d.n + " · Cuarto Oscuro";
   }
 
   // ---------- compartir ----------
@@ -462,6 +637,12 @@
       renderParty(decodeURIComponent(h.slice(9)));
     } else if (h === "#linea") {
       renderTimeline();
+    } else if (h === "#metodo") {
+      renderMethod();
+    } else if (/^#comparar/.test(h)) {
+      var pp = h.split("/"); renderCompare(pp[1], pp[2]);
+    } else if (/^#distritos/.test(h)) {
+      renderDistricts(h.split("/")[1]);
     } else if (/^#(main|)$/.test(h)) {
       show("intro");
     } else { show("intro"); }

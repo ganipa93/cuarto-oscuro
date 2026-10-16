@@ -1,0 +1,22 @@
+name: actas-del-senado
+on:
+  schedule:
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+permissions:
+  issues: write
+  contents: read
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - id: w
+        run: node scripts/watch-actas.js | tee actas.txt
+      - if: steps.w.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue create --title "Actas nuevas del Senado para revisar" --body-file actas.txt

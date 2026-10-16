@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cuarto Oscuro</title>
 <meta name="description" content="Test de ideología política argentina con 25 partidos nacionales: ejes, votaciones del Congreso, proyectos y fuentes.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cuarto Oscuro">
+<meta property="og:description" content="Test de ideología política argentina: ejes, 25 partidos, votaciones del Congreso y fuentes. No es una recomendación de voto.">
+<meta property="og:image" content="https://cuarto-oscuro.vercel.app/og.png">
+<meta property="og:url" content="https://cuarto-oscuro.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2712%27 fill=%27%23d9820b%27/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -20,6 +26,9 @@
     </div>
     <nav class="nav" aria-label="Secciones">
       <a href="#linea">Leyes y decretos</a>
+      <a href="#distritos">Provincias</a>
+      <a href="#comparar">Comparar</a>
+      <a href="#metodo">Método</a>
       <button type="button" id="theme">Tema: auto</button>
     </nav>
   </header>
@@ -82,6 +91,20 @@
     </div>
 
     <div class="card">
+      <h2>Qué pesó más en tu resultado</h2>
+      <p class="small muted">Las respuestas que más te alejaron del centro en cada eje.</p>
+      <div id="why"></div>
+    </div>
+
+    <div class="card">
+      <h2>Compararte con otra persona</h2>
+      <p class="small muted">Pegá el enlace de resultado de un amigo. Se compara en tu navegador: nada se envía a ningún lado.</p>
+      <label for="friend-in" class="small">Enlace del otro resultado</label>
+      <div class="row" style="gap:8px;flex-wrap:wrap"><input id="friend-in" type="text" inputmode="url" autocomplete="off" style="flex:1;min-width:200px"><button class="btn ghost" id="friend-go" type="button">Comparar</button></div>
+      <div id="friend"></div>
+    </div>
+
+    <div class="card">
       <h2>Tus respuestas frente a las votaciones</h2>
       <p class="small muted">Relaciono algunas de tus respuestas con votaciones reales del Congreso. Es una aproximación: una ley incluye muchos artículos y tus respuestas no cubren todos.</p>
       <ul class="small notes" id="votebox"></ul>
@@ -111,6 +134,31 @@
 
   <section data-view="party" aria-labelledby="p-name">
     <div class="card" id="pcard"></div>
+  </section>
+
+  <section data-view="method" aria-labelledby="t-method">
+    <div class="card" id="mcard"></div>
+  </section>
+
+  <section data-view="compare" aria-labelledby="t-compare">
+    <div class="card">
+      <h2 id="t-compare" tabindex="-1">Comparar dos partidos</h2>
+      <div class="row" style="gap:12px;flex-wrap:wrap">
+        <div><label for="cmp-a" class="small">Partido A</label><br><select id="cmp-a"></select></div>
+        <div><label for="cmp-b" class="small">Partido B</label><br><select id="cmp-b"></select></div>
+      </div>
+      <div id="cmp"></div>
+    </div>
+  </section>
+
+  <section data-view="districts" aria-labelledby="t-dist">
+    <div class="card">
+      <h2 id="t-dist" tabindex="-1">Provincias y partidos de distrito</h2>
+      <p class="small muted" id="dist-note"></p>
+      <label for="dsel" class="small">Provincia</label><br>
+      <select id="dsel"></select>
+      <div id="ddetail"></div>
+    </div>
   </section>
 
   <section data-view="timeline" aria-labelledby="t-tl">

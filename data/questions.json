@@ -322,6 +322,54 @@
    "t": "La emergencia en discapacidad (pensiones y prestaciones) debe garantizarse por ley aunque aumente el gasto.",
    "a": 0,
    "s": -1
+  },
+  {
+   "id": 44,
+   "t": "La universidad pública debe seguir siendo gratuita para todos los estudiantes.",
+   "a": 0,
+   "s": -1
+  },
+  {
+   "id": 45,
+   "t": "Las fuerzas de seguridad deben poder usar la fuerza con menos restricciones legales ante delincuentes armados.",
+   "a": 3,
+   "s": 1
+  },
+  {
+   "id": 46,
+   "t": "En las cárceles debe priorizarse la rehabilitación por sobre el castigo.",
+   "a": 3,
+   "s": -1
+  },
+  {
+   "id": 47,
+   "t": "Argentina debería alinearse con Estados Unidos en política exterior aunque eso afecte el comercio con China.",
+   "a": 2,
+   "s": 1
+  },
+  {
+   "id": 48,
+   "t": "Argentina debe sostener su reclamo de soberanía sobre las Islas Malvinas como política de Estado.",
+   "a": 2,
+   "s": -1
+  },
+  {
+   "id": 49,
+   "t": "La Educación Sexual Integral debe enseñarse en todas las escuelas.",
+   "a": 1,
+   "s": -1
+  },
+  {
+   "id": 50,
+   "t": "La religión debería tener un lugar en la escuela pública.",
+   "a": 1,
+   "s": 1
+  },
+  {
+   "id": 51,
+   "t": "El Banco Central debe ser independiente del gobierno y tener prohibido financiar al Tesoro.",
+   "a": 0,
+   "s": 1
   }
  ]
 }

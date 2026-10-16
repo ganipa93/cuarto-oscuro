@@ -385,8 +385,13 @@
    0.6,
    0.5
   ],
-  "cp": "Diciembre de 2024 (La Política Online): Fernando Burlando, que encabezó su lista bonaerense bajo la presidencia de Andrés Passamonti, dijo defender principios liberales \"sin extremismos\".",
-  "lk": [],
+  "cp": "Diciembre de 2024 (La Política Online): Fernando Burlando, que encabezó su lista bonaerense, difundió desde su entorno que defendería los \"principios inamovibles de la libertad\" sin ser extremista y reconociendo lo bueno y lo malo de gobiernos anteriores.",
+  "lk": [
+   [
+    "La Política Online, 3/12/2024",
+    "https://www.lapoliticaonline.com/politica/fernando-burlando-cerro-un-acuerdo-electoral-para-encabezar-la-lista-de-la-ucede/"
+   ]
+  ],
   "ev": "A",
   "nt": "Plataforma sin fecha y de fiabilidad dudosa: empresa privada, federalismo, valores cristianos y protección de la familia. Moderé la ubicación previa.",
   "slug": "ucede",
@@ -402,7 +407,12 @@
    0.8
   ],
   "cp": "2025 (Mendoza, Sitio Andino): fue uno de los primeros apoyos provinciales de Milei. Amenazó con romper con LLA si esta se aliaba con la UCR de Cornejo, a quien calificó de populista e intervencionista. Se sumó a un frente libertario con el Partido Libertario y busca un frente \"liberal puro\".",
-  "lk": [],
+  "lk": [
+   [
+    "Sitio Andino",
+    "https://www.sitioandino.com.ar/politica/el-primer-aliado-milei-mendoza-amenaza-romper-si-hay-pacto-cornejo-n5698518"
+   ]
+  ],
   "ev": "C",
   "nt": "No pude leer su plataforma. Estimación por trayectoria y por sus posiciones públicas de 2025 en Mendoza.",
   "slug": "partido-democrata",
@@ -417,8 +427,13 @@
    0.6,
    -0.5
   ],
-  "cp": "Enero de 2025 (prensa santafesina): se sumó a Unidos para Cambiar Santa Fe, la alianza del gobernador Pullaro, con Gabriel Real como secretario general. No encontré declaraciones de contenido ideológico.",
-  "lk": [],
+  "cp": "Julio de 2024 (La Capital): integra Unidos para Cambiar Santa Fe, la coalición del gobernador Pullaro, y su congreso reeligió a Gabriel Real como secretario general para 2024/2026. No encontré declaraciones de contenido ideológico.",
+  "lk": [
+   [
+    "La Capital, 4/7/2024",
+    "https://www.lacapital.com.ar/politica/el-pdp-renovo-sus-autoridades-territorio-santafesino-n10141799.html"
+   ]
+  ],
   "ev": "C",
   "nt": "No pude leer su declaración de principios. Estimación por trayectoria.",
   "slug": "democrata-progresista",
@@ -522,7 +537,12 @@
    -1.2
   ],
   "cp": "Enero de 2024 (Letra P): Sabbatella calificó de inconstitucionales el DNU 70/23 y la ley ómnibus, dijo que el Gobierno estaba \"cocinando la entrega total del país\" y criticó su postura sobre el cambio climático y el feminismo.",
-  "lk": [],
+  "lk": [
+   [
+    "Letra P: Sabbatella",
+    "https://www.letrap.com.ar/politica/martin-sabbatella-el-gobierno-esta-cocinando-la-entrega-total-del-pais-n5405983"
+   ]
+  ],
   "ev": "C",
   "nt": "No pude leer un documento propio. Estimación por trayectoria.",
   "slug": "nuevo-encuentro",
@@ -587,7 +607,16 @@
    -1.2
   ],
   "cp": "2024-2025 (Letra P y A24): Grabois impulsó un partido propio en Entre Ríos fuera del PJ con un \"Plan de Desarrollo Humano\" de ocho ejes (salud, educación, trabajo, integración sociourbana, desarrollo económico, ambiente y feminismo). En 2023 compitió contra Massa en las PASO de Unión por la Patria; en agosto de 2025 aún no confirmaba su ingreso a Fuerza Patria.",
-  "lk": [],
+  "lk": [
+   [
+    "Letra P: sello propio en Entre Ríos",
+    "https://www.letrap.com.ar/entre-rios/juan-grabois-se-despega-la-interna-del-pj-y-arma-sello-propio-rios-n5412163"
+   ],
+   [
+    "El Heraldo: Patria Grande en Entre Ríos",
+    "https://www.elheraldo.com.ar/noticias/politica/patria-grande-busca-conformarse-como-partido-en-entre-rios"
+   ]
+  ],
   "ev": "C",
   "nt": "No encontré un documento propio. Estimación por trayectoria.",
   "slug": "patria-grande",
@@ -603,7 +632,12 @@
    -1.6
   ],
   "cp": "Marzo de 2025 (comunicado difundido por Pressenza): en su comunicado por el aniversario se definió como Humanismo Universalista, defendió los derechos de mujeres, disidencias, pueblos indígenas, migrantes y minorías, llamó a la solidaridad no violenta y criticó a Milei, Trump y Musk. No incluye propuestas económicas ni de seguridad.",
-  "lk": [],
+  "lk": [
+   [
+    "Pressenza, marzo de 2025",
+    "https://www.pressenza.com/es/2025/03/a-41-anos-de-la-fundacion-del-partido-humanista-de-argentina-urge-la-humanizacion-progresiva-del-mundo/"
+   ]
+  ],
   "ev": "C",
   "nt": "No encontré un documento propio. Estimación por trayectoria.",
   "slug": "partido-humanista",
