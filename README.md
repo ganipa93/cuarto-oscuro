@@ -38,4 +38,4 @@ npm test
 Para actualizar: editar el JSON, cambiar `asof` y `meta.updated`, correr `npm test` y hacer push a `main` (Vercel despliega solo).
 
 ## Límites
-El sitio de votaciones nominales de Diputados no permite lectura automatizada; sus cifras salen de la prensa y Parlamentario. Las posiciones de los partidos son estimaciones.
+Las votaciones nominales de Diputados vienen de los datos abiertos de [¿Cómo votó?](https://comovoto.dev.ar/) (MIT), porque el sitio oficial no permite la lectura automatizada; `python3 scripts/build-diputados.py` regenera `data/diputados.json`. Los bloques no son partidos. Las posiciones de los partidos son estimaciones.
