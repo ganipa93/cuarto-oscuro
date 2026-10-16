@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cuarto-oscuro.vercel.app/sitemap.xml

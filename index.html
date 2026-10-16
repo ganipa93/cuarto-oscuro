@@ -3,10 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cuarto Oscuro</title>
-<meta name="description" content="Test de ideología política argentina con 25 partidos nacionales: ejes, votaciones del Congreso, proyectos y fuentes.">
+<title>Cuarto Oscuro · Test de ideología política argentina</title>
+<meta name="description" content="Test de ideología política argentina: respondé y mirá qué partidos quedan más cerca en economía, valores, mundo y orden, con votaciones del Congreso, proyectos y fuentes. No es una recomendación de voto.">
+<link rel="canonical" href="https://cuarto-oscuro.vercel.app/">
+<meta name="theme-color" content="#eef1f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1624" media="(prefers-color-scheme: dark)">
+<meta property="og:site_name" content="Cuarto Oscuro">
+<meta property="og:locale" content="es_AR">
+<meta property="og:image:alt" content="Cuarto Oscuro: test de ideología política argentina">
+<meta name="twitter:title" content="Cuarto Oscuro · Test de ideología política argentina">
+<meta name="twitter:description" content="Ubicate en cuatro ejes y mirá qué partidos quedan más cerca, con votos del Congreso y fuentes.">
+<meta name="twitter:image" content="https://cuarto-oscuro.vercel.app/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Cuarto Oscuro","url":"https://cuarto-oscuro.vercel.app/","inLanguage":"es-AR","applicationCategory":"EducationalApplication","operatingSystem":"Web","description":"Test de ideología política argentina con 25 partidos nacionales, votaciones del Congreso, proyectos y fuentes.","offers":{"@type":"Offer","price":"0","priceCurrency":"ARS"}}</script>
 <meta property="og:type" content="website">
-<meta property="og:title" content="Cuarto Oscuro">
+<meta property="og:title" content="Cuarto Oscuro · Test de ideología política argentina">
 <meta property="og:description" content="Test de ideología política argentina: ejes, 25 partidos, votaciones del Congreso y fuentes. No es una recomendación de voto.">
 <meta property="og:image" content="https://cuarto-oscuro.vercel.app/og.png">
 <meta property="og:url" content="https://cuarto-oscuro.vercel.app/">
@@ -22,7 +32,7 @@
   <header class="topbar">
     <div>
       <p class="eyebrow">Argentina · partidos políticos</p>
-      <h1><a href="#" style="color:inherit;text-decoration:none">Cuarto Oscuro</a></h1>
+      <h1><a href="#">Cuarto Oscuro</a></h1>
     </div>
     <nav class="nav" aria-label="Secciones">
       <a href="#linea">Leyes y decretos</a>
@@ -35,24 +45,30 @@
 
   <div id="status" class="sr" role="status" aria-live="polite"></div>
   <div id="loaderr" class="err" hidden></div>
+  <noscript><div class="card"><p>Cuarto Oscuro necesita JavaScript para funcionar. Es un test de ideología política argentina con 25 partidos, votaciones del Congreso y fuentes.</p></div></noscript>
 
   <section data-view="intro" class="on" aria-labelledby="t-intro">
     <div class="card">
-      <h2 id="t-intro">Cuatro ejes, 25 partidos, votos y fuentes</h2>
-      <p>Respondé qué tan de acuerdo estás con cada frase. Al final ves en qué punto de los ejes de economía, valores, mundo y orden te ubicás, qué partidos quedan más cerca y cómo votaron y qué proyectos presentaron sus legisladores.</p>
+      <h2 id="t-intro">¿Qué partido se parece más a lo que pensás?</h2>
+      <p class="lead">Respondé qué tan de acuerdo estás con cada frase. Al final ves dónde quedás en economía, valores, mundo y orden, qué partidos están más cerca y cómo votaron sus legisladores.</p>
       <div class="btnrow">
         <button class="btn" id="start-short" type="button">Versión corta<br><small id="n-short"></small></button>
         <button class="btn alt" id="start-full" type="button">Versión completa<br><small id="n-full"></small></button>
       </div>
       <ul class="small muted notes">
-        <li>Las respuestas no se guardan ni se envían a ningún lado. Si compartís el resultado, tus respuestas viajan dentro del enlace.</li>
-        <li>En cada pregunta podés marcar "esto me importa mucho" para que pese el doble en tu resultado.</li>
-        <li>Las posiciones de los partidos salen de sus documentos cuando pude leerlos. Las cartas orgánicas son estatutos internos y casi no dicen nada sobre ideología. Cada partido indica si su ubicación se apoya en un documento propio, en el estatuto o es una estimación.</li>
-        <li>Para varios partidos sumé lo que dijeron sus referentes entre 2022 y 2026, parafraseado desde notas de prensa y con enlace, y siete votaciones del Congreso con las actas nominales del Senado cuando existen. No cubre todas las campañas ni todos los partidos.</li>
-        <li>Los partidos son heterogéneos y los textos fundacionales pueden estar desactualizados, así que es una aproximación y no una verdad oficial.</li>
-        <li>La Justicia Electoral reconoce partidos nacionales y cientos de partidos de distrito. Acá hay una selección de 25 partidos nacionales, no el padrón completo.</li>
+        <li>Tus respuestas no se guardan ni se envían a ningún lado. Si compartís el resultado, viajan dentro del enlace.</li>
+        <li>En cada pregunta podés marcar "esto me importa mucho" para que pese el doble.</li>
         <li>El resultado mide cercanía de ideas. No es una recomendación de voto.</li>
       </ul>
+      <details class="intro-more small muted">
+        <summary>Cómo se armó y qué límites tiene</summary>
+        <ul class="notes">
+          <li>Las posiciones de los partidos salen de sus documentos cuando pude leerlos. Las cartas orgánicas son estatutos internos y casi no dicen nada sobre ideología. Cada partido indica si su ubicación se apoya en un documento propio, en el estatuto o es una estimación.</li>
+          <li>Para varios partidos sumé lo que dijeron sus referentes entre 2022 y 2026, parafraseado desde notas de prensa y con enlace, y votaciones del Congreso con actas nominales. No cubre todas las campañas ni todos los partidos.</li>
+          <li>Los partidos son heterogéneos y los textos fundacionales pueden estar desactualizados: es una aproximación, no una verdad oficial.</li>
+          <li>La Justicia Electoral reconoce partidos nacionales y cientos de partidos de distrito. Acá hay una selección de 25 partidos nacionales, no el padrón completo.</li>
+        </ul>
+      </details>
     </div>
   </section>
 
@@ -60,7 +76,7 @@
     <div class="card">
       <div class="row" style="justify-content:space-between">
         <span class="qnum" id="qnum"></span>
-        <button class="btn ghost" id="back" type="button" style="padding:6px 12px;font-size:.9rem">Volver</button>
+        <button class="btn ghost" id="back" type="button">← Anterior</button>
       </div>
       <div class="progress" aria-hidden="true"><i id="bar"></i></div>
       <p class="qtext" id="qtext" tabindex="-1"></p>
@@ -104,19 +120,19 @@
       <div id="friend"></div>
     </div>
 
-    <div class="card">
-      <h2>Tus respuestas frente a las votaciones</h2>
+    <details class="card fold">
+      <summary><h2>Tus respuestas frente a las votaciones</h2></summary>
       <p class="small muted">Relaciono algunas de tus respuestas con votaciones reales del Congreso. Es una aproximación: una ley incluye muchos artículos y tus respuestas no cubren todos.</p>
       <ul class="small notes" id="votebox"></ul>
-    </div>
+    </details>
 
-    <div class="card">
-      <h2>Explorador de votaciones</h2>
+    <details class="card fold">
+      <summary><h2>Explorador de votaciones</h2></summary>
       <p class="small muted">Elegí una votación para ver el resultado, el voto de cada bloque del Senado (con el acta oficial) y cómo se alinean los partidos.</p>
       <label for="vsel" class="small">Votación</label>
       <select id="vsel"></select>
       <div id="vdetail"></div>
-    </div>
+    </details>
 
     <div class="card">
       <h2>Mapa: economía y valores</h2>

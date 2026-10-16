@@ -45,6 +45,7 @@ test("versión completa y enlace compartido reproduce el resultado", async ({ pa
   await page.goto("/");
   await page.goto(url);
   await expect(page.locator("#list .match .name").first()).toHaveText(first);
+  await page.click("summary:has-text('Explorador de votaciones')");
   await page.selectOption("#vsel", "2");
   await expect(page.locator("#vdetail table")).toHaveCount(2);
   await expect(page.locator("#vdetail")).toContainText("Diputados, por bloque");

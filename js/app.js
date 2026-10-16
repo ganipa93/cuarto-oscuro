@@ -84,7 +84,7 @@
     $("copy").addEventListener("click", copyLink);
     $("png").addEventListener("click", downloadCard);
     $("friend-go").addEventListener("click", compareFriend);
-    buildChips("chips", CHIPS, "all", function (v) { $("list").setAttribute("data-filter", v); });
+    buildChips("chips", CHIPS, "all", function (v) { $("list").setAttribute("data-filter", v); Array.prototype.forEach.call($("list").querySelectorAll(".pdet"), function (x) { x.open = v !== "all"; }); });
     window.addEventListener("hashchange", route);
     route();
   }
@@ -194,7 +194,7 @@
 
   function renderResult() {
     computeResult();
-    $("headline").textContent = S.me.map(function (v, a) { return D.AX[a].k.toLowerCase() + ": " + side(v, a); }).join(" · ");
+    var hl = $("headline"); hl.innerHTML = ""; S.me.forEach(function (v, a) { hl.appendChild(el("span", "hl", D.AX[a].k + ": " + side(v, a))); });
     var ax = $("axes"); ax.innerHTML = "";
     S.me.forEach(function (v, a) {
       var d = el("div", "axis"), pos = (v + 2) / 4 * 100;
@@ -224,7 +224,7 @@
     var pc = el("span", "pct", r.pct + "%");
     d.appendChild(nm); d.appendChild(pc); d.appendChild(el("span", "tag", p.f)); d.appendChild(el("span", "nt", p.nt));
     if (p.ct) { var c = el("div", "ct"); c.appendChild(el("b", null, "Para mirar con atención")); c.appendChild(document.createTextNode(p.ct)); d.appendChild(c); }
-    sections(p, d, r);
+    var det = el("details", "pdet"); det.appendChild(el("summary", null, "Campañas, votos y proyectos")); sections(p, det, r); d.appendChild(det);
     var more = el("div", "more"); more.appendChild(Object.assign(el("a", null, "Ver ficha completa de " + p.n), { href: "#partido/" + p.slug }));
     more.appendChild(document.createTextNode(" · ")); more.appendChild(reportLink("Partido " + p.n));
     d.appendChild(more);
@@ -347,7 +347,7 @@
 
   // ---------- fuentes y alcance ----------
   function listCard(title, items, extra) {
-    var c = el("div", "card"); c.appendChild(el("h3", null, title));
+    var c = el("details", "card fold"); var sm = el("summary"); sm.appendChild(el("h3", null, title)); c.appendChild(sm);
     if (extra) c.appendChild(extra);
     var ul = el("ul", "small muted notes"); items.forEach(function (h) { var li = el("li"); li.innerHTML = h; ul.appendChild(li); });
     c.appendChild(ul); return c;
@@ -655,7 +655,7 @@
   // ---------- rutas ----------
   function route() {
     var h = location.hash;
-    document.title = "Cuarto Oscuro";
+    document.title = "Cuarto Oscuro · Test de ideología política argentina";
     if (/^#r\//.test(h)) {
       if (decodeHash(h)) {
         S.hash = h; renderResult(); show("result", "headline");
