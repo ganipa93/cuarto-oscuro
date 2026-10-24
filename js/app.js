@@ -261,11 +261,12 @@
     var vb = $("votebox"); vb.innerHTML = "";
     D.V.defs.forEach(function (v, k) {
       var li = el("li");
-      var me = S.st[k] === 1 ? "tendrías una postura a favor" : (S.st[k] === -1 ? "tendrías una postura en contra" : "tu postura no es clara");
+      var me = !v.q.length ? "sin preguntas en el test" : (S.st[k] === 1 ? "tendrías una postura a favor" : (S.st[k] === -1 ? "tendrías una postura en contra" : "tu postura no es clara"));
       var fav = [], con = [];
       D.P.forEach(function (p) { if (p.vv && p.vv[k] === 1) fav.push(p.n); if (p.vv && p.vv[k] === -1) con.push(p.n); });
       li.appendChild(el("b", null, v.n + ": " + me)); li.appendChild(document.createElement("br"));
-      li.appendChild(el("span", null, "Según tus respuestas sobre " + v.rel + ". Partidos a favor: " + (fav.join(", ") || "ninguno relevado") + ". En contra: " + (con.join(", ") || "ninguno relevado") + "."));
+      var base = v.q.length ? "Según tus respuestas sobre " + v.rel + ". " : "El test todavía no tiene preguntas sobre " + v.rel + ". ";
+      li.appendChild(el("span", null, base + "Partidos a favor: " + (fav.join(", ") || "ninguno relevado") + ". En contra: " + (con.join(", ") || "ninguno relevado") + "."));
       vb.appendChild(li);
     });
   }
@@ -296,7 +297,8 @@
     box.style.cssText = "display:flex;flex-direction:column;gap:12px;margin-top:8px";
     var ul = el("ul", "small notes"); v.res.forEach(function (t) { ul.appendChild(el("li", null, t)); }); box.appendChild(ul);
     var stance = S.st ? S.st[v.id] : 0;
-    box.appendChild(el("p", "small", "Con tus respuestas " + (stance === 1 ? "tendrías una postura a favor." : (stance === -1 ? "tendrías una postura en contra." : "tu postura no es clara."))));
+    box.appendChild(el("p", "small", !v.q.length ? "El test todavía no tiene preguntas sobre " + v.rel + ", así que no compara tu postura con esta votación." :
+      "Con tus respuestas " + (stance === 1 ? "tendrías una postura a favor." : (stance === -1 ? "tendrías una postura en contra." : "tu postura no es clara."))));
     if (v.links && v.links.length) { var l = el("div", "lk"); l.style.cssText = "display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.88rem"; v.links.forEach(function (x) { l.appendChild(link(x[0], x[1])); }); box.appendChild(l); }
     var any = false;
     if (v.acta && D.V.actas[v.acta]) { actaTable(box, "Senado", D.V.actas[v.acta]); any = true; }
