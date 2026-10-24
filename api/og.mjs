@@ -52,8 +52,10 @@ function imagen(r) {
 export function GET(request) {
   const r = resultado(new URL(request.url).searchParams.get("c"));
   if (!r) return Response.redirect(new URL("/og.png", request.url), 302);
-  return new ImageResponse(imagen(r), {
-    width: 1200, height: 630, fonts: FONTS,
-    headers: { "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400" },
+  const img = new ImageResponse(imagen(r), { width: 1200, height: 630, fonts: FONTS });
+  // ImageResponse agrega por su cuenta un caché "immutable" de un año; acá se reemplaza por uno
+  // de un día, para que la imagen se actualice si cambian los datos de los partidos.
+  return new Response(img.body, {
+    headers: { "Content-Type": "image/png", "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400" },
   });
 }
