@@ -194,6 +194,7 @@
 
   function renderResult() {
     computeResult();
+    if (window.va) window.va("event", { name: "resultado" });
     var hl = $("headline"); hl.innerHTML = ""; S.me.forEach(function (v, a) { hl.appendChild(el("span", "hl", D.AX[a].k + ": " + side(v, a))); });
     var ax = $("axes"); ax.innerHTML = "";
     S.me.forEach(function (v, a) {
