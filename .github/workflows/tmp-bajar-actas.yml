@@ -1,0 +1,21 @@
+# TEMPORAL: baja las actas del Senado de 2026 y deja un resumen en tmp/actas-senado-2026.json. Se borra antes del merge.
+name: tmp-bajar-actas
+on:
+  push:
+    branches: [senado-2026]
+    paths: [".github/workflows/tmp-bajar-actas.yml", "scripts/tmp-actas.js"]
+permissions:
+  contents: write
+jobs:
+  bajar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/tmp-actas.js
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp/actas-senado-2026.json && git commit -m "tmp: actas del Senado 2026" && git push
