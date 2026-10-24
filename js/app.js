@@ -480,9 +480,10 @@
   // ---------- comparar con otra persona ----------
   function compareFriend() {
     var box = $("friend"); box.innerHTML = "";
-    var m = /#r\/[sf]\/[0-4-]+\/[01]+/.exec($("friend-in").value);
-    var o = m && parseHash(m[0]);
-    if (!o) { box.appendChild(el("p", "err", "No reconozco ese enlace. Tiene que ser un enlace de resultado de este sitio (con #r/…).")); return; }
+    // acepta los dos formatos: …/#r/s/…/… (viejo) y …/r/s/…/… (el que se comparte ahora)
+    var m = /(?:#|\/)r\/([sf]\/[0-4-]+\/[01]+)/.exec($("friend-in").value);
+    var o = m && parseHash("#r/" + m[1]);
+    if (!o) { box.appendChild(el("p", "err", "No reconozco ese enlace. Tiene que ser un enlace de resultado de este sitio (con /r/…).")); return; }
     var me2 = score(o.ans, o.wt), st2 = stances(o.ans), r2 = rank(me2, st2);
     var d = 0; for (var a = 0; a < 4; a++) d += Math.pow(S.me[a] - me2[a], 2);
     var pct = Math.round(Math.max(0, 1 - Math.sqrt(d) / 6) * 100);
@@ -604,7 +605,12 @@
   }
 
   // ---------- compartir ----------
-  function shareUrl() { return location.origin + location.pathname + S.hash; }
+  // En el sitio publicado se comparte /r/…: esa página tiene su propia imagen para redes
+  // (api/r.mjs) y lleva al resultado. En local no existe, así que se usa el #r/… de siempre.
+  function shareUrl() {
+    var local = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || location.protocol === "file:";
+    return local ? location.origin + location.pathname + S.hash : location.origin + "/" + S.hash.slice(1);
+  }
   function copyLink() {
     var u = shareUrl(), b = $("copy");
     function done(msg) { b.textContent = msg; say(msg); setTimeout(function () { b.textContent = "Copiar enlace"; }, 2500); }

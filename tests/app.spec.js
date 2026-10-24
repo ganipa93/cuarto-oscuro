@@ -98,6 +98,10 @@ test("comparar con otra persona, 'qué pesó más' y enlace viejo de 44 pregunta
   await page.fill("#friend-in", mine.replace(/\/r\/s\//, "/r/s/").replace(/[01]\/?$/, "0"));
   await page.click("#friend-go");
   await expect(page.locator("#friend table")).toBeVisible();
+  // formato nuevo para compartir: …/r/s/…/…
+  await page.fill("#friend-in", "https://cuarto-oscuro.vercel.app/" + mine.split("#")[1]);
+  await page.click("#friend-go");
+  await expect(page.locator("#friend table")).toBeVisible();
   await page.fill("#friend-in", "no es un enlace");
   await page.click("#friend-go");
   await expect(page.locator("#friend .err")).toBeVisible();
@@ -130,3 +134,19 @@ for (const route of ["#metodo", "#comparar", "#distritos/cordoba", "#linea"]) {
     expect(r.violations.filter((v) => ["serious", "critical"].includes(v.impact))).toEqual([]);
   });
 }
+
+test("la imagen para redes calcula el mismo resultado que el navegador", async ({ page }) => {
+  const { resultado } = await import(require("url").pathToFileURL(require("path").join(__dirname, "..", "api", "_resultado.mjs")).href);
+  for (const pick of [(i) => i % 5, (i) => (i % 2 ? 4 : 0), (i) => (i * 3) % 5]) {
+    await page.goto("/");
+    await page.click("#start-short");
+    await answerAll(page, 15, pick);
+    await expect(page.locator("#headline")).toBeVisible();
+    const code = page.url().split("#r/")[1];
+    const r = resultado(code);
+    const top = page.locator("#list .match").first();
+    const nombre = (await top.locator(".name").evaluate((e) => e.firstChild.textContent)).trim();
+    expect(nombre).toBe(r.top[0].n);
+    await expect(top.locator(".pct")).toHaveText(r.top[0].pct + "%");
+  }
+});
