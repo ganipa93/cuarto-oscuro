@@ -1,0 +1,32 @@
+# TEMPORAL: prueba el detector de actas y trae el texto de las actas del 6/8/2026. Se borra antes del merge.
+name: diag-actas
+on:
+  pull_request:
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: |
+          node scripts/watch-actas.js > /tmp/w.txt 2>&1 || true
+          node -e '
+            const ids=[2795,2796,2797,2798,2799,2800];
+            (async()=>{for(const id of ids){
+              const r=await fetch("https://www.senado.gob.ar/votaciones/detalleActa/"+id,{headers:{"user-agent":"cuarto-oscuro-watch"}});
+              const h=await r.text();
+              const t=h.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi," ").replace(/<\/(tr|p|div|h\d|li)>/gi,"\n").replace(/<[^>]+>/g," ").replace(/&nbsp;/g," ").replace(/&aacute;/g,"á").replace(/&eacute;/g,"é").replace(/&iacute;/g,"í").replace(/&oacute;/g,"ó").replace(/&uacute;/g,"ú").replace(/&ntilde;/g,"ñ").replace(/&Ntilde;/g,"Ñ").replace(/[ \t]+/g," ").replace(/\n\s*\n+/g,"\n");
+              const i=Math.max(0,t.search(/Acta/i));
+              console.log("===== ACTA "+id+" (HTTP "+r.status+")\n"+t.slice(i,i+9000));
+            }})();' > /tmp/a.txt 2>&1
+          { echo "### Detector"; echo '```'; cat /tmp/w.txt; echo '```'; } > /tmp/c1.md
+          gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/c1.md
+          { echo "### Actas 2795-2800"; echo '```'; head -c 60000 /tmp/a.txt; echo '```'; } > /tmp/c2.md
+          gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/c2.md
+        env:
+          GH_TOKEN: ${{ github.token }}
