@@ -3,14 +3,18 @@
 //
 // Cuidados, porque la numeración del Senado no es cronológica:
 //  - se cargan actas históricas con números nuevos (2005, 2009, 2013…): se descartan las que tienen
-//    fecha anterior a la última acta cargada;
+//    fecha anterior a "senado_revisado" (votes.json);
 //  - pasado el último número existente, el sitio devuelve una página sin votación que muestra la fecha
 //    del día: solo cuenta como acta una página con resultados (afirmativos y negativos).
 const fs = require("fs"), path = require("path");
 const V = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "votes.json"), "utf8"));
+// "senado_revisado" (votes.json) es la fecha hasta la que ya se revisaron las sesiones del Senado.
+// Se usa esa fecha y no la del acta más nueva, porque se puede cargar una votación puntual
+// (por ejemplo, de agosto) sin haber revisado todavía las sesiones anteriores.
 const senado = Object.values(V.actas).filter((a) => /senado\.gob\.ar/.test(a.u));
-const last = Math.max(...senado.map((a) => Number((a.u.match(/(\d+)\/?$/) || [])[1])).filter(Boolean));
-const lastDate = senado.map((a) => a.d).sort().pop();
+const lastDate = V.senado_revisado || senado.map((a) => a.d).sort().pop();
+const idDe = (a) => Number((a.u.match(/(\d+)\/?$/) || [])[1]);
+const last = Math.max(...senado.filter((a) => a.d <= lastDate).map(idDe).filter(Boolean));
 const base = "https://www.senado.gob.ar/votaciones/detalleActa/";
 const hoy = new Date().toLocaleDateString("es-AR", { timeZone: "America/Argentina/Buenos_Aires", day: "2-digit", month: "2-digit", year: "numeric" });
 
@@ -46,7 +50,7 @@ function asunto(t) {
       found.push({ id, f, a: asunto(t) });
     } catch (e) { misses++; }
   }
-  console.log(`Última acta cargada: ${last} (${lastDate}). Actas nuevas: ${found.length}. Descartadas por ser anteriores: ${viejas}.`);
+  console.log(`Sesiones revisadas hasta el ${lastDate} (acta ${last}). Actas nuevas para revisar: ${found.length}. Descartadas por ser anteriores: ${viejas}.`);
   // agrupadas por sesión, que es como se revisan
   const porFecha = {};
   found.forEach((x) => (porFecha[x.f] = porFecha[x.f] || []).push(x));

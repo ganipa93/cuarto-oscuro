@@ -260,6 +260,27 @@
    "actasD": [
     "d-discapacidad"
    ]
+  },
+  {
+   "id": 7,
+   "n": "Inviolabilidad de la propiedad privada (2026)",
+   "q": [],
+   "rel": "la protección de la propiedad privada",
+   "short": "Propiedad privada",
+   "date": "2026-08-06",
+   "res": [
+    "Senado 6/8/2026 (la votación terminó en la madrugada del 7), en general: 37 a 33, sin abstenciones y con 2 ausentes (acta oficial). Los capítulos se aprobaron por márgenes similares.",
+    "El oficialismo retiró el capítulo que modificaba la Ley de Manejo del Fuego porque no tenía los votos.",
+    "Diputados: pendiente. El proyecto tiene media sanción del Senado."
+   ],
+   "acta": "propiedad",
+   "tema": "economía",
+   "links": [
+    [
+     "Cobertura de la sesión (La Nación)",
+     "https://www.lanacion.com.ar/politica/ley-de-propiedad-privada-en-el-senado-en-vivo-se-debate-el-proyecto-de-milei-minuto-a-minuto-nid06082026/"
+    ]
+   ]
   }
  ],
  "actas": {
@@ -1102,6 +1123,119 @@
      0
     ]
    ]
+  },
+  "propiedad": {
+   "t": "Inviolabilidad de la propiedad privada, en general",
+   "d": "2026-08-06",
+   "maj": "Simple",
+   "tot": [
+    37,
+    33,
+    0,
+    2
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2796",
+   "b": [
+    [
+     "Justicialista",
+     0,
+     21,
+     0,
+     1
+    ],
+    [
+     "La Libertad Avanza",
+     21,
+     0,
+     0,
+     0
+    ],
+    [
+     "UCR",
+     9,
+     0,
+     0,
+     1
+    ],
+    [
+     "Convicción Federal",
+     0,
+     3,
+     0,
+     0
+    ],
+    [
+     "Frente PRO",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente Cívico por Santiago",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Movere Santa Cruz",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     "Despierta Chubut",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Primero los Salteños",
+     0,
+     1,
+     0,
+     0
+    ]
+   ]
   }
- }
+ },
+ "senado_revisado": "2026-02-27"
 }
