@@ -49,10 +49,13 @@ test("versión completa y enlace compartido reproduce el resultado", async ({ pa
   await page.selectOption("#vsel", "2");
   await expect(page.locator("#vdetail table")).toHaveCount(2);
   await expect(page.locator("#vdetail")).toContainText("Diputados, por bloque");
-  // votación solo del Senado y sin preguntas en el test (propiedad privada, 2026)
+  // votación solo del Senado, con pregunta propia en el test (propiedad privada, 2026)
   await page.selectOption("#vsel", "7");
   await expect(page.locator("#vdetail table")).toHaveCount(1);
   await expect(page.locator("#vdetail")).toContainText("Senado, por bloque");
+  await expect(page.locator("#vdetail")).toContainText("Con tus respuestas");
+  // votación sin preguntas en el test (acuerdo con holdouts, 2026)
+  await page.selectOption("#vsel", "9");
   await expect(page.locator("#vdetail")).toContainText("no compara tu postura");
   await page.click("#png", { trial: true });
   expect(errs.join("\n")).toBe("");
