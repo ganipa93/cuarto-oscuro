@@ -264,21 +264,175 @@
   {
    "id": 7,
    "n": "Inviolabilidad de la propiedad privada (2026)",
-   "q": [],
-   "rel": "la protección de la propiedad privada",
+   "q": [
+    [
+     52,
+     1
+    ]
+   ],
+   "rel": "la velocidad de los desalojos",
    "short": "Propiedad privada",
    "date": "2026-08-06",
    "res": [
     "Senado 6/8/2026 (la votación terminó en la madrugada del 7), en general: 37 a 33, sin abstenciones y con 2 ausentes (acta oficial). Los capítulos se aprobaron por márgenes similares.",
-    "El oficialismo retiró el capítulo que modificaba la Ley de Manejo del Fuego porque no tenía los votos.",
+    "Lo aprobado acelera los desalojos (juicio sumarísimo, desocupación inmediata con declaración jurada en lugar de caución) y pone más límites a las expropiaciones: utilidad pública más estricta e indemnización completa antes de que el Estado tome el bien.",
+    "Antes de votar, el oficialismo retiró el capítulo de tierras rurales (límites a la compra por extranjeros) y el que modificaba la Ley de Manejo del Fuego; en comisión ya había salido el de barrios populares.",
     "Diputados: pendiente. El proyecto tiene media sanción del Senado."
    ],
    "acta": "propiedad",
    "tema": "economía",
    "links": [
     [
+     "Las claves del proyecto (Chequeado)",
+     "https://chequeado.com/el-explicador/claves-del-proyecto-de-ley-sobre-inviolabilidad-de-la-propiedad-privada-que-impulsa-el-gobierno-de-milei/"
+    ],
+    [
+     "Qué capítulos se retiraron (BAE Negocios)",
+     "https://www.baenegocios.com/politica/el-senado-aprobo-la-ley-de-propiedad-privada-pero-el-gobierno-resigno-los-capitulos-sobre-tierras-y-manejo-del-fuego-4971/"
+    ],
+    [
      "Cobertura de la sesión (La Nación)",
      "https://www.lanacion.com.ar/politica/ley-de-propiedad-privada-en-el-senado-en-vivo-se-debate-el-proyecto-de-milei-minuto-a-minuto-nid06082026/"
+    ]
+   ]
+  },
+  {
+   "id": 8,
+   "n": "Regularización de armas de fuego (2026)",
+   "q": [
+    [
+     27,
+     1
+    ]
+   ],
+   "rel": "la tenencia de armas",
+   "short": "Regularización de armas",
+   "date": "2026-05-14",
+   "res": [
+    "Senado 14/5/2026, en general: 40 a 26 con 6 ausentes (acta oficial). Con esta votación fue ley; venía con media sanción de Diputados de octubre de 2024.",
+    "Da 360 días para registrar armas sin papeles o con el registro vencido, sin la sanción por tenencia ilegítima si no hay causa abierta, y prorroga hasta fines de 2027 la entrega voluntaria anónima (ese artículo salió por unanimidad).",
+    "A favor: más armas registradas son más armas trazables. En contra: es un blanqueo que no distingue entre armas que alguna vez estuvieron registradas y las que nunca lo estuvieron."
+   ],
+   "acta": "armas",
+   "tema": "seguridad",
+   "links": [
+    [
+     "La ley y el debate (Perfil)",
+     "https://www.perfil.com/noticias/politica/el-senado-convirtio-en-ley-la-regularizacion-de-armas-de-fuego.phtml"
+    ]
+   ]
+  },
+  {
+   "id": 9,
+   "n": "Acuerdo de pago a holdouts (2026)",
+   "q": [],
+   "rel": "el acuerdo con los acreedores que litigaban contra el país",
+   "short": "Pago a holdouts",
+   "date": "2026-06-04",
+   "res": [
+    "Senado 4/6/2026, en general y en particular: 40 a 22 con 10 ausentes (acta oficial). Diputados lo sancionó el 24/6/2026, 139 a 97.",
+    "Aprueba pagar US$ 171 millones a dos fondos que litigaban desde el default (Bainbridge y Attestor) para levantar embargos sobre activos del Estado, como acciones de YPF, Aerolíneas y el Banco Nación.",
+    "A favor: cierra un conflicto de 25 años con una quita cercana al 30%. En contra: premia a fondos que compraron deuda en default y la documentación enviada al Congreso era incompleta."
+   ],
+   "acta": "holdouts",
+   "tema": "economía",
+   "links": [
+    [
+     "Qué aprobó el Senado (Perfil)",
+     "https://www.perfil.com/noticias/politica/fondos-buitre-milei-consiguio-la-media-sancion-para-pagar-us171-millones-a-holdouts.phtml"
+    ],
+    [
+     "Sanción en Diputados (La Gaceta)",
+     "https://www.lagaceta.com.ar/nota/1142606/politica/camara-diputados-sanciono-acuerdo-renegociacion-pago-holdouts.html"
+    ]
+   ]
+  },
+  {
+   "id": 10,
+   "n": "Traspaso de la Justicia a la Ciudad (2026)",
+   "q": [],
+   "rel": "el traspaso de la Justicia Nacional a la Ciudad de Buenos Aires",
+   "short": "Traspaso de la Justicia",
+   "date": "2026-09-17",
+   "res": [
+    "Senado 17/9/2026, en general y en particular: 44 a 21 con 7 ausentes (acta oficial). Pasó a Diputados.",
+    "Aprueba dos convenios para que la Ciudad juzgue delitos no federales de menores de 18 años y otros delitos comunes (contra el honor, la integridad sexual y la libertad, entre otros). Entra en vigor 120 días después de que se acuerden los recursos.",
+    "A favor: cumple la autonomía de la Ciudad prevista en la Constitución y sigue un proceso iniciado en 2000. Votaron en contra el bloque justicialista y los senadores de Santiago del Estero."
+   ],
+   "acta": "traspaso",
+   "tema": "instituciones",
+   "links": [
+    [
+     "Qué se transfiere (Diario Judicial)",
+     "https://www.diariojudicial.com/news-104433-traspaso-a-mitad-de-camino"
+    ]
+   ]
+  },
+  {
+   "id": 11,
+   "n": "Inocencia Fiscal II (2026)",
+   "q": [],
+   "rel": "los controles de ARCA sobre el origen de los ahorros",
+   "short": "Inocencia Fiscal II",
+   "date": "2026-09-17",
+   "res": [
+    "Senado 17/9/2026, en general: 44 a 23 con 5 ausentes (acta oficial). Con esta votación fue ley.",
+    "Amplía el régimen simplificado de Ganancias (deja afuera a funcionarios), fija un umbral para la \"discrepancia significativa\" y limita hasta 2027 las presunciones que ARCA puede usar por sí solas: la carga de la prueba queda en el fisco.",
+    "A favor: atraer al sistema los ahorros en dólares no declarados. En contra: favorece a evasores, según el bloque justicialista."
+   ],
+   "acta": "inocencia2",
+   "tema": "economía",
+   "links": [
+    [
+     "Qué cambia (El Economista)",
+     "https://eleconomista.com.ar/economia/inocencia-fiscal-ii-ya-ley-cambia-dolares-colchon-quienes-quedan-afuera-n98258"
+    ]
+   ]
+  },
+  {
+   "id": 12,
+   "n": "Ley de Biocombustibles (2026)",
+   "q": [],
+   "rel": "el régimen de biocombustibles",
+   "short": "Biocombustibles",
+   "date": "2026-09-17",
+   "res": [
+    "Senado 17/9/2026, en general: 41 a 25 con 6 ausentes (acta oficial). Pasó a Diputados.",
+    "Sube el corte obligatorio de bioetanol en la nafta del 12% al 15% y de biodiésel en el gasoil del 7,5% al 10%, deroga la ley 27.640 y crea un mercado electrónico con subastas, con una transición hasta 2036 para las pymes no integradas.",
+    "A favor: reglas estables por 15 años y protección de la producción regional. Votaron en contra el bloque justicialista y Movere Santa Cruz."
+   ],
+   "acta": "biocombustibles",
+   "tema": "economía",
+   "links": [
+    [
+     "Qué cambia (Palabras del Derecho)",
+     "https://www.palabrasdelderecho.com.ar/articulo/7000/Biocombustibles-el-Senado-dio-media-sancion-a-la-ley-que-aumenta-los-cortes-obligatorios-y-desregula-el-mercado"
+    ]
+   ]
+  },
+  {
+   "id": 13,
+   "n": "Reforma del Banco Central (2026)",
+   "q": [
+    [
+     51,
+     1
+    ]
+   ],
+   "rel": "la independencia del Banco Central y el financiamiento al Tesoro",
+   "short": "Reforma del BCRA",
+   "date": "2026-09-24",
+   "res": [
+    "Senado 24/9/2026, en general: 46 a 22 con 4 ausentes (acta oficial). Como el Senado cambió el texto, volvió a Diputados.",
+    "Prohíbe que el BCRA financie al Tesoro y a las provincias, fija como objetivo preservar el valor de la moneda, elimina el direccionamiento del crédito y permite usar reservas como garantía. El Senado se quedó con la designación y remoción del directorio, por mayoría absoluta.",
+    "A favor: reglas que protegen la moneda de la discrecionalidad política. En contra: da demasiado margen sobre las reservas y puede poner en riesgo los depósitos."
+   ],
+   "acta": "bcra",
+   "tema": "economía",
+   "links": [
+    [
+     "Qué cambia y por qué vuelve a Diputados (El Economista)",
+     "https://eleconomista.com.ar/politica/milei-logro-aprobar-reforma-bcra-pero-tuvo-ceder-cambio-clave-vuelve-diputados-n98405"
     ]
    ]
   }
@@ -1235,7 +1389,679 @@
      0
     ]
    ]
+  },
+  "armas": {
+   "t": "Regularización de armas de fuego, en general",
+   "d": "2026-05-14",
+   "maj": "Simple",
+   "tot": [
+    40,
+    26,
+    0,
+    6
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2693",
+   "b": [
+    [
+     "Justicialista",
+     0,
+     21,
+     0,
+     1
+    ],
+    [
+     "La Libertad Avanza",
+     21,
+     0,
+     0,
+     0
+    ],
+    [
+     "UCR",
+     9,
+     0,
+     0,
+     1
+    ],
+    [
+     "Convicción Federal",
+     0,
+     3,
+     0,
+     0
+    ],
+    [
+     "Frente PRO",
+     2,
+     0,
+     0,
+     1
+    ],
+    [
+     "Frente Cívico por Santiago",
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     "Movere Santa Cruz",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Despierta Chubut",
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     "Independencia",
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     "Justicia Social Federal",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero los Salteños",
+     1,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "holdouts": {
+   "t": "Acuerdo con acreedores de deuda en litigio (holdouts)",
+   "d": "2026-06-04",
+   "maj": "Simple",
+   "tot": [
+    40,
+    22,
+    0,
+    10
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2770",
+   "b": [
+    [
+     "Justicialista",
+     0,
+     17,
+     0,
+     5
+    ],
+    [
+     "La Libertad Avanza",
+     20,
+     0,
+     0,
+     1
+    ],
+    [
+     "UCR",
+     9,
+     0,
+     0,
+     1
+    ],
+    [
+     "Convicción Federal",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente PRO",
+     2,
+     0,
+     0,
+     1
+    ],
+    [
+     "Frente Cívico por Santiago",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Movere Santa Cruz",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     "Despierta Chubut",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     "Primero los Salteños",
+     1,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "traspaso": {
+   "t": "Traspaso de competencias penales de la Justicia Nacional a la Ciudad",
+   "d": "2026-09-17",
+   "maj": "Simple",
+   "tot": [
+    44,
+    21,
+    0,
+    7
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2807",
+   "b": [
+    [
+     "Justicialista",
+     0,
+     18,
+     0,
+     4
+    ],
+    [
+     "La Libertad Avanza",
+     20,
+     0,
+     0,
+     1
+    ],
+    [
+     "UCR",
+     9,
+     0,
+     0,
+     1
+    ],
+    [
+     "Convicción Federal",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente PRO",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente Cívico por Santiago",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Movere Santa Cruz",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     "Despierta Chubut",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero los Salteños",
+     1,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "inocencia2": {
+   "t": "Inocencia Fiscal II, en general",
+   "d": "2026-09-17",
+   "maj": "Simple",
+   "tot": [
+    44,
+    23,
+    0,
+    5
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2808",
+   "b": [
+    [
+     "Justicialista",
+     0,
+     20,
+     0,
+     2
+    ],
+    [
+     "La Libertad Avanza",
+     20,
+     0,
+     0,
+     1
+    ],
+    [
+     "UCR",
+     9,
+     0,
+     0,
+     1
+    ],
+    [
+     "Convicción Federal",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente PRO",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente Cívico por Santiago",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Movere Santa Cruz",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     "Despierta Chubut",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero los Salteños",
+     1,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "biocombustibles": {
+   "t": "Marco regulatorio de biocombustibles, en general",
+   "d": "2026-09-17",
+   "maj": "Simple",
+   "tot": [
+    41,
+    25,
+    0,
+    6
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2819",
+   "b": [
+    [
+     "Justicialista",
+     1,
+     19,
+     0,
+     2
+    ],
+    [
+     "La Libertad Avanza",
+     19,
+     0,
+     0,
+     2
+    ],
+    [
+     "UCR",
+     7,
+     1,
+     0,
+     2
+    ],
+    [
+     "Convicción Federal",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente PRO",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente Cívico por Santiago",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Movere Santa Cruz",
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Despierta Chubut",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero los Salteños",
+     1,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "bcra": {
+   "t": "Reforma de la Carta Orgánica del Banco Central, en general",
+   "d": "2026-09-24",
+   "maj": "Simple",
+   "tot": [
+    46,
+    22,
+    0,
+    4
+   ],
+   "u": "https://www.senado.gob.ar/votaciones/detalleActa/2829",
+   "b": [
+    [
+     "Justicialista",
+     0,
+     20,
+     0,
+     2
+    ],
+    [
+     "La Libertad Avanza",
+     21,
+     0,
+     0,
+     0
+    ],
+    [
+     "UCR",
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     "Convicción Federal",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente PRO",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Frente Cívico por Santiago",
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     "Movere Santa Cruz",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Movimiento por Misiones",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Provincias Unidas",
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     "Despierta Chubut",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Justicia Social Federal",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "La Neuquinidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Primero los Salteños",
+     1,
+     0,
+     0,
+     0
+    ]
+   ]
   }
  },
- "senado_revisado": "2026-02-27"
+ "senado_revisado": "2026-09-24"
 }
