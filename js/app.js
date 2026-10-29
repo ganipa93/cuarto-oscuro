@@ -69,7 +69,9 @@
     $("foot").innerHTML = "";
     $("foot").appendChild(document.createTextNode("Datos relevados hasta el " + fmtDate(D.M.updated) + ". Código y datos abiertos en "));
     $("foot").appendChild(link("GitHub", "https://github.com/ganipa93/cuarto-oscuro"));
-    $("foot").appendChild(document.createTextNode(". No es una recomendación de voto."));
+    $("foot").appendChild(document.createTextNode(". No es una recomendación de voto. Para ver cuánto gastó cada gobierno, "));
+    $("foot").appendChild(link("Presupuesto Argentina", "https://presupuesto-argentina.vercel.app/historia"));
+    $("foot").appendChild(document.createTextNode("."));
     $("start-short").addEventListener("click", function () { startQuiz("short"); });
     $("start-full").addEventListener("click", function () { startQuiz("full"); });
     $("back").addEventListener("click", function () { if (S.i > 0) { S.i--; renderQ(); } });
