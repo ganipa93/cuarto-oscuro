@@ -37,6 +37,30 @@
    ]
   },
   {
+   "d": "2008-11-20",
+   "t": "Fin de las AFJP: Sistema Integrado Previsional Argentino (Ley 26.425)",
+   "e": "Unificó el sistema jubilatorio en un régimen público de reparto (SIPA) y eliminó el régimen de capitalización de las AFJP; los fondos pasaron a la ANSES.",
+   "tema": "economía",
+   "src": [
+    [
+     "Texto de la ley (argentina.gob.ar)",
+     "https://argentina.gob.ar/sites/default/files/2023/06/ley_26425_-_sistema_integrado_previsional_argentino.pdf"
+    ]
+   ]
+  },
+  {
+   "d": "2009-10-10",
+   "t": "Ley de Servicios de Comunicación Audiovisual (Ley 26.522)",
+   "e": "Reguló la radio y la televisión en todo el país, con límites a la cantidad de licencias por grupo y reserva de espectro para medios sin fines de lucro.",
+   "tema": "instituciones",
+   "src": [
+    [
+     "Texto de la ley (Ministerio de Agricultura, normativa)",
+     "https://magyp.gob.ar/sitio/areas/d_recursos_humanos/concurso/normativa/_archivos/000001_Leyes/000000_LEY%2026.522%20COMUNICACI%C3%93N%20AUDIOVISUAL.pdf"
+    ]
+   ]
+  },
+  {
    "d": "2010-07-15",
    "t": "Matrimonio igualitario (Ley 26.618)",
    "e": "El Senado la aprobó el 15 de julio de 2010 con 33 votos a favor, 27 en contra y 3 abstenciones.",
@@ -57,6 +81,34 @@
     [
      "Cadena 3, quién votó",
      "https://www.cadena3.com/noticia/politica-y-economia/el-archivo-condena-a-todos-la-lista-de-los-que-votaron-la-expropiacion-de-ypf_438809"
+    ]
+   ]
+  },
+  {
+   "d": "2012-05-09",
+   "t": "Identidad de género (Ley 26.743)",
+   "e": "Reconoció el derecho a la identidad de género autopercibida y permitió cambiar el sexo y el nombre en el DNI con un trámite administrativo.",
+   "tema": "valores",
+   "src": [
+    [
+     "Texto de la ley (argentina.gob.ar)",
+     "https://argentina.gob.ar/sites/default/files/2023/06/ley_26.743_-_identidad_de_genero.pdf"
+    ]
+   ]
+  },
+  {
+   "d": "2020-12-30",
+   "t": "Interrupción voluntaria del embarazo (Ley 27.610)",
+   "e": "Reguló el acceso al aborto voluntario hasta la semana 14 inclusive y a la atención posaborto. En 2018 un proyecto similar había sido rechazado por el Senado.",
+   "tema": "valores",
+   "src": [
+    [
+     "Texto de la ley (Digesto de Catamarca)",
+     "https://digesto.catamarca.gob.ar/media/ddhh/Ley_27.610.pdf"
+    ],
+    [
+     "Boletín Oficial, 15/1/2021",
+     "https://www.boletinoficial.gob.ar/detalleAviso/primera/239808/20210115"
     ]
    ]
   },
@@ -137,5 +189,5 @@
    ]
   }
  ],
- "nota": "No es el catálogo completo de leyes desde 1983: incluí solo normas emblemáticas con fecha y fuente verificadas. Faltan, entre otras, la estatización de las AFJP, la Ley de Medios, la identidad de género y la interrupción voluntaria del embarazo, que no pude verificar con una fuente confiable."
+ "nota": "No es el catálogo completo de leyes desde 1983: incluí solo normas emblemáticas con fecha y fuente verificadas. Las votaciones nominales de varias de estas leyes están en la sección de leyes históricas."
 }
