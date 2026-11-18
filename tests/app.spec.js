@@ -268,10 +268,14 @@ test("preguntas repetidas: no se preguntan y los enlaces viejos con respuestas a
   const a2 = base.join("");
   const w = "0".repeat(q.length);
   await page.goto("/#r/f/" + a1 + "/" + w);
+  await expect(page.locator("#headline")).not.toHaveText("Tu perfil");
+  await expect(page.locator("#list .match .name").first()).toBeVisible();
   const h1 = await page.locator("#headline").textContent();
   const l1 = await page.locator("#list .match .name").allTextContents();
   await page.goto("/#r/f/" + a2 + "/" + w);
   await page.reload();
+  await expect(page.locator("#headline")).not.toHaveText("Tu perfil");
+  await expect(page.locator("#list .match .name").first()).toBeVisible();
   expect(await page.locator("#headline").textContent()).toBe(h1);
   expect(await page.locator("#list .match .name").allTextContents()).toEqual(l1);
   expect(errs.join("\n")).toBe("");
@@ -314,5 +318,23 @@ test("enlaces viejos: el perfil de 12 ejes funciona con links sin las preguntas 
   await page.goto("/#r/f/" + "34".repeat(26) + "3/" + "0".repeat(53));
   await expect(page.locator("#headline")).toBeVisible();
   await expect(page.locator("#perfil12 .p12row")).toHaveCount(12);
+  expect(errs.join("\n")).toBe("");
+});
+
+test("12 ejes: partidos parecidos por eje y posición en la ficha del partido", async ({ page }) => {
+  const errs = watch(page);
+  await page.goto("/");
+  await page.click("#start-full");
+  const total = Number((await page.locator("#qnum").textContent()).split("/")[1]);
+  await answerAll(page, total, (i) => (i % 3 === 0 ? 4 : i % 3 === 1 ? 1 : 2));
+  const par = page.locator("#perfil12 .p12p");
+  await expect(par).toHaveCount(12);
+  await expect(par.filter({ hasText: "Partidos más parecidos" }).first()).toContainText(/\((est\.|voto)\)/);
+  await expect(par.filter({ hasText: "Todavía no hay posiciones" }).first()).toBeVisible();
+  await page.goto("/#partido/la-libertad-avanza");
+  await expect(page.locator("#pcard")).toContainText("En los 12 ejes");
+  await expect(page.locator("#pcard")).toContainText("según su voto");
+  await expect(page.locator("#pcard")).toContainText("derivado de su ubicación estimada");
+  await expect(page.locator("#pcard")).toContainText("Sin datos relevados en");
   expect(errs.join("\n")).toBe("");
 });

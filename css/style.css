@@ -188,3 +188,4 @@ input[type="text"] { font: inherit; background: var(--bg); color: var(--ink); bo
 .p12bar { display: block; height: 12px; border-radius: 6px; background: var(--soft); border: 1px solid var(--line-ui); overflow: hidden; }
 .p12bar i { display: block; height: 100%; background: var(--accent); }
 .p12n, .p12none { font-size: 0.8rem; color: var(--muted); }
+.p12p { font-size: 0.82rem; color: var(--muted); }
