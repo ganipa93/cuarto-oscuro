@@ -8,7 +8,7 @@ Sitio: https://cuarto-oscuro.vercel.app
 - Versión corta (15 preguntas) y completa (87), con peso doble por pregunta.
 - Resultado compartible por enlace (las respuestas viajan en el hash) y tarjeta PNG.
 - Filtro por sección (campañas, votos, proyectos) y ficha por partido (`#partido/<slug>`).
-- Perfil en 12 ejes (Instituciones, Mundo, Economía, Sociedad) con barras entre polos; usa las mismas respuestas y no entra en la afinidad con partidos. Datos en `data/ejes12.json`.
+- Perfil en 12 ejes (Instituciones, Mundo, Economía, Sociedad) con barras entre polos; usa las mismas respuestas y no entra en la afinidad con partidos. Datos en `data/ejes12.json`. Muestra por eje los partidos más parecidos y la ficha de cada partido su posición, con la base del dato (est. = derivada de su ubicación en los 4 ejes; voto = según votaciones). Cinco ejes (Federalismo, Alineamiento internacional, Inmigración, Propiedad estatal, Religión y Estado) todavía no tienen posiciones de partidos; se generan con `scripts/build-ejes12-partidos.py`.
 - Explorador de votaciones con tablas por bloque del Senado (actas oficiales).
 - Línea de tiempo de leyes y decretos desde 1983 (curada y verificada, **no exhaustiva**) y cifras de DNU.
 - Aviso de contradicciones entre discurso y voto, y fecha de relevamiento por dato.

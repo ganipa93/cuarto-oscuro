@@ -34,6 +34,16 @@ if (E12) {
   });
   bal.forEach(([p, n], e) => { if (p + n < 4) err(`ejes12: ${E12.ejes[e].k} tiene menos de 4 preguntas`); if (Math.abs(p - n) > 1) err(`ejes12: ${E12.ejes[e].k} desbalanceado (${p}/${n})`); });
 }
+if (E12 && E12.p) {
+  const slugs = new Set(rd("parties.json").map((p) => p.slug));
+  Object.entries(E12.p).forEach(([slug, m]) => {
+    if (!slugs.has(slug)) err(`ejes12.p: partido ${slug} no existe`);
+    Object.entries(m).forEach(([e, v]) => {
+      if (!E12.ejes[+e]) return err(`ejes12.p: ${slug} eje ${e} inválido`);
+      if (!Array.isArray(v) || typeof v[0] !== "number" || Math.abs(v[0]) > 2 || !["D", "V"].includes(v[1])) err(`ejes12.p: ${slug} eje ${e} valor inválido`);
+    });
+  });
+}
 Q.questions.forEach((q) => { if (q.a === null && !(E12 && E12.q[q.id])) err(`pregunta ${q.id}: sin eje de 4 y sin eje de 12`); });
 if (Q.questions.filter((q) => q.core).length < 10) err("versión corta con menos de 10 preguntas");
 

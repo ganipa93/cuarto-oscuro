@@ -197,6 +197,14 @@
     });
     return sum.map(function (t, e) { return { v: den[e] ? t / den[e] : 0, n: cnt[e] }; });
   }
+  var BASE12 = { D: "est.", V: "voto" };
+  function partidosParecidos(e, v) {
+    var xs = [];
+    D.P.forEach(function (p) { var x = D.E12.p && D.E12.p[p.slug] && D.E12.p[p.slug][e]; if (x) xs.push({ p: p, d: Math.abs(x[0] - v), b: x[1] }); });
+    if (!xs.length) return "Todavía no hay posiciones de partidos relevadas para este eje.";
+    xs.sort(function (a, b) { return a.d - b.d; });
+    return "Partidos más parecidos (de " + xs.length + " con dato): " + xs.slice(0, 3).map(function (x) { return x.p.n + " (" + BASE12[x.b] + ")"; }).join(", ") + ".";
+  }
   function renderPerfil12() {
     var card = $("perfil12-card"), box = $("perfil12");
     if (!card || !D.E12) return;
@@ -219,6 +227,7 @@
         var bar = el("span", "p12bar"); bar.setAttribute("role", "img"); bar.setAttribute("aria-label", txt + ", según " + s.n + " respuestas");
         var f = el("i"); f.style.width = lo + "%"; bar.appendChild(f); r.appendChild(bar);
         r.appendChild(el("span", "p12n", s.n + " respuestas"));
+        r.appendChild(el("span", "p12p", partidosParecidos(e, s.v)));
         g.appendChild(r);
       });
       box.appendChild(g);
@@ -450,6 +459,20 @@
     });
     box.appendChild(co);
     if (S.me) box.appendChild(el("p", "small muted", "Punto azul: el partido. Punto naranja: vos."));
+    if (D.E12 && D.E12.p && D.E12.p[p.slug]) {
+      box.appendChild(el("h3", null, "En los 12 ejes"));
+      var l12 = el("ul", "small notes"), sin = [];
+      D.E12.ejes.forEach(function (x, e) {
+        var v = D.E12.p[p.slug][e];
+        if (!v) { sin.push(x.k); return; }
+        var li = el("li"), m = Math.abs(v[0]);
+        li.appendChild(el("b", null, x.k + ": "));
+        li.appendChild(document.createTextNode((m < 0.35 ? "equilibrado" : (m > 1.2 ? "marcadamente " : "") + (v[0] < 0 ? x.lo : x.hi).toLowerCase()) + " (" + (v[0] > 0 ? "+" : "") + v[0] + "; " + (v[1] === "V" ? "según su voto" : "derivado de su ubicación estimada") + ")."));
+        l12.appendChild(li);
+      });
+      box.appendChild(l12);
+      if (sin.length) box.appendChild(el("p", "small muted", "Sin datos relevados en: " + sin.join(", ") + "."));
+    }
     var holder = el("div", "match"); holder.style.cssText = "display:flex;flex-direction:column;gap:12px;border:0";
     sections(p, holder, r); box.appendChild(holder);
     if (p.vv) {
@@ -607,7 +630,7 @@
       "Tu posición en cada eje es el promedio ponderado de tus respuestas de ese eje, con signo. Una respuesta marcada como importante pesa el doble. Si no respondiste nada de un eje, queda en 0.",
       "Cada partido tiene una posición estimada en los mismos cuatro ejes, entre −2 y +2. La afinidad es 100% menos la distancia euclídea en 4 dimensiones dividida por 6, con piso en 0%.",
       "La evidencia de cada partido se marca así: A, la ubicación se apoya en un documento programático propio; B, solo en el estatuto o carta orgánica, que casi nunca habla de ideología; C, es una estimación a partir de declaraciones y votos. Una ubicación C es la más discutible.",
-      "Además del cálculo en cuatro ejes, el resultado muestra un perfil en 12 ejes agrupados en cuatro categorías (Instituciones, Mundo, Economía y Sociedad). Usa las mismas respuestas más algunas preguntas que solo cuentan ahí, y cada eje necesita al menos tres respuestas para mostrarse. Es un retrato tuyo: no se usa para calcular la afinidad con partidos, porque las posiciones de los partidos solo están estimadas en los cuatro ejes.",
+      "Además del cálculo en cuatro ejes, el resultado muestra un perfil en 12 ejes agrupados en cuatro categorías (Instituciones, Mundo, Economía y Sociedad). Usa las mismas respuestas más algunas preguntas que solo cuentan ahí, y cada eje necesita al menos tres respuestas para mostrarse. Es un retrato tuyo: no se usa para calcular la afinidad con partidos. Para cada eje se muestran los partidos más parecidos solo como referencia, con la base del dato: \"est.\" es la ubicación estimada del partido en los cuatro ejes del test y \"voto\" es cómo votó en las votaciones relevadas. Hay cuatro ejes con datos de ubicación y tres con votos; Federalismo, Alineamiento internacional, Inmigración, Propiedad estatal y Religión y Estado todavía no tienen posiciones de partidos relevadas, y no las inventamos.",
       "La coincidencia de votos relaciona algunas de tus respuestas con votaciones reales. Solo cuenta las votaciones donde tu postura es clara y el partido votó a favor o en contra de manera definida.",
       "Las posiciones de los partidos se ubicaron antes de que existieran las preguntas sobre salud, provincias, ambiente, inmigración y corrupción. Para esos temas el cálculo se apoya en la posición general del partido en cada eje, no en un dato específico sobre el tema. Es una aproximación más débil que en los temas que ya estaban.",
       "Selección de partidos: la Justicia Electoral reconoce 44 partidos de orden nacional y 710 de distrito (Observatorio Electoral, datos al 30/4/2026). Acá hay 25 nacionales. La selección no sigue un criterio formal de votos o bancas, así que faltan fuerzas nacionales y todas las de distrito. Un porcentaje cercano entre dos partidos no es un empate técnico ni una diferencia real: el cálculo no tiene ese nivel de precisión.",
