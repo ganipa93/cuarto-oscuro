@@ -22,6 +22,7 @@ ACTAS = {
     "d-universidades": ("5766", "Financiamiento universitario: insistencia tras el veto (ley 27.795)"),
     "d-pediatria": ("5762", "Emergencia pediátrica: insistencia tras el veto (ley 27.796)"),
     "d-fichalimpia": ("5585", "Ficha Limpia, en general y particular"),
+    "d-jubilaciones": ("5655", "Aumento de emergencia a jubilaciones y pensiones (7,2% y bono), en general"),
 }
 MAJ = {"d-bases": "mayoría simple"}  # el resto: mayoría simple de los presentes
 

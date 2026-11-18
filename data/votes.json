@@ -552,6 +552,40 @@
    "actasD": [
     "d-fichalimpia"
    ]
+  },
+  {
+   "id": 17,
+   "n": "Aumento de emergencia a jubilaciones y bono (2025)",
+   "q": [
+    [
+     24,
+     1
+    ]
+   ],
+   "rel": "un aumento de emergencia a las jubilaciones y pensiones, aunque aumente el gasto",
+   "short": "Aumento a jubilaciones",
+   "date": "2025-06-04",
+   "res": [
+    "Diputados 4/6/2025, votación en general: 142 a favor, 67 en contra y 19 abstenciones (acta nominal). Era un aumento único de 7,2% más la suba del bono de $70.000 a $110.000. Esta votación es la media sanción en Diputados; no cargué lo que pasó después en el Senado ni con el Poder Ejecutivo."
+   ],
+   "tema": "economía",
+   "links": [
+    [
+     "Votaciones nominales de Diputados (sitio oficial)",
+     "https://votaciones.hcdn.gob.ar/"
+    ],
+    [
+     "Diputados aprobó el aumento (Cadena 3)",
+     "https://www.cadena3.com/noticia/politica-y-economia/diputados-aprobo-un-aumento-del-72-de-las-jubilaciones-y-un-bono-de-110-mil_429286"
+    ],
+    [
+     "Diputados aprobó el aumento (Primera Edición)",
+     "https://www.primeraedicion.com.ar/nota/101010500/diputados-aprobo-un-aumento-para-las-jubilaciones-del-72-y-un-incremento-en-el-bono/"
+    ]
+   ],
+   "actasD": [
+    "d-jubilaciones"
+   ]
   }
  ],
  "actas": {
