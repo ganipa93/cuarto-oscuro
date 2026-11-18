@@ -212,3 +212,11 @@ test("versión corta: ejes balanceados (mitad y mitad en Orden y Valores)", asyn
     expect(Math.abs(all.filter((v) => v === 1).length - all.filter((v) => v === -1).length)).toBeLessThanOrEqual(1);
   }
 });
+
+test("versión completa: ningún eje queda desbalanceado por más de una pregunta", async ({ page }) => {
+  const q = await (await page.request.get("/data/questions.json")).json();
+  for (const a of [0, 1, 2, 3]) {
+    const s = q.questions.filter((x) => x.a === a).map((x) => x.s);
+    expect(Math.abs(s.filter((v) => v === 1).length - s.filter((v) => v === -1).length)).toBeLessThanOrEqual(1);
+  }
+});
