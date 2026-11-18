@@ -65,7 +65,7 @@
 
   function init() {
     $("n-short").textContent = nShort() + " afirmaciones · unos 3 minutos";
-    $("n-full").textContent = D.Q.length + " afirmaciones · unos 10 minutos";
+    $("n-full").textContent = D.Q.length + " afirmaciones · unos 12 minutos";
     $("foot").innerHTML = "";
     $("foot").appendChild(document.createTextNode("Datos relevados hasta el " + fmtDate(D.M.updated) + ". Código y datos abiertos en "));
     $("foot").appendChild(link("GitHub", "https://github.com/ganipa93/cuarto-oscuro"));

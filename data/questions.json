@@ -418,6 +418,84 @@
    "t": "Los cambios culturales deberían surgir de la sociedad y no ser impulsados por leyes del Estado.",
    "a": 1,
    "s": 1
+  },
+  {
+   "id": 60,
+   "t": "Cada persona debería poder elegir libremente su cobertura de salud, con menos regulación del Estado sobre obras sociales y prepagas.",
+   "a": 0,
+   "s": 1
+  },
+  {
+   "id": 61,
+   "t": "El Estado debería garantizar salud pública gratuita y universal, aunque eso requiera más impuestos.",
+   "a": 0,
+   "s": -1
+  },
+  {
+   "id": 62,
+   "t": "Cada provincia debería financiarse sobre todo con sus propios impuestos y depender menos de las transferencias de la Nación.",
+   "a": 0,
+   "s": 1
+  },
+  {
+   "id": 63,
+   "t": "La Nación debe redistribuir recursos hacia las provincias más pobres, aunque las más ricas reciban menos.",
+   "a": 0,
+   "s": -1
+  },
+  {
+   "id": 64,
+   "t": "Hay que facilitar la minería y la explotación de hidrocarburos, aunque implique flexibilizar algunas regulaciones ambientales.",
+   "a": 0,
+   "s": 1
+  },
+  {
+   "id": 65,
+   "t": "La protección ambiental (glaciares, humedales, bosques) debe tener prioridad sobre proyectos de minería y energía.",
+   "a": 0,
+   "s": -1
+  },
+  {
+   "id": 66,
+   "t": "Argentina debería poner más límites a la inmigración para proteger el empleo y los servicios públicos.",
+   "a": 2,
+   "s": -1
+  },
+  {
+   "id": 67,
+   "t": "Argentina debería facilitar la llegada de inmigrantes, porque aportan al desarrollo del país.",
+   "a": 2,
+   "s": 1
+  },
+  {
+   "id": 68,
+   "t": "Las personas con condena por corrupción confirmada en segunda instancia no deberían poder ser candidatas.",
+   "a": 3,
+   "s": 1
+  },
+  {
+   "id": 69,
+   "t": "Nadie debería quedar inhabilitado para ser candidato mientras su condena no sea firme, es decir, hasta que se agoten todas las instancias.",
+   "a": 3,
+   "s": -1
+  },
+  {
+   "id": 70,
+   "t": "Los extranjeros que cometen delitos deberían ser expulsados del país.",
+   "a": 3,
+   "s": 1
+  },
+  {
+   "id": 71,
+   "t": "La expulsión de un extranjero debería requerir siempre una decisión judicial, con derecho a defensa.",
+   "a": 3,
+   "s": -1
+  },
+  {
+   "id": 72,
+   "t": "Los extranjeros no residentes deberían pagar por la atención en hospitales y universidades públicas.",
+   "a": 2,
+   "s": -1
   }
  ]
 }
