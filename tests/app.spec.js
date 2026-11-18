@@ -220,3 +220,20 @@ test("versión completa: ningún eje queda desbalanceado por más de una pregunt
     expect(Math.abs(s.filter((v) => v === 1).length - s.filter((v) => v === -1).length)).toBeLessThanOrEqual(1);
   }
 });
+
+test("votaciones nuevas: universidades, emergencia pediátrica y Ficha Limpia", async ({ page }) => {
+  const errs = watch(page);
+  await page.goto("/");
+  await page.click("#start-full");
+  const total = Number((await page.locator("#qnum").textContent()).split("/")[1]);
+  await answerAll(page, total, (i) => (i % 2 ? 4 : 0));
+  await page.click("summary:has-text('Explorador de votaciones')");
+  for (const [id, texto] of [["14", "174 a 67"], ["15", "181 a 60"], ["16", "36 a 35"]]) {
+    await page.selectOption("#vsel", id);
+    await expect(page.locator("#vdetail")).toContainText(texto);
+    await expect(page.locator("#vdetail table")).toHaveCount(1);
+    await expect(page.locator("#vdetail")).toContainText("Con tus respuestas");
+  }
+  await expect(page.locator("#vdetail")).toContainText("Partido Justicialista: en contra");
+  expect(errs.join("\n")).toBe("");
+});

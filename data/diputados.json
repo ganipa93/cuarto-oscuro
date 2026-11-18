@@ -1115,6 +1115,531 @@
      1
     ]
    ]
+  },
+  "d-universidades": {
+   "t": "Financiamiento universitario: insistencia tras el veto (ley 27.795)",
+   "d": "2025-09-17",
+   "id": "5766",
+   "u": "https://votaciones.hcdn.gob.ar/votacion/5766",
+   "tot": [
+    174,
+    67,
+    2,
+    14
+   ],
+   "b": [
+    [
+     "Union Por La Patria",
+     96,
+     0,
+     0,
+     2
+    ],
+    [
+     "La Libertad Avanza",
+     0,
+     34,
+     0,
+     3
+    ],
+    [
+     "Pro",
+     6,
+     25,
+     1,
+     3
+    ],
+    [
+     "Encuentro Federal",
+     14,
+     0,
+     0,
+     1
+    ],
+    [
+     "Ucr - Union Civica Radical",
+     13,
+     0,
+     0,
+     1
+    ],
+    [
+     "Democracia Para Siempre",
+     11,
+     0,
+     0,
+     1
+    ],
+    [
+     "Innovacion Federal",
+     8,
+     0,
+     0,
+     0
+    ],
+    [
+     "Liga Del Interior Eli",
+     1,
+     5,
+     0,
+     0
+    ],
+    [
+     "Coalicion Civica",
+     5,
+     0,
+     0,
+     1
+    ],
+    [
+     "Coherencia",
+     4,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Mid - Movimiento De Integracion Y Desarrollo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Por Santa Cruz",
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     "Produccion Y Trabajo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Pts-frente De Izquierda Unidad",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Creo",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Defendamos Santa Fe",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Futuro Y Libertad",
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     "Izquierda Socialista Fit-unidad",
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     "Movimiento Popular  Neuquino",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Mst - Frente De Izquierda Y Trabajadores Unidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Somos Fueguinos",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Unidos",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Republicanos Unidos",
+     0,
+     0,
+     1,
+     0
+    ]
+   ]
+  },
+  "d-pediatria": {
+   "t": "Emergencia pediátrica: insistencia tras el veto (ley 27.796)",
+   "d": "2025-09-17",
+   "id": "5762",
+   "u": "https://votaciones.hcdn.gob.ar/votacion/5762",
+   "tot": [
+    181,
+    60,
+    1,
+    15
+   ],
+   "b": [
+    [
+     "Union Por La Patria",
+     96,
+     0,
+     0,
+     2
+    ],
+    [
+     "La Libertad Avanza",
+     0,
+     34,
+     0,
+     3
+    ],
+    [
+     "Pro",
+     9,
+     21,
+     1,
+     4
+    ],
+    [
+     "Encuentro Federal",
+     14,
+     0,
+     0,
+     1
+    ],
+    [
+     "Democracia Para Siempre",
+     11,
+     0,
+     0,
+     1
+    ],
+    [
+     "Ucr - Union Civica Radical",
+     11,
+     0,
+     0,
+     3
+    ],
+    [
+     "Innovacion Federal",
+     8,
+     0,
+     0,
+     0
+    ],
+    [
+     "Coalicion Civica",
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     "Liga Del Interior Eli",
+     2,
+     4,
+     0,
+     0
+    ],
+    [
+     "Coherencia",
+     4,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Futuro Y Libertad",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Mid - Movimiento De Integracion Y Desarrollo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Por Santa Cruz",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Produccion Y Trabajo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Pts-frente De Izquierda Unidad",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Creo",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Defendamos Santa Fe",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Izquierda Socialista Fit-unidad",
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     "Movimiento Popular  Neuquino",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Mst - Frente De Izquierda Y Trabajadores Unidad",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Republicanos Unidos",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Somos Fueguinos",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Unidos",
+     1,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "d-fichalimpia": {
+   "t": "Ficha Limpia, en general y particular",
+   "d": "2025-02-12",
+   "id": "5585",
+   "u": "https://votaciones.hcdn.gob.ar/votacion/5585",
+   "tot": [
+    144,
+    98,
+    2,
+    13
+   ],
+   "b": [
+    [
+     "Union Por La Patria",
+     0,
+     91,
+     0,
+     7
+    ],
+    [
+     "La Libertad Avanza",
+     39,
+     0,
+     0,
+     0
+    ],
+    [
+     "Pro",
+     37,
+     0,
+     0,
+     0
+    ],
+    [
+     "Ucr - Union Civica Radical",
+     19,
+     0,
+     0,
+     1
+    ],
+    [
+     "Democracia Para Siempre",
+     12,
+     0,
+     0,
+     0
+    ],
+    [
+     "Encuentro Federal",
+     11,
+     0,
+     2,
+     3
+    ],
+    [
+     "Innovacion Federal",
+     8,
+     0,
+     0,
+     0
+    ],
+    [
+     "Coalicion Civica",
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     "Independencia",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Mid - Movimiento De Integracion Y Desarrollo",
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     "Pts-frente De Izquierda Unidad",
+     0,
+     3,
+     0,
+     0
+    ],
+    [
+     "Produccion Y Trabajo",
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     "Creo",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Defendamos Santa Fe",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Fuerzas Del Cielo - Espacio Liberal F.c.e",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Izquierda Socialista Fit-unidad",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Movimiento Popular  Neuquino",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Partido Obrero -frente De Izquierda Y De Trabajadores -unidad",
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     "Por Santa Cruz",
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     "Somos Fueguinos",
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     "Unidos",
+     0,
+     0,
+     0,
+     1
+    ]
+   ]
   }
  }
 }
