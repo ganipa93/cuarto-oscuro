@@ -194,3 +194,21 @@ test("pantalla de preguntas sin violaciones de accesibilidad", async ({ page }) 
   const r = await new AxeBuilder({ page }).analyze();
   expect(r.violations).toEqual([]);
 });
+
+test("enlace de 53 preguntas (anterior al rebalanceo) sigue dando resultado", async ({ page }) => {
+  const errs = watch(page);
+  await page.goto("/#r/f/" + "34".repeat(26) + "3/" + "0".repeat(53));
+  await expect(page.locator("#headline")).toBeVisible();
+  await expect(page.locator("#list .match")).toHaveCount(5);
+  expect(errs.join("\n")).toBe("");
+});
+
+test("versión corta: ejes balanceados (mitad y mitad en Orden y Valores)", async ({ page }) => {
+  const q = await (await page.request.get("/data/questions.json")).json();
+  for (const a of [1, 3]) {
+    const s = q.questions.filter((x) => x.a === a && x.core).map((x) => x.s);
+    expect(s.filter((v) => v === 1).length).toBe(s.filter((v) => v === -1).length);
+    const all = q.questions.filter((x) => x.a === a).map((x) => x.s);
+    expect(Math.abs(all.filter((v) => v === 1).length - all.filter((v) => v === -1).length)).toBeLessThanOrEqual(1);
+  }
+});

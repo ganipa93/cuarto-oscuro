@@ -82,8 +82,7 @@
    "id": 5,
    "t": "La educación sexual integral debería ser obligatoria en todas las escuelas.",
    "a": 1,
-   "s": -1,
-   "core": true
+   "s": -1
   },
   {
    "id": 6,
@@ -149,8 +148,7 @@
    "id": 15,
    "t": "Los cortes de calle y piquetes deberían sancionarse con firmeza.",
    "a": 3,
-   "s": 1,
-   "core": true
+   "s": 1
   },
   {
    "id": 16,
@@ -375,6 +373,50 @@
    "id": 52,
    "t": "Los juicios de desalojo deberían resolverse mucho más rápido, aunque los ocupantes tengan menos tiempo para defenderse.",
    "a": 0,
+   "s": 1
+  },
+  {
+   "id": 53,
+   "t": "Para reducir el delito, es más efectivo invertir en prevención y oportunidades que endurecer las penas.",
+   "a": 3,
+   "s": -1,
+   "core": true
+  },
+  {
+   "id": 54,
+   "t": "El uso de la fuerza por parte de las fuerzas de seguridad necesita más controles y rendición de cuentas, no menos.",
+   "a": 3,
+   "s": -1
+  },
+  {
+   "id": 55,
+   "t": "El derecho a la protesta debe protegerse aunque genere molestias en el espacio público.",
+   "a": 3,
+   "s": -1
+  },
+  {
+   "id": 56,
+   "t": "Las Fuerzas Armadas deberían quedar fuera de la seguridad interior.",
+   "a": 3,
+   "s": -1
+  },
+  {
+   "id": 57,
+   "t": "Las familias, y no el Estado, deberían tener la última palabra sobre la educación en valores de sus hijos.",
+   "a": 1,
+   "s": 1,
+   "core": true
+  },
+  {
+   "id": 58,
+   "t": "La vida debe protegerse desde la concepción.",
+   "a": 1,
+   "s": 1
+  },
+  {
+   "id": 59,
+   "t": "Los cambios culturales deberían surgir de la sociedad y no ser impulsados por leyes del Estado.",
+   "a": 1,
    "s": 1
   }
  ]
