@@ -1,5 +1,19 @@
 {
   "rewrites": [
-    { "source": "/r/:modo/:resp/:peso", "destination": "/api/r?c=:modo/:resp/:peso" }
+    {
+      "source": "/r/:modo/:resp/:peso",
+      "destination": "/api/r?c=:modo/:resp/:peso"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
   ]
 }

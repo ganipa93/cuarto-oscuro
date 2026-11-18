@@ -158,3 +158,39 @@ test("la imagen para redes calcula el mismo resultado que el navegador", async (
     await expect(top.locator(".pct")).toHaveText(r.top[0].pct + "%");
   }
 });
+
+test("teclado: 1 a 5 responden, 0 saltea y W da más peso; sin pedidos a Google Fonts", async ({ page }) => {
+  const errs = watch(page);
+  const ext = [];
+  page.on("request", (r) => { if (/fonts\.(googleapis|gstatic)\.com/.test(r.url())) ext.push(r.url()); });
+  await page.goto("/");
+  await page.click("#start-short");
+  await expect(page.locator("#qnum")).toHaveText("1 / 15");
+  await page.keyboard.press("w");
+  await expect(page.locator("#weight")).toHaveAttribute("aria-pressed", "true");
+  await page.keyboard.press("5");
+  await expect(page.locator("#qnum")).toHaveText("2 / 15");
+  await expect(page.locator("#qtext")).toBeFocused();
+  await page.keyboard.press("0");
+  await expect(page.locator("#qnum")).toHaveText("3 / 15");
+  await page.click("#back");
+  await expect(page.locator("#opts .opt[aria-pressed=true]")).toHaveCount(0);
+  await page.click("#noans");
+  await expect(page.locator("#qnum")).toHaveText("3 / 15");
+  for (let i = 3; i <= 15; i++) await page.keyboard.press(String(((i * 2) % 5) + 1));
+  await expect(page.locator("#headline")).toBeVisible();
+  expect(page.url()).toMatch(/#r\/s\/[0-4-]+\/[01]+$/);
+  const a = page.url().split("/")[5];
+  expect(a.charAt(0)).toBe("4");
+  expect(a.charAt(1)).toBe("-");
+  await expect(page.locator("#list .match")).toHaveCount(5);
+  expect(ext).toEqual([]);
+  expect(errs.join("\n")).toBe("");
+});
+
+test("pantalla de preguntas sin violaciones de accesibilidad", async ({ page }) => {
+  await page.goto("/");
+  await page.click("#start-short");
+  const r = await new AxeBuilder({ page }).analyze();
+  expect(r.violations).toEqual([]);
+});
