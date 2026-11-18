@@ -237,3 +237,19 @@ test("votaciones nuevas: universidades, emergencia pediátrica y Ficha Limpia", 
   await expect(page.locator("#vdetail")).toContainText("Partido Justicialista: en contra");
   expect(errs.join("\n")).toBe("");
 });
+
+test("transparencia: selección de partidos, evidencia visible y límites en el método", async ({ page }) => {
+  const errs = watch(page);
+  await page.goto("/");
+  await page.click("summary:has-text('Cómo se armó')");
+  await expect(page.locator(".intro-more")).toContainText("44 partidos de orden nacional");
+  await expect(page.locator(".intro-more a[href*='observatorioelectoral']")).toHaveCount(1);
+  await page.click("#start-short");
+  const total = Number((await page.locator("#qnum").textContent()).split("/")[1]);
+  await answerAll(page, total, (i) => (i % 2 ? 4 : 0));
+  await expect(page.locator(".match .ev").first()).toContainText("evidencia:");
+  await page.goto("/#metodo");
+  await expect(page.locator("#mcard")).toContainText("Selección de partidos");
+  await expect(page.locator("#mcard")).toContainText("posición general del partido");
+  expect(errs.join("\n")).toBe("");
+});
