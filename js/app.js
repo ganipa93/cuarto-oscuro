@@ -76,10 +76,9 @@
     $("start-full").addEventListener("click", function () { startQuiz("full"); });
     $("back").addEventListener("click", function () { if (S.i > 0) { S.i--; renderQ(); } });
     $("again").addEventListener("click", function () { location.hash = ""; });
-    $("weight").addEventListener("click", function () {
-      var q = S.list[S.i]; if (S.wt[q.id]) delete S.wt[q.id]; else S.wt[q.id] = true;
-      this.setAttribute("aria-pressed", S.wt[q.id] ? "true" : "false");
-    });
+    $("weight").addEventListener("click", toggleWeight);
+    $("noans").addEventListener("click", function () { pick(S.list[S.i], null); });
+    document.addEventListener("keydown", onKey);
     $("toggle").addEventListener("click", function () {
       S.all = !S.all; renderList();
     });
@@ -110,6 +109,25 @@
     S.list = D.Q.filter(function (q) { return mode === "full" || q.core; });
     renderQ(); show("quiz", "qtext");
   }
+  // v === null: la persona prefirió no responder; esa pregunta no entra en el promedio
+  function pick(q, v) {
+    S.ans[q.id] = v;
+    if (v === null) delete S.wt[q.id];
+    if (S.i < S.list.length - 1) { S.i++; renderQ(); $("qtext").focus({ preventScroll: true }); }
+    else { location.hash = encodeHash(); }
+  }
+  function toggleWeight() {
+    var q = S.list[S.i]; if (S.wt[q.id]) delete S.wt[q.id]; else S.wt[q.id] = true;
+    $("weight").setAttribute("aria-pressed", S.wt[q.id] ? "true" : "false");
+  }
+  function onKey(e) {
+    if (!views.quiz.classList.contains("on") || e.ctrlKey || e.metaKey || e.altKey) return;
+    var t = e.target && e.target.tagName; if (t === "INPUT" || t === "SELECT" || t === "TEXTAREA") return;
+    var q = S.list[S.i]; if (!q) return;
+    if (e.key >= "1" && e.key <= String(D.OPT.length)) { e.preventDefault(); pick(q, D.OPT[Number(e.key) - 1].v); }
+    else if (e.key === "0") { e.preventDefault(); pick(q, null); }
+    else if (e.key === "w" || e.key === "W") { e.preventDefault(); toggleWeight(); }
+  }
   function renderQ() {
     var q = S.list[S.i];
     $("qnum").textContent = (S.i + 1) + " / " + S.list.length;
@@ -123,11 +141,8 @@
       b.setAttribute("aria-pressed", S.ans[q.id] === o.v ? "true" : "false");
       b.innerHTML = '<span class="box" aria-hidden="true"></span><span></span>';
       b.lastChild.textContent = o.l;
-      b.addEventListener("click", function () {
-        S.ans[q.id] = o.v;
-        if (S.i < S.list.length - 1) { S.i++; renderQ(); $("qtext").focus({ preventScroll: true }); }
-        else { location.hash = encodeHash(); }
-      });
+      b.setAttribute("aria-keyshortcuts", String(D.OPT.indexOf(o) + 1));
+      b.addEventListener("click", function () { pick(q, o.v); });
       box.appendChild(b);
     });
     say("Pregunta " + (S.i + 1) + " de " + S.list.length);

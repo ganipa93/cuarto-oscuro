@@ -22,8 +22,8 @@
 <meta property="og:url" content="https://cuarto-oscuro.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2712%27 fill=%27%23d9820b%27/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preload" href="fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bricolage-grotesque-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -84,7 +84,11 @@
       <div class="progress" aria-hidden="true"><i id="bar"></i></div>
       <p class="qtext" id="qtext" tabindex="-1"></p>
       <div class="opts" id="opts" role="group" aria-label="Tu respuesta"></div>
-      <button class="weight" id="weight" type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span>Esto me importa mucho (cuenta el doble)</button>
+      <div class="row">
+        <button class="weight" id="weight" type="button" aria-pressed="false" aria-keyshortcuts="W"><span class="box" aria-hidden="true"></span>Esto me importa mucho (cuenta el doble)</button>
+        <button class="weight" id="noans" type="button" aria-keyshortcuts="0">Prefiero no responder</button>
+      </div>
+      <p class="small muted" id="kbhint">Con teclado: 1 a 5 para responder, 0 para no responder, W para marcar que te importa mucho.</p>
     </div>
   </section>
 
