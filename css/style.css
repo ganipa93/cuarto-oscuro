@@ -120,6 +120,7 @@ ul { margin: 0; padding-left: 20px; }
 .match .ct b { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 2px; }
 .match .vm { margin-top: 6px; font-weight: 600; color: var(--accent); }
 .match .asof { grid-column: 1 / -1; font-size: 0.78rem; color: var(--muted); font-family: var(--font-mono); }
+.match .tie { grid-column: 1 / -1; font-size: 0.82rem; color: var(--muted); }
 .match .more { grid-column: 1 / -1; font-size: 0.9rem; }
 .match .more a { color: var(--accent); }
 #list[data-filter="cp"] .sec:not([data-sec="cp"]),
