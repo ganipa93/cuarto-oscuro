@@ -5,9 +5,10 @@ Test de ideología política argentina. Ubica a quien lo hace en 4 ejes (Econom�
 Sitio: https://cuarto-oscuro.vercel.app
 
 ## Funciones
-- Versión corta (15 preguntas) y completa (70), con peso doble por pregunta.
+- Versión corta (15 preguntas) y completa (87), con peso doble por pregunta.
 - Resultado compartible por enlace (las respuestas viajan en el hash) y tarjeta PNG.
 - Filtro por sección (campañas, votos, proyectos) y ficha por partido (`#partido/<slug>`).
+- Perfil en 12 ejes (Instituciones, Mundo, Economía, Sociedad) con barras entre polos; usa las mismas respuestas y no entra en la afinidad con partidos. Datos en `data/ejes12.json`.
 - Explorador de votaciones con tablas por bloque del Senado (actas oficiales).
 - Línea de tiempo de leyes y decretos desde 1983 (curada y verificada, **no exhaustiva**) y cifras de DNU.
 - Aviso de contradicciones entre discurso y voto, y fecha de relevamiento por dato.

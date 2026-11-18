@@ -1,0 +1,391 @@
+{
+ "nota": "Perfil en 12 ejes: cada pregunta aporta a un eje (e) con un signo (+1: estar de acuerdo empuja hacia el polo derecho). Se calcula con las mismas respuestas del test; no entra en la afinidad con partidos.",
+ "ejes": [
+  {
+   "k": "Federalismo",
+   "cat": "Instituciones",
+   "lo": "Federal",
+   "hi": "Centralista"
+  },
+  {
+   "k": "Poder presidencial",
+   "cat": "Instituciones",
+   "lo": "Institucionalista",
+   "hi": "Decisionista"
+  },
+  {
+   "k": "Libertades y seguridad",
+   "cat": "Instituciones",
+   "lo": "Garantista",
+   "hi": "Mano dura"
+  },
+  {
+   "k": "Soberanía y comercio",
+   "cat": "Mundo",
+   "lo": "Soberanista",
+   "hi": "Aperturista"
+  },
+  {
+   "k": "Alineamiento internacional",
+   "cat": "Mundo",
+   "lo": "Regional y equidistante",
+   "hi": "Alineado con EEUU"
+  },
+  {
+   "k": "Inmigración",
+   "cat": "Mundo",
+   "lo": "Abierta",
+   "hi": "Restrictiva"
+  },
+  {
+   "k": "Propiedad estatal",
+   "cat": "Economía",
+   "lo": "Estatista",
+   "hi": "Privatizador"
+  },
+  {
+   "k": "Trabajo",
+   "cat": "Economía",
+   "lo": "Protección laboral",
+   "hi": "Flexibilización"
+  },
+  {
+   "k": "Gasto e impuestos",
+   "cat": "Economía",
+   "lo": "Más gasto social",
+   "hi": "Menos impuestos y gasto"
+  },
+  {
+   "k": "Religión y Estado",
+   "cat": "Sociedad",
+   "lo": "Laico",
+   "hi": "Religioso"
+  },
+  {
+   "k": "Valores",
+   "cat": "Sociedad",
+   "lo": "Progresista",
+   "hi": "Conservador"
+  },
+  {
+   "k": "Ambiente y producción",
+   "cat": "Sociedad",
+   "lo": "Prioridad ambiental",
+   "hi": "Prioridad productiva"
+  }
+ ],
+ "q": {
+  "0": [
+   8,
+   1
+  ],
+  "1": [
+   10,
+   -1
+  ],
+  "2": [
+   4,
+   1
+  ],
+  "3": [
+   2,
+   1
+  ],
+  "4": [
+   6,
+   -1
+  ],
+  "5": [
+   10,
+   -1
+  ],
+  "6": [
+   3,
+   -1
+  ],
+  "7": [
+   2,
+   1
+  ],
+  "8": [
+   8,
+   -1
+  ],
+  "9": [
+   10,
+   1
+  ],
+  "10": [
+   3,
+   1
+  ],
+  "12": [
+   8,
+   1
+  ],
+  "13": [
+   9,
+   1
+  ],
+  "14": [
+   3,
+   1
+  ],
+  "15": [
+   2,
+   1
+  ],
+  "16": [
+   7,
+   -1
+  ],
+  "17": [
+   10,
+   -1
+  ],
+  "19": [
+   2,
+   1
+  ],
+  "20": [
+   7,
+   1
+  ],
+  "21": [
+   10,
+   -1
+  ],
+  "22": [
+   3,
+   1
+  ],
+  "23": [
+   2,
+   1
+  ],
+  "24": [
+   8,
+   -1
+  ],
+  "25": [
+   10,
+   1
+  ],
+  "26": [
+   4,
+   -1
+  ],
+  "27": [
+   2,
+   1
+  ],
+  "28": [
+   8,
+   1
+  ],
+  "29": [
+   10,
+   -1
+  ],
+  "30": [
+   4,
+   -1
+  ],
+  "31": [
+   2,
+   -1
+  ],
+  "32": [
+   1,
+   1
+  ],
+  "33": [
+   1,
+   -1
+  ],
+  "34": [
+   6,
+   1
+  ],
+  "35": [
+   6,
+   -1
+  ],
+  "36": [
+   6,
+   1
+  ],
+  "39": [
+   3,
+   1
+  ],
+  "40": [
+   9,
+   -1
+  ],
+  "42": [
+   11,
+   1
+  ],
+  "43": [
+   8,
+   -1
+  ],
+  "44": [
+   8,
+   -1
+  ],
+  "45": [
+   2,
+   1
+  ],
+  "46": [
+   2,
+   -1
+  ],
+  "50": [
+   9,
+   1
+  ],
+  "53": [
+   2,
+   -1
+  ],
+  "54": [
+   2,
+   -1
+  ],
+  "55": [
+   2,
+   -1
+  ],
+  "56": [
+   2,
+   -1
+  ],
+  "57": [
+   10,
+   1
+  ],
+  "58": [
+   10,
+   1
+  ],
+  "59": [
+   10,
+   1
+  ],
+  "60": [
+   8,
+   1
+  ],
+  "61": [
+   8,
+   -1
+  ],
+  "62": [
+   0,
+   -1
+  ],
+  "63": [
+   0,
+   1
+  ],
+  "64": [
+   11,
+   1
+  ],
+  "65": [
+   11,
+   -1
+  ],
+  "66": [
+   5,
+   1
+  ],
+  "67": [
+   5,
+   -1
+  ],
+  "70": [
+   5,
+   1
+  ],
+  "71": [
+   5,
+   -1
+  ],
+  "72": [
+   5,
+   1
+  ],
+  "73": [
+   0,
+   -1
+  ],
+  "74": [
+   0,
+   1
+  ],
+  "75": [
+   0,
+   -1
+  ],
+  "76": [
+   1,
+   1
+  ],
+  "77": [
+   1,
+   -1
+  ],
+  "78": [
+   3,
+   -1
+  ],
+  "79": [
+   3,
+   -1
+  ],
+  "80": [
+   4,
+   1
+  ],
+  "81": [
+   4,
+   -1
+  ],
+  "82": [
+   6,
+   1
+  ],
+  "83": [
+   7,
+   1
+  ],
+  "84": [
+   7,
+   -1
+  ],
+  "85": [
+   7,
+   -1
+  ],
+  "86": [
+   9,
+   -1
+  ],
+  "87": [
+   9,
+   1
+  ],
+  "88": [
+   11,
+   -1
+  ],
+  "89": [
+   11,
+   1
+  ]
+ }
+}
