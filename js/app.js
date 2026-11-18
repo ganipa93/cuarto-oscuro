@@ -237,7 +237,7 @@
   function row(r, top) {
     var p = r.p, d = el("div", "match" + (top ? " top" : ""));
     var nm = el("span", "name", p.n);
-    var bd = el("span", "ev " + p.ev.toLowerCase(), p.ev === "A" ? "doc. propio" : (p.ev === "B" ? "estatuto" : "estimado"));
+    var bd = el("span", "ev " + p.ev.toLowerCase(), "evidencia: " + (p.ev === "A" ? "documento propio" : (p.ev === "B" ? "estatuto" : "estimada")));
     nm.appendChild(bd);
     var pc = el("span", "pct", r.pct + "%");
     d.appendChild(nm); d.appendChild(pc); d.appendChild(el("span", "tag", p.f)); d.appendChild(el("span", "nt", p.nt));
@@ -563,6 +563,8 @@
       "Cada partido tiene una posición estimada en los mismos cuatro ejes, entre −2 y +2. La afinidad es 100% menos la distancia euclídea en 4 dimensiones dividida por 6, con piso en 0%.",
       "La evidencia de cada partido se marca así: A, la ubicación se apoya en un documento programático propio; B, solo en el estatuto o carta orgánica, que casi nunca habla de ideología; C, es una estimación a partir de declaraciones y votos. Una ubicación C es la más discutible.",
       "La coincidencia de votos relaciona algunas de tus respuestas con votaciones reales. Solo cuenta las votaciones donde tu postura es clara y el partido votó a favor o en contra de manera definida.",
+      "Las posiciones de los partidos se ubicaron antes de que existieran las preguntas sobre salud, provincias, ambiente, inmigración y corrupción. Para esos temas el cálculo se apoya en la posición general del partido en cada eje, no en un dato específico sobre el tema. Es una aproximación más débil que en los temas que ya estaban.",
+      "Selección de partidos: la Justicia Electoral reconoce 44 partidos de orden nacional y 710 de distrito (Observatorio Electoral, datos al 30/4/2026). Acá hay 25 nacionales. La selección no sigue un criterio formal de votos o bancas, así que faltan fuerzas nacionales y todas las de distrito. Un porcentaje cercano entre dos partidos no es un empate técnico ni una diferencia real: el cálculo no tiene ese nivel de precisión.",
       "Nada de esto es una verdad oficial ni una recomendación de voto. Si no estás de acuerdo con una ubicación o con un dato, podés reportarlo desde la ficha del partido: cada corrección necesita una fuente."
     ].forEach(function (t) { box.appendChild(el("p", null, t)); });
     box.appendChild(el("h3", null, "Posiciones estimadas de cada partido"));
