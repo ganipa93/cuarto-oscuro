@@ -62,10 +62,12 @@
   });
 
   function nShort() { return D.Q.filter(function (q) { return q.core; }).length; }
+  // preguntas "dup" repiten otra pregunta: se conservan por posición (enlaces viejos) pero ya no se preguntan ni cuentan
+  function nFull() { return D.Q.filter(function (q) { return !q.dup; }).length; }
 
   function init() {
     $("n-short").textContent = nShort() + " afirmaciones · unos 3 minutos";
-    $("n-full").textContent = D.Q.length + " afirmaciones · unos 12 minutos";
+    $("n-full").textContent = nFull() + " afirmaciones · unos 12 minutos";
     $("foot").innerHTML = "";
     $("foot").appendChild(document.createTextNode("Datos relevados hasta el " + fmtDate(D.M.updated) + ". Código y datos abiertos en "));
     $("foot").appendChild(link("GitHub", "https://github.com/ganipa93/cuarto-oscuro"));
@@ -106,7 +108,7 @@
   // ---------- test ----------
   function startQuiz(mode) {
     S.mode = mode; S.ans = {}; S.wt = {}; S.i = 0;
-    S.list = D.Q.filter(function (q) { return mode === "full" || q.core; });
+    S.list = D.Q.filter(function (q) { return !q.dup && (mode === "full" || q.core); });
     renderQ(); show("quiz", "qtext");
   }
   // v === null: la persona prefirió no responder; esa pregunta no entra en el promedio
@@ -160,7 +162,7 @@
     while (m[2].length < D.Q.length) { m[2] += "-"; m[3] += "0"; }
     var o = { mode: m[1] === "s" ? "short" : "full", ans: {}, wt: {} };
     D.Q.forEach(function (q, k) {
-      var c = m[2].charAt(k); if (c !== "-") o.ans[q.id] = Number(c) - 2;
+      var c = m[2].charAt(k); if (c !== "-" && !q.dup) o.ans[q.id] = Number(c) - 2;
       if (m[3].charAt(k) === "1") o.wt[q.id] = true;
     });
     return o;

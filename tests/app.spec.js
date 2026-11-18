@@ -216,7 +216,7 @@ test("versión corta: ejes balanceados (mitad y mitad en Orden y Valores)", asyn
 test("versión completa: ningún eje queda desbalanceado por más de una pregunta", async ({ page }) => {
   const q = await (await page.request.get("/data/questions.json")).json();
   for (const a of [0, 1, 2, 3]) {
-    const s = q.questions.filter((x) => x.a === a).map((x) => x.s);
+    const s = q.questions.filter((x) => x.a === a && !x.dup).map((x) => x.s);
     expect(Math.abs(s.filter((v) => v === 1).length - s.filter((v) => v === -1).length)).toBeLessThanOrEqual(1);
   }
 });
@@ -251,5 +251,27 @@ test("transparencia: selección de partidos, evidencia visible y límites en el 
   await page.goto("/#metodo");
   await expect(page.locator("#mcard")).toContainText("Selección de partidos");
   await expect(page.locator("#mcard")).toContainText("posición general del partido");
+  expect(errs.join("\n")).toBe("");
+});
+
+test("preguntas repetidas: no se preguntan y los enlaces viejos con respuestas ahí dan lo mismo", async ({ page }) => {
+  const errs = watch(page);
+  const q = (await (await page.request.get("/data/questions.json")).json()).questions;
+  const dups = q.filter((x) => x.dup).map((x) => x.id);
+  expect(dups.length).toBeGreaterThan(0);
+  await page.goto("/");
+  await page.click("#start-full");
+  await expect(page.locator("#qnum")).toContainText("/ " + (q.length - dups.length));
+  const base = q.map((x) => (x.id % 5)).map((n) => String(n));
+  const a1 = base.map((c, i) => (dups.includes(i) ? "-" : c)).join("");
+  const a2 = base.join("");
+  const w = "0".repeat(q.length);
+  await page.goto("/#r/f/" + a1 + "/" + w);
+  const h1 = await page.locator("#headline").textContent();
+  const l1 = await page.locator("#list .match .name").allTextContents();
+  await page.goto("/#r/f/" + a2 + "/" + w);
+  await page.reload();
+  expect(await page.locator("#headline").textContent()).toBe(h1);
+  expect(await page.locator("#list .match .name").allTextContents()).toEqual(l1);
   expect(errs.join("\n")).toBe("");
 });

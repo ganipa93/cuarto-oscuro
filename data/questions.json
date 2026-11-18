@@ -343,19 +343,22 @@
    "id": 47,
    "t": "Argentina debería alinearse con Estados Unidos en política exterior aunque eso afecte el comercio con China.",
    "a": 2,
-   "s": 1
+   "s": 1,
+   "dup": true
   },
   {
    "id": 48,
    "t": "Argentina debe sostener su reclamo de soberanía sobre las Islas Malvinas como política de Estado.",
    "a": 2,
-   "s": -1
+   "s": -1,
+   "dup": true
   },
   {
    "id": 49,
    "t": "La Educación Sexual Integral debe enseñarse en todas las escuelas.",
    "a": 1,
-   "s": -1
+   "s": -1,
+   "dup": true
   },
   {
    "id": 50,
