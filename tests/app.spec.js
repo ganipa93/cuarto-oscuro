@@ -276,3 +276,17 @@ test("preguntas repetidas: no se preguntan y los enlaces viejos con respuestas a
   expect(await page.locator("#list .match .name").allTextContents()).toEqual(l1);
   expect(errs.join("\n")).toBe("");
 });
+
+test("ranking: marca los partidos con menos de 3 puntos de diferencia con el de arriba", async ({ page }) => {
+  const errs = watch(page);
+  await page.goto("/");
+  await page.click("#start-short");
+  const total = Number((await page.locator("#qnum").textContent()).split("/")[1]);
+  await answerAll(page, total, () => 2);
+  await page.click("#toggle");
+  const pcts = (await page.locator("#list .match .pct").allTextContents()).map((t) => parseInt(t, 10));
+  const esperado = pcts.filter((p, i) => i > 0 && pcts[i - 1] - p < 3).length;
+  expect(esperado).toBeGreaterThan(0);
+  await expect(page.locator("#list .match .tie")).toHaveCount(esperado);
+  expect(errs.join("\n")).toBe("");
+});

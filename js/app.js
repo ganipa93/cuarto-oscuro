@@ -236,7 +236,7 @@
     renderExtra();
   }
 
-  function row(r, top) {
+  function row(r, top, tie) {
     var p = r.p, d = el("div", "match" + (top ? " top" : ""));
     var nm = el("span", "name", p.n);
     var bd = el("span", "ev " + p.ev.toLowerCase(), "evidencia: " + (p.ev === "A" ? "documento propio" : (p.ev === "B" ? "estatuto" : "estimada")));
@@ -248,6 +248,7 @@
     var more = el("div", "more"); more.appendChild(Object.assign(el("a", null, "Ver ficha completa de " + p.n), { href: "#partido/" + p.slug }));
     more.appendChild(document.createTextNode(" · ")); more.appendChild(reportLink("Partido " + p.n));
     d.appendChild(more);
+    if (tie) d.appendChild(el("span", "tie", "Casi igual al partido de arriba: menos de 3 puntos de diferencia no son una diferencia real."));
     d.appendChild(el("span", "asof", "Datos al " + fmtDate(p.asof)));
     var br = el("div", "bar"); br.innerHTML = '<i style="width:' + r.pct + '%"></i>'; d.appendChild(br);
     return d;
@@ -272,7 +273,7 @@
   }
   function renderList() {
     var box = $("list"); box.innerHTML = "";
-    S.ranked.forEach(function (r, k) { if (k < 5 || S.all) box.appendChild(row(r, k < 3)); });
+    S.ranked.forEach(function (r, k) { if (k < 5 || S.all) box.appendChild(row(r, k < 3, k > 0 && S.ranked[k - 1].pct - r.pct < 3)); });
     $("toggle").textContent = S.all ? "Mostrar menos" : "Ver los 25";
   }
 
