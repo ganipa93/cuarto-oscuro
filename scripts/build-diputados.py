@@ -19,6 +19,9 @@ ACTAS = {
     "d-dnu": ("5774", "Reforma de la ley de DNU (26.122), en general"),
     "d-glaciares": ("5902", "Ley de Glaciares, en general y particular"),
     "d-discapacidad": ("5667", "Emergencia en discapacidad, en general"),
+    "d-universidades": ("5766", "Financiamiento universitario: insistencia tras el veto (ley 27.795)"),
+    "d-pediatria": ("5762", "Emergencia pediátrica: insistencia tras el veto (ley 27.796)"),
+    "d-fichalimpia": ("5585", "Ficha Limpia, en general y particular"),
 }
 MAJ = {"d-bases": "mayoría simple"}  # el resto: mayoría simple de los presentes
 

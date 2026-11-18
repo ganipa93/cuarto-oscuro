@@ -435,6 +435,123 @@
      "https://eleconomista.com.ar/politica/milei-logro-aprobar-reforma-bcra-pero-tuvo-ceder-cambio-clave-vuelve-diputados-n98405"
     ]
    ]
+  },
+  {
+   "id": 14,
+   "n": "Financiamiento universitario: insistencia tras el veto (2025)",
+   "q": [
+    [
+     24,
+     1
+    ],
+    [
+     44,
+     1
+    ]
+   ],
+   "rel": "el financiamiento de las universidades públicas",
+   "short": "Financiamiento universitario",
+   "date": "2025-10-02",
+   "res": [
+    "Diputados 17/9/2025, insistencia tras el veto (decreto 647/2025): 174 a 67 con 2 abstenciones, por encima de los dos tercios necesarios (acta nominal).",
+    "Senado 2/10/2025: 58 a 7 con 4 abstenciones. La ley quedó firme y el Poder Ejecutivo debe promulgarla (cifras de la prensa; no cargué el acta del Senado por bloque)."
+   ],
+   "tema": "economía",
+   "links": [
+    [
+     "Votaciones nominales de Diputados (sitio oficial)",
+     "https://votaciones.hcdn.gob.ar/"
+    ],
+    [
+     "Qué se votó ese día en Diputados (La Nación)",
+     "https://www.lanacion.com.ar/politica/que-se-voto-ayer-en-el-congreso-nid18092025"
+    ],
+    [
+     "Senado rechazó los vetos (Los Andes)",
+     "https://www.losandes.com.ar/politica/otro-reves-milei-el-senado-rechazo-los-vetos-al-financiamiento-del-garrahan-y-las-universidades-n5965108"
+    ],
+    [
+     "Senado: insistencia aprobada (UBA)",
+     "https://www.uba.ar/ubanoticias/noticias/888"
+    ]
+   ],
+   "actasD": [
+    "d-universidades"
+   ]
+  },
+  {
+   "id": 15,
+   "n": "Emergencia pediátrica: insistencia tras el veto (2025)",
+   "q": [
+    [
+     61,
+     1
+    ]
+   ],
+   "rel": "el financiamiento del sistema público de salud pediátrica (Garrahan)",
+   "short": "Emergencia pediátrica",
+   "date": "2025-10-02",
+   "res": [
+    "Diputados 17/9/2025, insistencia tras el veto (decreto 651/2025): 181 a 60 con 1 abstención (acta nominal).",
+    "Senado 2/10/2025: 59 a 7 con 3 abstenciones, por encima de los dos tercios (cifras de la prensa; no cargué el acta del Senado por bloque)."
+   ],
+   "tema": "economía",
+   "links": [
+    [
+     "Votaciones nominales de Diputados (sitio oficial)",
+     "https://votaciones.hcdn.gob.ar/"
+    ],
+    [
+     "Diputados rechazó los vetos (La Voz de San Justo)",
+     "https://www.lavozdesanjusto.com.ar/diputados-rechazo-los-vetos-al-financiamiento-del-garrahan-y-universidades"
+    ],
+    [
+     "Senado rechazó los vetos (Los Andes)",
+     "https://www.losandes.com.ar/politica/otro-reves-milei-el-senado-rechazo-los-vetos-al-financiamiento-del-garrahan-y-las-universidades-n5965108"
+    ]
+   ],
+   "actasD": [
+    "d-pediatria"
+   ]
+  },
+  {
+   "id": 16,
+   "n": "Ficha Limpia (2025)",
+   "q": [
+    [
+     68,
+     1
+    ],
+    [
+     69,
+     -1
+    ]
+   ],
+   "rel": "que quienes tienen condena por corrupción en segunda instancia no puedan ser candidatos",
+   "short": "Ficha Limpia",
+   "date": "2025-05-07",
+   "res": [
+    "Diputados 12/2/2025, en general y particular: 144 a 98 con 2 abstenciones (acta nominal).",
+    "Senado 7/5/2025: rechazada por 36 a 35; necesitaba 37 votos (mayoría absoluta). No pudo volver a tratarse en las sesiones ordinarias de 2025 (cifras de la prensa; no cargué el acta del Senado por bloque)."
+   ],
+   "tema": "instituciones",
+   "links": [
+    [
+     "Votaciones nominales de Diputados (sitio oficial)",
+     "https://votaciones.hcdn.gob.ar/"
+    ],
+    [
+     "Cómo votó cada senador (Perfil)",
+     "https://www.perfil.com/noticias/politica/ficha-limpia-el-voto-de-cada-senador.phtml"
+    ],
+    [
+     "El Senado rechazó Ficha Limpia (Los Andes)",
+     "https://www.losandes.com.ar/politica/final-inesperado-el-senado-rechazo-ficha-limpia-y-cristina-kirchner-podra-ser-candidata-n5947516"
+    ]
+   ],
+   "actasD": [
+    "d-fichalimpia"
+   ]
   }
  ],
  "actas": {
