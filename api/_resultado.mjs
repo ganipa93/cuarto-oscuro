@@ -27,7 +27,7 @@ export function parse(code) {
 function score(ans, wt) {
   const sum = [0, 0, 0, 0], den = [0, 0, 0, 0];
   Q.questions.forEach((q) => {
-    if (ans[q.id] == null) return;
+    if (ans[q.id] == null || q.a == null) return;
     const w = wt[q.id] ? 2 : 1;
     sum[q.a] += w * q.s * ans[q.id]; den[q.a] += w;
   });

@@ -499,6 +499,108 @@
    "t": "Los extranjeros no residentes deberían pagar por la atención en hospitales y universidades públicas.",
    "a": 2,
    "s": -1
+  },
+  {
+   "id": 73,
+   "t": "Las provincias deberían tener más autonomía para decidir sus políticas, aunque eso genere diferencias entre ellas.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 74,
+   "t": "Las leyes de educación y de seguridad deberían ser iguales en todo el país.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 75,
+   "t": "Las provincias deberían manejar sus propios recursos naturales y su energía.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 76,
+   "t": "Argentina necesita un presidente con mucho poder para hacer reformas rápido.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 77,
+   "t": "El Congreso y la Justicia deben poder frenar al presidente aunque eso demore las reformas.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 78,
+   "t": "Argentina debería priorizar el desarrollo de su industria, aunque eso encarezca algunos productos.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 79,
+   "t": "Los recursos estratégicos del país (litio, energía, agua) deberían estar bajo control nacional.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 80,
+   "t": "Argentina debería buscar una alianza estratégica con Estados Unidos.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 81,
+   "t": "Argentina debería ampliar su relación económica con China.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 82,
+   "t": "Los servicios públicos (agua, trenes, energía) funcionan mejor en manos privadas.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 83,
+   "t": "Los sindicatos tienen demasiado poder en la Argentina.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 84,
+   "t": "La indemnización por despido es una protección que no debería recortarse.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 85,
+   "t": "Los trabajadores de plataformas (apps de reparto y de transporte) deberían tener derechos laborales plenos.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 86,
+   "t": "La religión es un asunto privado y no debería influir en las leyes.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 87,
+   "t": "Los valores religiosos deberían inspirar las leyes del país.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 88,
+   "t": "Argentina debería reducir sus emisiones aunque eso encarezca la energía o la producción.",
+   "a": null,
+   "s": 1
+  },
+  {
+   "id": 89,
+   "t": "La explotación de Vaca Muerta y de la minería es clave para el futuro económico del país.",
+   "a": null,
+   "s": 1
   }
  ]
 }

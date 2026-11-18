@@ -19,8 +19,22 @@ if (Q.axes.length !== 4) err("deben ser 4 ejes");
 const ids = new Set();
 Q.questions.forEach((q) => {
   if (ids.has(q.id)) err(`pregunta ${q.id} duplicada`); ids.add(q.id);
-  if (!q.t || ![0, 1, 2, 3].includes(q.a) || ![1, -1].includes(q.s)) err(`pregunta ${q.id}: campos inválidos`);
+  // a: null = la pregunta solo cuenta en el perfil de 12 ejes (data/ejes12.json)
+  if (!q.t || !(q.a === null || [0, 1, 2, 3].includes(q.a)) || ![1, -1].includes(q.s)) err(`pregunta ${q.id}: campos inválidos`);
 });
+let E12 = null; try { E12 = rd("ejes12.json"); } catch (e) { /* opcional */ }
+if (E12) {
+  const bal = E12.ejes.map(() => [0, 0]);
+  Object.entries(E12.q).forEach(([id, m]) => {
+    const q = Q.questions.find((x) => String(x.id) === id);
+    if (!q) return err(`ejes12: pregunta ${id} no existe`);
+    if (q.dup) err(`ejes12: pregunta ${id} es dup`);
+    if (!Number.isInteger(m[0]) || m[0] < 0 || m[0] >= E12.ejes.length || ![1, -1].includes(m[1])) return err(`ejes12: pregunta ${id} inválida`);
+    bal[m[0]][m[1] === 1 ? 0 : 1]++;
+  });
+  bal.forEach(([p, n], e) => { if (p + n < 4) err(`ejes12: ${E12.ejes[e].k} tiene menos de 4 preguntas`); if (Math.abs(p - n) > 1) err(`ejes12: ${E12.ejes[e].k} desbalanceado (${p}/${n})`); });
+}
+Q.questions.forEach((q) => { if (q.a === null && !(E12 && E12.q[q.id])) err(`pregunta ${q.id}: sin eje de 4 y sin eje de 12`); });
 if (Q.questions.filter((q) => q.core).length < 10) err("versión corta con menos de 10 preguntas");
 
 const slugs = new Set();

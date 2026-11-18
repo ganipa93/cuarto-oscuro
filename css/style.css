@@ -178,3 +178,13 @@ input[type="text"] { font: inherit; background: var(--bg); color: var(--ink); bo
 .fold > *:not(summary) { margin-top: 14px; }
 #headline { display: flex; flex-wrap: wrap; gap: 2px 18px; font-size: 1.3rem; }
 #headline .hl { white-space: nowrap; }
+
+/* perfil en 12 ejes */
+.p12group { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+.p12group h3 { margin: 6px 0 0; }
+.p12row { display: grid; gap: 4px; padding-block: 8px; border-top: 1px solid var(--line); }
+.p12k { font-weight: 600; }
+.p12txt { font-size: 0.92rem; }
+.p12bar { display: block; height: 12px; border-radius: 6px; background: var(--soft); border: 1px solid var(--line-ui); overflow: hidden; }
+.p12bar i { display: block; height: 100%; background: var(--accent); }
+.p12n, .p12none { font-size: 0.8rem; color: var(--muted); }

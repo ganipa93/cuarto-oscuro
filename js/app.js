@@ -51,9 +51,10 @@
     getJSON("data/dnu.json"), getJSON("data/timeline.json"), getJSON("data/content.json"), getJSON("data/meta.json"),
     getJSON("data/distritos.json").catch(function () { return null; }),
     getJSON("data/diputados.json").catch(function () { return null; }),
-    getJSON("data/historicas.json").catch(function () { return null; })
+    getJSON("data/historicas.json").catch(function () { return null; }),
+    getJSON("data/ejes12.json").catch(function () { return null; })
   ]).then(function (r) {
-    D.AX = r[0].axes; D.OPT = r[0].options; D.Q = r[0].questions; D.P = r[1]; D.V = r[2]; D.DNU = r[3]; D.TL = r[4]; D.C = r[5]; D.M = r[6]; D.DIST = r[7]; D.DIP = r[8]; D.HIST = r[9];
+    D.AX = r[0].axes; D.OPT = r[0].options; D.Q = r[0].questions; D.P = r[1]; D.V = r[2]; D.DNU = r[3]; D.TL = r[4]; D.C = r[5]; D.M = r[6]; D.DIST = r[7]; D.DIP = r[8]; D.HIST = r[9]; D.E12 = r[10];
     init();
   }).catch(function (e) {
     var b = $("loaderr");
@@ -67,7 +68,7 @@
 
   function init() {
     $("n-short").textContent = nShort() + " afirmaciones · unos 3 minutos";
-    $("n-full").textContent = nFull() + " afirmaciones · unos 12 minutos";
+    $("n-full").textContent = nFull() + " afirmaciones · unos 15 minutos";
     $("foot").innerHTML = "";
     $("foot").appendChild(document.createTextNode("Datos relevados hasta el " + fmtDate(D.M.updated) + ". Código y datos abiertos en "));
     $("foot").appendChild(link("GitHub", "https://github.com/ganipa93/cuarto-oscuro"));
@@ -177,10 +178,51 @@
     var sum = [0, 0, 0, 0], den = [0, 0, 0, 0];
     D.Q.forEach(function (q) {
       if (ans[q.id] == null) return;
+      if (q.a == null) return;
       var w = wt[q.id] ? 2 : 1;
       sum[q.a] += w * q.s * ans[q.id]; den[q.a] += w;
     });
     return sum.map(function (s, a) { return den[a] ? s / den[a] : 0; });
+  }
+  // Perfil en 12 ejes: mismas respuestas, otro agrupamiento (data/ejes12.json). Devuelve, por eje, { v: -2..2, n: respuestas }
+  var MIN12 = 3;
+  function score12(ans, wt) {
+    ans = ans || S.ans; wt = wt || S.wt;
+    if (!D.E12) return [];
+    var sum = D.E12.ejes.map(function () { return 0; }), den = sum.slice(), cnt = sum.slice();
+    D.Q.forEach(function (q) {
+      var m = D.E12.q[q.id]; if (!m || q.dup || ans[q.id] == null) return;
+      var w = wt[q.id] ? 2 : 1;
+      sum[m[0]] += w * m[1] * ans[q.id]; den[m[0]] += w; cnt[m[0]]++;
+    });
+    return sum.map(function (t, e) { return { v: den[e] ? t / den[e] : 0, n: cnt[e] }; });
+  }
+  function renderPerfil12() {
+    var card = $("perfil12-card"), box = $("perfil12");
+    if (!card || !D.E12) return;
+    box.innerHTML = "";
+    var sc = score12(), cats = [];
+    D.E12.ejes.forEach(function (x) { if (cats.indexOf(x.cat) < 0) cats.push(x.cat); });
+    cats.forEach(function (cat) {
+      var g = el("div", "p12group"); g.appendChild(el("h3", null, cat));
+      D.E12.ejes.forEach(function (x, e) {
+        if (x.cat !== cat) return;
+        var r = el("div", "p12row"), s = sc[e];
+        r.appendChild(el("b", "p12k", x.k));
+        if (s.n < MIN12) {
+          r.appendChild(el("span", "p12none", "Faltan respuestas para este eje (hacé la versión completa para verlo)."));
+          g.appendChild(r); return;
+        }
+        var hi = Math.round((s.v + 2) / 4 * 100), lo = 100 - hi;
+        var txt = x.lo + " " + lo + "% · " + x.hi + " " + hi + "%";
+        r.appendChild(el("span", "p12txt", txt));
+        var bar = el("span", "p12bar"); bar.setAttribute("role", "img"); bar.setAttribute("aria-label", txt + ", según " + s.n + " respuestas");
+        var f = el("i"); f.style.width = lo + "%"; bar.appendChild(f); r.appendChild(bar);
+        r.appendChild(el("span", "p12n", s.n + " respuestas"));
+        g.appendChild(r);
+      });
+      box.appendChild(g);
+    });
   }
   function stances(ans) {
     ans = ans || S.ans;
@@ -233,7 +275,7 @@
     S.all = false; renderList();
     renderWhy(); $("friend").innerHTML = ""; $("friend-in").value = "";
     renderVotebox(); renderExplorer(); drawMap();
-    renderExtra();
+    renderExtra(); renderPerfil12();
   }
 
   function row(r, top, tie) {
@@ -482,7 +524,7 @@
     var box = $("why"); box.innerHTML = "";
     var den = [0, 0, 0, 0], labels = {};
     D.OPT.forEach(function (o) { labels[o.v] = o.l; });
-    D.Q.forEach(function (q) { if (S.ans[q.id] != null) den[q.a] += S.wt[q.id] ? 2 : 1; });
+    D.Q.forEach(function (q) { if (q.a != null && S.ans[q.id] != null) den[q.a] += S.wt[q.id] ? 2 : 1; });
     D.AX.forEach(function (ax, a) {
       var items = D.Q.filter(function (q) { return q.a === a && S.ans[q.id] != null && S.ans[q.id] !== 0; }).map(function (q) {
         return { q: q, c: (S.wt[q.id] ? 2 : 1) * q.s * S.ans[q.id] / den[a] };
@@ -565,6 +607,7 @@
       "Tu posición en cada eje es el promedio ponderado de tus respuestas de ese eje, con signo. Una respuesta marcada como importante pesa el doble. Si no respondiste nada de un eje, queda en 0.",
       "Cada partido tiene una posición estimada en los mismos cuatro ejes, entre −2 y +2. La afinidad es 100% menos la distancia euclídea en 4 dimensiones dividida por 6, con piso en 0%.",
       "La evidencia de cada partido se marca así: A, la ubicación se apoya en un documento programático propio; B, solo en el estatuto o carta orgánica, que casi nunca habla de ideología; C, es una estimación a partir de declaraciones y votos. Una ubicación C es la más discutible.",
+      "Además del cálculo en cuatro ejes, el resultado muestra un perfil en 12 ejes agrupados en cuatro categorías (Instituciones, Mundo, Economía y Sociedad). Usa las mismas respuestas más algunas preguntas que solo cuentan ahí, y cada eje necesita al menos tres respuestas para mostrarse. Es un retrato tuyo: no se usa para calcular la afinidad con partidos, porque las posiciones de los partidos solo están estimadas en los cuatro ejes.",
       "La coincidencia de votos relaciona algunas de tus respuestas con votaciones reales. Solo cuenta las votaciones donde tu postura es clara y el partido votó a favor o en contra de manera definida.",
       "Las posiciones de los partidos se ubicaron antes de que existieran las preguntas sobre salud, provincias, ambiente, inmigración y corrupción. Para esos temas el cálculo se apoya en la posición general del partido en cada eje, no en un dato específico sobre el tema. Es una aproximación más débil que en los temas que ya estaban.",
       "Selección de partidos: la Justicia Electoral reconoce 44 partidos de orden nacional y 710 de distrito (Observatorio Electoral, datos al 30/4/2026). Acá hay 25 nacionales. La selección no sigue un criterio formal de votos o bancas, así que faltan fuerzas nacionales y todas las de distrito. Un porcentaje cercano entre dos partidos no es un empate técnico ni una diferencia real: el cálculo no tiene ese nivel de precisión.",

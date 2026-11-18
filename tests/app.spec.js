@@ -290,3 +290,29 @@ test("ranking: marca los partidos con menos de 3 puntos de diferencia con el de 
   await expect(page.locator("#list .match .tie")).toHaveCount(esperado);
   expect(errs.join("\n")).toBe("");
 });
+
+test("perfil en 12 ejes: versión completa muestra los 12; la corta avisa de los que faltan", async ({ page }) => {
+  const errs = watch(page);
+  await page.goto("/");
+  await page.click("#start-full");
+  const total = Number((await page.locator("#qnum").textContent()).split("/")[1]);
+  await answerAll(page, total, (i) => (i % 3 === 0 ? 4 : i % 3 === 1 ? 1 : 2));
+  await expect(page.locator("#perfil12 .p12row")).toHaveCount(12);
+  await expect(page.locator("#perfil12 .p12bar")).toHaveCount(12);
+  await expect(page.locator("#perfil12 .p12group h3")).toHaveText(["Instituciones", "Mundo", "Economía", "Sociedad"]);
+  await expect(page.locator("#perfil12 .p12txt").first()).toContainText("%");
+  await page.goto("/");
+  await page.click("#start-short");
+  const t2 = Number((await page.locator("#qnum").textContent()).split("/")[1]);
+  await answerAll(page, t2, () => 4);
+  await expect(page.locator("#perfil12 .p12none").first()).toContainText("Faltan respuestas");
+  expect(errs.join("\n")).toBe("");
+});
+
+test("enlaces viejos: el perfil de 12 ejes funciona con links sin las preguntas nuevas", async ({ page }) => {
+  const errs = watch(page);
+  await page.goto("/#r/f/" + "34".repeat(26) + "3/" + "0".repeat(53));
+  await expect(page.locator("#headline")).toBeVisible();
+  await expect(page.locator("#perfil12 .p12row")).toHaveCount(12);
+  expect(errs.join("\n")).toBe("");
+});
