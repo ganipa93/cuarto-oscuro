@@ -18,7 +18,7 @@ export function parse(code) {
   const o = { mode: m[1] === "s" ? "short" : "full", ans: {}, wt: {} };
   Q.questions.forEach((q, k) => {
     const c = a.charAt(k);
-    if (c !== "-") o.ans[q.id] = Number(c) - 2;
+    if (c !== "-" && !q.dup) o.ans[q.id] = Number(c) - 2;
     if (w.charAt(k) === "1") o.wt[q.id] = true;
   });
   return o;
