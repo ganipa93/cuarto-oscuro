@@ -717,30 +717,60 @@
   }
   function cssVar(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
   function downloadCard() {
-    var W = 1080, H = 1350, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
-    var c = cv.getContext("2d"), bg = cssVar("--paper") || "#fff", ink = cssVar("--ink") || "#14213d", mu = cssVar("--muted") || "#5b6678",
-      soft = cssVar("--soft") || "#e3e9f6", mark = cssVar("--mark") || "#d9820b", acc = cssVar("--accent") || "#1f4fd8";
     var fd = '"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif', fm = '"IBM Plex Mono", ui-monospace, monospace';
-    c.fillStyle = bg; c.fillRect(0, 0, W, H);
-    c.fillStyle = mu; c.font = "28px " + fm; c.fillText("ARGENTINA · PARTIDOS POLÍTICOS", 70, 100);
-    c.fillStyle = ink; c.font = "bold 84px " + fd; c.fillText("Cuarto Oscuro", 70, 190);
+    var go = function () { try { drawCard(fd, fm); } catch (e) { say("No se pudo armar la tarjeta"); } };
+    if (document.fonts && document.fonts.load) {
+      Promise.all([document.fonts.load("700 40px " + fd), document.fonts.load("500 40px " + fd), document.fonts.load("400 28px " + fm)]).then(go, go);
+    } else go();
+  }
+  function drawCard(fd, fm) {
+    // Tarjeta vertical (1080x1920) para historias y WhatsApp. Colores fijos y de alto contraste, sin depender del tema.
+    var W = 1080, H = 1920, M = 70, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+    var c = cv.getContext("2d");
+    var BG = "#0f1b36", PANEL = "#1a2a4f", INK = "#f3f6fc", MU = "#c3cde0", ACC = "#8fb0ff", TRACK = "#4a5d88", MARK = "#f2b04a";
+    function box(x, y, w, h, r, col) {
+      c.fillStyle = col; c.beginPath();
+      if (c.roundRect) c.roundRect(x, y, w, h, r); else c.rect(x, y, w, h);
+      c.fill();
+    }
+    function text(t, x, y, font, col, al) { c.font = font; c.fillStyle = col; c.textAlign = al || "left"; c.fillText(t, x, y); c.textAlign = "left"; }
+    function fit(t, maxW, font) { c.font = font; while (t.length > 3 && c.measureText(t).width > maxW) t = t.slice(0, -2) + "…"; return t; }
+    box(0, 0, W, H, 0, BG);
+    text("CUARTO OSCURO", M, 110, "500 30px " + fm, MU);
+    text("MI RESULTADO", W - M, 110, "500 30px " + fm, MU, "right");
+    text("Test de ideología política argentina", M, 200, "700 54px " + fd, INK);
     S.me.forEach(function (v, a) {
-      var y = 300 + a * 150;
-      c.fillStyle = mu; c.font = "28px " + fd; c.fillText(D.AX[a].lo, 70, y); c.textAlign = "right"; c.fillText(D.AX[a].hi, W - 70, y); c.textAlign = "left";
-      c.fillStyle = ink; c.font = "bold 30px " + fd; c.textAlign = "center"; c.fillText(D.AX[a].k, W / 2, y); c.textAlign = "left";
-      c.fillStyle = soft; c.fillRect(70, y + 25, W - 140, 16);
-      c.fillStyle = mu; c.fillRect(W / 2 - 2, y + 15, 4, 36);
-      var x = 70 + (v + 2) / 4 * (W - 140);
-      c.fillStyle = mark; c.beginPath(); c.arc(x, y + 33, 20, 0, 7); c.fill();
+      var col = a % 2, row = Math.floor(a / 2);
+      text(fit(D.AX[a].k + ": " + side(v, a), 440, "500 34px " + fd), M + col * 500, 290 + row * 52, "500 34px " + fd, INK);
     });
-    c.fillStyle = ink; c.font = "bold 44px " + fd; c.fillText("Partidos más cercanos", 70, 960);
+    var top = 420, rows = D.E12 ? D.E12.ejes.length : 0, rh = 70;
+    if (rows) {
+      box(M - 20, top, W - 2 * M + 40, 100 + rows * rh, 28, PANEL);
+      text("TUS 12 EJES", M + 20, top + 62, "500 28px " + fm, MU);
+      var sc = score12();
+      D.E12.ejes.forEach(function (x, e) {
+        var y = top + 100 + e * rh, s = sc[e], bx = M + 20, bw = W - 2 * M - 40;
+        text(fit(x.k, 480, "700 32px " + fd), bx, y + 30, "700 32px " + fd, INK);
+        box(bx, y + 44, bw, 16, 8, TRACK);
+        if (s.n < MIN12) { text("sin datos suficientes", W - M - 20, y + 30, "500 28px " + fd, MU, "right"); return; }
+        var hi = Math.round((s.v + 2) / 4 * 100), lo = 100 - hi;
+        var lab = hi === 50 ? "equilibrado 50%" : (hi > 50 ? x.hi + " " + hi + "%" : x.lo + " " + lo + "%");
+        text(fit(lab, 440, "500 30px " + fd), W - M - 20, y + 30, "500 30px " + fd, ACC, "right");
+        box(bx, y + 44, Math.max(16, bw * Math.max(lo, hi) / 100), 16, 8, ACC); // el relleno es el polo nombrado
+        box(bx + bw / 2 - 2, y + 38, 4, 28, 2, MARK);
+      });
+    }
+    var py = top + 100 + rows * rh + 40;
+    box(M - 20, py, W - 2 * M + 40, 340, 28, PANEL);
+    text("PARTIDOS MÁS CERCANOS", M + 20, py + 62, "500 28px " + fm, MU);
     S.ranked.slice(0, 3).forEach(function (r, k) {
-      var y = 1030 + k * 90;
-      c.fillStyle = ink; c.font = "bold 40px " + fd; c.fillText(r.p.n, 70, y);
-      c.fillStyle = acc; c.font = "40px " + fm; c.textAlign = "right"; c.fillText(r.pct + "%", W - 70, y); c.textAlign = "left";
+      var y = py + 140 + k * 76;
+      text(fit(r.p.n, 700, "700 42px " + fd), M + 20, y, "700 42px " + fd, INK);
+      text(r.pct + "%", W - M - 20, y, "500 42px " + fm, ACC, "right");
     });
-    c.fillStyle = mu; c.font = "26px " + fd;
-    c.fillText("Mide cercanía de ideas. No es una recomendación de voto.", 70, 1300);
+    var fy = py + 340 + 70;
+    text("Mide cercanía de ideas. No es una recomendación de voto.", M, fy, "500 28px " + fd, MU);
+    text(location.host.toUpperCase() || "CUARTO OSCURO", M, fy + 50, "500 30px " + fm, INK);
     cv.toBlob(function (blob) {
       var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "cuarto-oscuro.png";
       document.body.appendChild(a); a.click(); document.body.removeChild(a);

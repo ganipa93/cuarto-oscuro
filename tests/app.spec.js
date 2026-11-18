@@ -338,3 +338,17 @@ test("12 ejes: partidos parecidos por eje y posición en la ficha del partido", 
   await expect(page.locator("#pcard")).toContainText("Sin datos relevados en");
   expect(errs.join("\n")).toBe("");
 });
+
+test("tarjeta de resultado: descarga un PNG vertical con los 12 ejes", async ({ page }) => {
+  const errs = watch(page);
+  await page.goto("/#r/f/" + "34".repeat(26) + "3/" + "0".repeat(53));
+  await expect(page.locator("#headline")).toBeVisible();
+  const [dl] = await Promise.all([page.waitForEvent("download"), page.click("#png")]);
+  expect(dl.suggestedFilename()).toBe("cuarto-oscuro.png");
+  const buf = require("fs").readFileSync(await dl.path());
+  expect(buf.slice(1, 4).toString()).toBe("PNG");
+  expect(buf.readUInt32BE(16)).toBe(1080);
+  expect(buf.readUInt32BE(20)).toBe(1920);
+  await dl.saveAs("test-results/tarjeta.png");
+  expect(errs.join("\n")).toBe("");
+});

@@ -40,3 +40,5 @@ Para actualizar: editar el JSON, cambiar `asof` y `meta.updated`, correr `npm te
 
 ## Límites
 Las votaciones nominales de Diputados son las actas oficiales de [votaciones.hcdn.gob.ar](https://votaciones.hcdn.gob.ar/) y [senado.gob.ar](https://www.senado.gob.ar/votaciones/); se obtuvieron de una recopilación abierta, porque el sitio oficial no permite la lectura automatizada; `python3 scripts/build-diputados.py` regenera `data/diputados.json` y `python3 scripts/build-historicas.py` regenera `data/historicas.json` (13 leyes emblemáticas, 2008-2025). Los bloques no son partidos. Las posiciones de los partidos son estimaciones.
+
+- La tarjeta descargable (botón "Descargar tarjeta") es un PNG vertical de 1080×1920 con los 4 ejes, los 12 ejes y los 3 partidos más cercanos; colores fijos de alto contraste, armada en el navegador con canvas (`drawCard` en `js/app.js`).
